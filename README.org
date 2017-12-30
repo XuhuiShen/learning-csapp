@@ -1,2 +1,2 @@
-* play-with-computer-architecture
-play with computer architecture ^_^.
+* learning cmu 213
+include video and xmind file and pptx and labs and assignments.
