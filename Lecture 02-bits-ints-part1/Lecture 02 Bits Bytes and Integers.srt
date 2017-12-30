@@ -1,0 +1,4641 @@
+1
+00:00:00,000 --> 00:00:00,030
+ Youtube subtitles download by mo.dbxdb.com 
+
+2
+00:00:00,030 --> 00:00:04,370
+all right so Greene's welcome to the
+
+3
+00:00:02,370 --> 00:00:06,319
+second exciting addition to fifteen
+
+4
+00:00:04,319 --> 00:00:09,210
+eighteen to thirteen and fifteen five
+
+5
+00:00:06,210 --> 00:00:17,719
+thirteen today we get to talk about bits
+
+6
+00:00:09,719 --> 00:00:20,580
+bytes and integers all right I know this
+
+7
+00:00:17,580 --> 00:00:23,010
+is gonna shock and amaze everyone in the
+
+8
+00:00:20,010 --> 00:00:25,220
+class you probably never ever heard this
+
+9
+00:00:23,220 --> 00:00:28,160
+before okay
+
+10
+00:00:25,160 --> 00:00:30,920
+computers work in binary look I can
+
+11
+00:00:28,920 --> 00:00:33,210
+pissed that past things I'm very good at
+
+12
+00:00:30,210 --> 00:00:34,000
+this this is actually a little trickier
+
+13
+00:00:33,000 --> 00:00:36,410
+because there's no table here but I can
+
+14
+00:00:34,410 --> 00:00:40,780
+even do that one it's going to amaze
+
+15
+00:00:36,780 --> 00:00:44,219
+everybody okay computers work in binary
+
+16
+00:00:40,219 --> 00:00:46,309
+they don't actually use decimal right
+
+17
+00:00:44,309 --> 00:00:49,289
+you've all seen the t-shirts right then
+
+18
+00:00:46,289 --> 00:00:51,129
+you know one zero the number two right
+
+19
+00:00:49,129 --> 00:00:54,390
+there are one zero types of people those
+
+20
+00:00:51,390 --> 00:00:57,770
+who understand binary those who don't so
+
+21
+00:00:54,770 --> 00:01:04,930
+here's my question for you right why do
+
+22
+00:00:57,930 --> 00:01:06,309
+computers work in binary what's that
+
+23
+00:01:04,309 --> 00:01:15,150
+transistors only have two states is that
+
+24
+00:01:06,150 --> 00:01:21,869
+true has an amplifier work push-pull
+
+25
+00:01:15,869 --> 00:01:22,090
+amplifier you do digital logic indeed so
+
+26
+00:01:21,090 --> 00:01:26,530
+you do digital logic transistors just
+
+27
+00:01:22,530 --> 00:01:28,819
+switch okay hypothesizing the
+
+28
+00:01:26,819 --> 00:01:30,079
+transistors actually can be used for
+
+29
+00:01:28,079 --> 00:01:36,810
+analog applications also which I think
+
+30
+00:01:30,810 --> 00:01:47,959
+would be a verifiable hypothesis what's
+
+31
+00:01:36,959 --> 00:01:49,970
+that so so I mean admittedly there's a
+
+32
+00:01:47,970 --> 00:01:50,229
+gate current that controls whether it's
+
+33
+00:01:49,229 --> 00:01:52,549
+on or off if there's an amplification or
+
+34
+00:01:50,549 --> 00:02:01,680
+a game that's associated with that it's
+
+35
+00:01:52,680 --> 00:02:03,880
+variable so any rate why why is it
+
+36
+00:02:01,880 --> 00:02:05,680
+I mean well before they were digital
+
+37
+00:02:03,680 --> 00:02:13,090
+computers there were analog computers
+
+38
+00:02:05,090 --> 00:02:18,729
+yes yeah it's easier to distinguish
+
+39
+00:02:13,729 --> 00:02:20,019
+between on and off then on 1/3 2/3 3/4
+
+40
+00:02:18,019 --> 00:02:21,539
+7/8 whatever and off right I mean here's
+
+41
+00:02:20,539 --> 00:02:23,769
+the example I like to use it was much
+
+42
+00:02:21,769 --> 00:02:25,120
+easier when we had normal light switches
+
+43
+00:02:23,120 --> 00:02:31,130
+in the room but you know details details
+
+44
+00:02:25,130 --> 00:02:46,930
+right right now are the lights on or off
+
+45
+00:02:31,930 --> 00:02:58,549
+the lights on yes and now off ok so if
+
+46
+00:02:46,549 --> 00:03:05,930
+we call this zero and this one come on
+
+47
+00:02:58,930 --> 00:03:15,389
+what is that is that 10% or 20% or 30%
+
+48
+00:03:05,389 --> 00:03:16,650
+or 40% 50% what do you think no I mean
+
+49
+00:03:15,650 --> 00:03:22,789
+is I mean really how like what
+
+50
+00:03:16,789 --> 00:03:32,789
+percentage brightness is it you think
+
+51
+00:03:22,789 --> 00:03:39,030
+maybe 75% what do you think 40 80 help
+
+52
+00:03:32,030 --> 00:03:41,769
+me out 60 ma'am 70 right
+
+53
+00:03:39,769 --> 00:03:45,780
+we can't tell forty sixty eighty twenty
+
+54
+00:03:41,780 --> 00:03:46,109
+seventy you know it's harder right it's
+
+55
+00:03:45,109 --> 00:03:49,609
+much easier to distinguish between on
+
+56
+00:03:46,609 --> 00:03:51,220
+and off and that's why we have digital
+
+57
+00:03:49,220 --> 00:03:54,979
+logic if I have some signal right it's
+
+58
+00:03:51,979 --> 00:03:56,349
+much easier to tell on from off than it
+
+59
+00:03:54,349 --> 00:03:58,690
+is somewhere in between now add to that
+
+60
+00:03:56,690 --> 00:04:04,669
+the fact that we never have pure signals
+
+61
+00:03:58,669 --> 00:04:06,250
+we have signal and noise right and so I
+
+62
+00:04:04,250 --> 00:04:08,709
+might take a signal that's exactly 5
+
+63
+00:04:06,709 --> 00:04:12,959
+volts really it's exactly 5 volts plus
+
+64
+00:04:08,959 --> 00:04:14,079
+or minus some tolerance right and now if
+
+65
+00:04:12,079 --> 00:04:15,060
+I go to transfer that signal some of the
+
+66
+00:04:14,060 --> 00:04:17,680
+leaves
+
+67
+00:04:15,680 --> 00:04:20,959
+right we lose some and the wire acts as
+
+68
+00:04:17,959 --> 00:04:22,750
+an antenna and we gain some so our noise
+
+69
+00:04:20,750 --> 00:04:25,610
+signal is whatever we gain and whatever
+
+70
+00:04:22,610 --> 00:04:29,038
+we lose right
+
+71
+00:04:25,038 --> 00:04:30,538
+so it's really hard to have anything
+
+72
+00:04:29,538 --> 00:04:33,800
+exact when you have things that are
+
+73
+00:04:30,800 --> 00:04:37,620
+analog you can't copy things right back
+
+74
+00:04:33,620 --> 00:04:41,130
+in the day right the music was stored on
+
+75
+00:04:37,130 --> 00:04:44,990
+tape right and you would copy things it
+
+76
+00:04:41,990 --> 00:04:48,029
+was like a photocopier every copy got a
+
+77
+00:04:44,029 --> 00:04:50,348
+little worse because you introduced more
+
+78
+00:04:48,348 --> 00:04:54,839
+noise and lost more signal there was no
+
+79
+00:04:50,839 --> 00:04:56,348
+way to get it back okay
+
+80
+00:04:54,348 --> 00:04:58,418
+the good thing about about a digital
+
+81
+00:04:56,418 --> 00:05:03,668
+signal is that if we say look this is on
+
+82
+00:04:58,668 --> 00:05:04,199
+this is off we tolerate that in terms of
+
+83
+00:05:03,199 --> 00:05:07,668
+new ways we tolerate that in terms of
+
+84
+00:05:04,668 --> 00:05:08,098
+noise if we're anywhere here we can
+
+85
+00:05:07,098 --> 00:05:10,899
+always reset it to fully on what's
+
+86
+00:05:08,899 --> 00:05:12,639
+really off if we're anywhere here we can
+
+87
+00:05:10,639 --> 00:05:14,800
+always reset it to fully on and if we
+
+88
+00:05:12,800 --> 00:05:18,959
+ever land in this space that's the error
+
+89
+00:05:14,959 --> 00:05:21,009
+state we've lost too much to no prisoner
+
+90
+00:05:18,009 --> 00:05:23,709
+okay so with digital signals we can
+
+91
+00:05:21,709 --> 00:05:25,870
+easily sample to tell what we have a 1
+
+92
+00:05:23,870 --> 00:05:28,639
+or a 0 and we can keep that going
+
+93
+00:05:25,639 --> 00:05:31,759
+forever not like analog where it's very
+
+94
+00:05:28,759 --> 00:05:38,098
+hard to tell exactly what we have and
+
+95
+00:05:31,098 --> 00:05:42,839
+where it only degenerates it's
+
+96
+00:05:38,839 --> 00:05:45,009
+unsurprising and amazing to most of you
+
+97
+00:05:42,009 --> 00:05:48,829
+that binary as you guys seem to get
+
+98
+00:05:45,829 --> 00:05:50,348
+right has two states on/off and then our
+
+99
+00:05:48,348 --> 00:05:52,089
+numbering system is based upon that so
+
+100
+00:05:50,089 --> 00:05:54,579
+we have two digits your own one so we
+
+101
+00:05:52,579 --> 00:05:57,860
+have the two the zeros place that's the
+
+102
+00:05:54,860 --> 00:05:59,470
+ones place the two to the ones place
+
+103
+00:05:57,470 --> 00:06:01,360
+that's the twos place the two squared
+
+104
+00:05:59,360 --> 00:06:02,399
+place that's the fours place two cubes
+
+105
+00:06:01,399 --> 00:06:05,509
+place that's the eights place
+
+106
+00:06:02,509 --> 00:06:08,720
+16s plays thirty twos plays 64 plays 128
+
+107
+00:06:05,720 --> 00:06:10,329
+plays 2d six plays 512 plays and so on
+
+108
+00:06:08,329 --> 00:06:12,250
+right it works just like math did in
+
+109
+00:06:10,250 --> 00:06:14,228
+kindergarten right we knew the ones
+
+110
+00:06:12,228 --> 00:06:15,000
+place the tens place the hundreds plays
+
+111
+00:06:14,000 --> 00:06:17,500
+the thousands place right used to
+
+112
+00:06:15,500 --> 00:06:20,360
+rearrange you these little things the
+
+113
+00:06:17,360 --> 00:06:25,269
+unit that was a little square right the
+
+114
+00:06:20,269 --> 00:06:28,339
+line that was ten right the tens block
+
+115
+00:06:25,339 --> 00:06:32,860
+that was ten tens into a big square
+
+116
+00:06:28,860 --> 00:06:34,639
+the cube right there was 10 of those
+
+117
+00:06:32,639 --> 00:06:40,560
+things stacked on top of each other for
+
+118
+00:06:34,560 --> 00:06:43,918
+a thousand or a hundred no there's 10
+
+119
+00:06:40,918 --> 00:06:44,259
+pens thousand yes sorry the ones tens
+
+120
+00:06:43,259 --> 00:06:47,970
+hundreds thousand you get past that was
+
+121
+00:06:44,970 --> 00:06:51,879
+in kindergarten and so it's the same way
+
+122
+00:06:47,879 --> 00:06:52,538
+right we have the ones place the twos
+
+123
+00:06:51,538 --> 00:06:54,918
+place the fours place the eights place
+
+124
+00:06:52,918 --> 00:06:57,690
+that is to say to the zero to the 1 2
+
+125
+00:06:54,690 --> 00:06:59,209
+squared to the 3rd just like 10 to the 0
+
+126
+00:06:57,209 --> 00:07:02,370
+10 to the 1st 10 to the 2nd 10 to the
+
+127
+00:06:59,370 --> 00:07:06,098
+3rd 10 to the 4th and so on and that's
+
+128
+00:07:02,098 --> 00:07:08,478
+that binary is really tough for people
+
+129
+00:07:06,478 --> 00:07:10,190
+to deal with because it takes so many
+
+130
+00:07:08,190 --> 00:07:11,560
+digits to represent something right it's
+
+131
+00:07:10,560 --> 00:07:13,699
+just a pain if you've got to deal with
+
+132
+00:07:11,699 --> 00:07:15,649
+it so when programmers are dealing with
+
+133
+00:07:13,649 --> 00:07:17,300
+binary but want a more compressed
+
+134
+00:07:15,300 --> 00:07:20,399
+representation we often times turn to
+
+135
+00:07:17,399 --> 00:07:25,218
+hexadecimal hexadecimals base 16
+
+136
+00:07:20,218 --> 00:07:28,199
+numbering system 1 16 256 and so on
+
+137
+00:07:25,199 --> 00:07:30,168
+right 16 to the 0 16 to the one 16 to
+
+138
+00:07:28,168 --> 00:07:33,569
+the two 16 to the 3 16 to the 4 16 to
+
+139
+00:07:30,569 --> 00:07:34,000
+the 5 16 to the six right blah blah blah
+
+140
+00:07:33,000 --> 00:07:38,589
+blah blah the good thing about it is
+
+141
+00:07:34,589 --> 00:07:42,310
+it's a power of 2 system so every 4
+
+142
+00:07:38,310 --> 00:07:45,509
+binary digits can be represented as a
+
+143
+00:07:42,509 --> 00:07:49,240
+single hex digit that's really nice
+
+144
+00:07:45,240 --> 00:07:52,668
+because I have these groupings of 4 okay
+
+145
+00:07:49,668 --> 00:07:56,978
+and if I want to know what bits you know
+
+146
+00:07:52,978 --> 00:07:58,130
+you know what bit 10 is I only have to
+
+147
+00:07:56,130 --> 00:08:03,288
+you know to decode one of those
+
+148
+00:07:58,288 --> 00:08:05,779
+groupings right it's very easy decimal
+
+149
+00:08:03,779 --> 00:08:09,430
+is much harder right these decimals not
+
+150
+00:08:05,430 --> 00:08:14,060
+a power of two okay so you can't tightly
+
+151
+00:08:09,060 --> 00:08:17,639
+group the bits okay there's no way of
+
+152
+00:08:14,639 --> 00:08:19,699
+just taking a group of powers of two and
+
+153
+00:08:17,699 --> 00:08:21,680
+having it you know densely represent a
+
+154
+00:08:19,680 --> 00:08:21,300
+power of 10 right if I take these two
+
+155
+00:08:21,300 --> 00:08:27,959
+bits
+
+156
+00:08:21,959 --> 00:08:28,360
+I have zero right through three if I
+
+157
+00:08:27,360 --> 00:08:32,829
+take these three bits I have zero
+
+158
+00:08:28,829 --> 00:08:33,370
+through seven right seven you know seven
+
+159
+00:08:32,370 --> 00:08:34,149
+is less than 10
+
+160
+00:08:33,149 --> 00:08:37,889
+if I take these four bits I have 0
+
+161
+00:08:34,889 --> 00:08:40,529
+through 15 15 is more than 10 I don't
+
+162
+00:08:37,529 --> 00:08:42,889
+have exactly 10 right whereas if I take
+
+163
+00:08:40,889 --> 00:08:49,940
+a group of 4 bits I have 0 through 15
+
+164
+00:08:42,940 --> 00:08:51,100
+that's exactly 16 digits so people you
+
+165
+00:08:49,100 --> 00:08:52,169
+know use commonly the decimal numbering
+
+166
+00:08:51,169 --> 00:08:54,639
+systems because it's convenient for us
+
+167
+00:08:52,639 --> 00:08:56,589
+it's not just because we have 10 fingers
+
+168
+00:08:54,589 --> 00:08:58,389
+and 10 toes and whatnot right although
+
+169
+00:08:56,389 --> 00:09:02,250
+we like to say that it's because it's
+
+170
+00:08:58,250 --> 00:09:03,149
+for common purposes and easy for us to
+
+171
+00:09:02,149 --> 00:09:06,860
+wrap our brains around having 10 digits
+
+172
+00:09:03,860 --> 00:09:10,110
+we don't need a big lookup table to see
+
+173
+00:09:06,110 --> 00:09:12,429
+what some digit means okay so the
+
+174
+00:09:10,429 --> 00:09:17,169
+logical things for us to use our power
+
+175
+00:09:12,169 --> 00:09:20,419
+of 8 octal or power of 16 hexadecimal to
+
+176
+00:09:17,419 --> 00:09:21,028
+represent binary they're very close to
+
+177
+00:09:20,028 --> 00:09:24,500
+what we commonly use as a power of 10
+
+178
+00:09:21,500 --> 00:09:26,200
+but their powers of 2 so it breaks up
+
+179
+00:09:24,200 --> 00:09:26,450
+nicely
+
+180
+00:09:26,450 --> 00:09:30,669
+sometimes programmers do use octal but
+
+181
+00:09:28,669 --> 00:09:32,139
+as it turns out our brains don't stay
+
+182
+00:09:30,139 --> 00:09:37,870
+exploded 16 16 is still very comfortable
+
+183
+00:09:32,870 --> 00:09:39,610
+for us and so most of the time
+
+184
+00:09:37,610 --> 00:09:41,740
+programmers will use hexadecimal you
+
+185
+00:09:39,740 --> 00:09:46,089
+could imagine a numbering system that
+
+186
+00:09:41,089 --> 00:09:52,370
+had 32 characters okay most of the
+
+187
+00:09:46,370 --> 00:09:53,578
+alphabet plus 0 through 9 okay but at a
+
+188
+00:09:52,578 --> 00:09:59,958
+certain point we get really hard to
+
+189
+00:09:53,958 --> 00:10:01,839
+remember like what exactly is Jake just
+
+190
+00:09:59,839 --> 00:10:05,339
+more state than we're used to dealing
+
+191
+00:10:01,339 --> 00:10:06,870
+with data representations when we deal
+
+192
+00:10:05,870 --> 00:10:08,980
+with programs when we deal with data
+
+193
+00:10:06,980 --> 00:10:13,659
+types the data types are ultimately
+
+194
+00:10:08,659 --> 00:10:17,370
+represented in binary okay a character
+
+195
+00:10:13,370 --> 00:10:22,750
+tends to be one byte eight bits a short
+
+196
+00:10:17,750 --> 00:10:27,909
+tends to be two bytes 16 bits int 4
+
+197
+00:10:22,909 --> 00:10:29,440
+bytes sorry it's 4 byte 16 bits short 2
+
+198
+00:10:27,440 --> 00:10:33,889
+bytes 8 bits long
+
+199
+00:10:29,889 --> 00:10:36,759
+right on most systems it's still 4 bits
+
+200
+00:10:33,759 --> 00:10:40,350
+except on 64-bit systems right the
+
+201
+00:10:36,350 --> 00:10:42,669
+current generation and I'm having
+
+202
+00:10:40,669 --> 00:10:47,889
+trouble with math today on most systems
+
+203
+00:10:42,889 --> 00:10:50,179
+along is still 4 bits ok 4 bytes
+
+204
+00:10:47,179 --> 00:10:53,509
+32 bits on the 64 bit systems it
+
+205
+00:10:50,509 --> 00:10:57,950
+actually is now larger it is 64 bits
+
+206
+00:10:53,950 --> 00:10:59,009
+okay long Long's 64-bits across all
+
+207
+00:10:57,009 --> 00:11:01,230
+systems floats four bits across all
+
+208
+00:10:59,230 --> 00:11:04,419
+systems doubles 8 bits across all
+
+209
+00:11:01,419 --> 00:11:06,509
+systems along double its eight bits on
+
+210
+00:11:04,509 --> 00:11:09,370
+most older architecture 32-bit machines
+
+211
+00:11:06,370 --> 00:11:14,490
+on Intel it's a weird 10 or 12 bits and
+
+212
+00:11:09,490 --> 00:11:18,200
+we'll talk about why on 32-bit systems
+
+213
+00:11:14,200 --> 00:11:22,580
+and 10 or 16 bits on 64-bit systems why
+
+214
+00:11:18,580 --> 00:11:24,779
+10 you know 10 or 12 or 10 or 16 it has
+
+215
+00:11:22,779 --> 00:11:27,610
+to do with the native format on the
+
+216
+00:11:24,610 --> 00:11:28,070
+Intel processor or using the standard I
+
+217
+00:11:27,070 --> 00:11:34,960
+Triple E format that the processor also
+
+218
+00:11:28,960 --> 00:11:37,840
+supports pointers okay memory is
+
+219
+00:11:34,840 --> 00:11:41,899
+addressed right basically with index
+
+220
+00:11:37,899 --> 00:11:42,500
+into it bytes 0 byte 1 by 2 by 3 by 4 so
+
+221
+00:11:41,500 --> 00:11:47,759
+memory is address with an integer
+
+222
+00:11:42,759 --> 00:11:49,350
+basically okay so pointers are gonna be
+
+223
+00:11:47,350 --> 00:11:54,559
+you know 4 bytes
+
+224
+00:11:49,559 --> 00:11:59,309
+okay 32 bits on 32-bit systems or 8
+
+225
+00:11:54,309 --> 00:12:00,110
+bytes 64 bits on 64-bit systems what
+
+226
+00:11:59,110 --> 00:12:03,700
+does it mean we say we have a 64-bit
+
+227
+00:12:00,700 --> 00:12:06,460
+system that means the register size is
+
+228
+00:12:03,460 --> 00:12:09,970
+64 bits besides the data path is 64 bits
+
+229
+00:12:06,970 --> 00:12:13,610
+the basic size of data that the system
+
+230
+00:12:09,610 --> 00:12:15,509
+deals with easily is 64 bits what
+
+231
+00:12:13,509 --> 00:12:16,100
+happens if it has small smaller data
+
+232
+00:12:15,100 --> 00:12:20,840
+that's okay it just doesn't use all
+
+233
+00:12:16,840 --> 00:12:23,409
+those bits what happens if it has larger
+
+234
+00:12:20,409 --> 00:12:28,049
+data well that's okay but it might take
+
+235
+00:12:23,049 --> 00:12:30,179
+two paths two trips through the thing or
+
+236
+00:12:28,179 --> 00:12:32,460
+in the case of floating-point numbers
+
+237
+00:12:30,460 --> 00:12:37,740
+that's using sort of a separate separate
+
+238
+00:12:32,740 --> 00:12:38,450
+part of the processor um so what to say
+
+239
+00:12:37,450 --> 00:12:41,620
+we've all heard about boolean logic
+
+240
+00:12:38,620 --> 00:12:42,169
+logic involving true and false right you
+
+241
+00:12:41,169 --> 00:12:44,669
+probably took some logic class over in
+
+242
+00:12:42,669 --> 00:12:46,710
+philosophy that dealt with this or play
+
+243
+00:12:44,710 --> 00:12:48,299
+with a little bit in high school but the
+
+244
+00:12:46,299 --> 00:12:49,039
+basic idea is that we deal with ORS and
+
+245
+00:12:48,039 --> 00:12:55,600
+Anne's and exclusive ORS and things like
+
+246
+00:12:49,600 --> 00:12:56,000
+that an end condition is only true if
+
+247
+00:12:55,000 --> 00:13:00,620
+both of the constituent states are true
+
+248
+00:12:56,620 --> 00:13:05,700
+you can eat dinner if you have a fork
+
+249
+00:13:00,700 --> 00:13:06,429
+and a knife okay you
+
+250
+00:13:05,429 --> 00:13:13,480
+can't cut your food with one of the
+
+251
+00:13:06,480 --> 00:13:15,980
+other okay and that's a logic land and
+
+252
+00:13:13,980 --> 00:13:21,870
+so it's only true if both conditions are
+
+253
+00:13:15,870 --> 00:13:24,839
+true otherwise it's false you can leave
+
+254
+00:13:21,839 --> 00:13:29,240
+the class when the class is over or the
+
+255
+00:13:24,240 --> 00:13:36,700
+fire alarm rings so you leave if class
+
+256
+00:13:29,700 --> 00:13:45,360
+ends or the fire alarm rings or fire
+
+257
+00:13:36,360 --> 00:13:47,240
+alarm rings one class ends the not
+
+258
+00:13:45,240 --> 00:13:49,700
+operation is oppositeday you played this
+
+259
+00:13:47,700 --> 00:13:51,259
+game as a kid everything that's true is
+
+260
+00:13:49,259 --> 00:13:54,899
+false everything that's false is true so
+
+261
+00:13:51,899 --> 00:13:56,539
+if I negate something I take it from his
+
+262
+00:13:54,539 --> 00:14:00,339
+from false to a true or true to false
+
+263
+00:13:56,339 --> 00:14:04,990
+from 0 or 1 or 1 to 0 I'm an exclusive
+
+264
+00:14:00,990 --> 00:14:07,350
+or is like an or condition except for
+
+265
+00:14:04,350 --> 00:14:14,110
+this state here when they're both true
+
+266
+00:14:07,110 --> 00:14:16,669
+it's actually false okay so this is like
+
+267
+00:14:14,669 --> 00:14:19,880
+we do were a little kid and you know
+
+268
+00:14:16,880 --> 00:14:23,708
+your your your father said well you can
+
+269
+00:14:19,708 --> 00:14:23,080
+have an ice-cream sandwich or a cookie
+
+270
+00:14:24,080 --> 00:14:31,190
+what your father meant is you can have
+
+271
+00:14:26,190 --> 00:14:32,380
+one or the other but not both if you
+
+272
+00:14:31,380 --> 00:14:33,669
+follow as a computer scientist your
+
+273
+00:14:32,669 --> 00:14:42,630
+father might have said you can
+
+274
+00:14:33,630 --> 00:14:44,509
+exclusive-or right there put that cell
+
+275
+00:14:42,509 --> 00:14:44,958
+phone away
+
+276
+00:14:45,958 --> 00:14:54,529
+okay right so exclusive-or is true one
+
+277
+00:14:50,529 --> 00:14:54,509
+or the other but not both
+
+278
+00:14:55,509 --> 00:15:00,970
+and so these form the basis for these
+
+279
+00:14:57,970 --> 00:15:01,220
+logical operations you know for the
+
+280
+00:15:00,220 --> 00:15:05,720
+basis for a lot of decision-making and
+
+281
+00:15:01,720 --> 00:15:07,740
+binary systems and here you can see
+
+282
+00:15:05,740 --> 00:15:11,559
+we're applying the bitwise operators and
+
+283
+00:15:07,559 --> 00:15:13,889
+or exclusive or and not to two inputs
+
+284
+00:15:11,889 --> 00:15:16,958
+and binary and the operator is applied
+
+285
+00:15:13,958 --> 00:15:22,899
+to corresponding bits in both of the
+
+286
+00:15:16,899 --> 00:15:24,630
+operands 1 & 1 is 1 0 & 0 is 0 ok and so
+
+287
+00:15:22,630 --> 00:15:27,399
+we see we only have a 1 when both
+
+288
+00:15:24,399 --> 00:15:29,970
+columns are 1 it's the end operator here
+
+289
+00:15:27,970 --> 00:15:32,559
+you can see we have it we're going to
+
+290
+00:15:29,559 --> 00:15:35,649
+have a 1 anytime we have a 1 in any
+
+291
+00:15:32,649 --> 00:15:39,139
+columns and either column the only time
+
+292
+00:15:35,139 --> 00:15:42,759
+it's 0 is when both columns are 0 that's
+
+293
+00:15:39,759 --> 00:15:44,940
+the or operator the exclusive or
+
+294
+00:15:42,940 --> 00:15:48,698
+operator is going to be true
+
+295
+00:15:44,698 --> 00:15:50,100
+only when there's a 1 in exactly one of
+
+296
+00:15:48,100 --> 00:15:52,470
+the two plate corresponding places not
+
+297
+00:15:50,470 --> 00:16:02,448
+if they're both 0 not if they're both 1
+
+298
+00:15:52,448 --> 00:16:07,799
+1 0 0 1 okay boom func 1 0 0 1 0 there 0
+
+299
+00:16:02,799 --> 00:16:14,240
+there ok and not the gate just opposite
+
+300
+00:16:07,240 --> 00:16:16,589
+day okay we refer to the width of a
+
+301
+00:16:14,589 --> 00:16:20,809
+number it's how many digits there are so
+
+302
+00:16:16,809 --> 00:16:22,049
+if we say the you know the width of an
+
+303
+00:16:20,049 --> 00:16:26,328
+integer in this particular system is 16
+
+304
+00:16:22,328 --> 00:16:26,970
+bits we mean there are 16 binary digits
+
+305
+00:16:32,970 --> 00:16:40,519
+now sometimes we use integers not really
+
+306
+00:16:38,519 --> 00:16:45,009
+to perform not really to count things
+
+307
+00:16:40,009 --> 00:16:47,629
+okay but just as bit sets where each bit
+
+308
+00:16:45,629 --> 00:16:48,519
+represents something different like
+
+309
+00:16:47,519 --> 00:16:51,990
+let's say I wanted to take attendance I
+
+310
+00:16:48,990 --> 00:16:52,028
+could say you're gonna be represented by
+
+311
+00:16:51,028 --> 00:16:54,860
+bit zero and you're gonna be represented
+
+312
+00:16:52,860 --> 00:16:55,240
+by bit one and you're gonna be
+
+313
+00:16:54,240 --> 00:16:57,828
+represented by bit too and you're gonna
+
+314
+00:16:55,828 --> 00:16:59,779
+be represented by bit three and your bid
+
+315
+00:16:57,779 --> 00:17:00,339
+is four and your bid is five and your
+
+316
+00:16:59,339 --> 00:17:02,809
+bit of six and you're a bit of seven and
+
+317
+00:17:00,809 --> 00:17:04,279
+your bid is eight and your bid is nine
+
+318
+00:17:02,279 --> 00:17:06,709
+your bid is ten and so on and if you
+
+319
+00:17:04,709 --> 00:17:10,890
+show up to class we flip you're a bit on
+
+320
+00:17:06,890 --> 00:17:13,349
+if you don't we flip your bit off now I
+
+321
+00:17:10,349 --> 00:17:15,230
+have an integer acting as a bit set and
+
+322
+00:17:13,230 --> 00:17:17,119
+to say it's acting as a set it tests
+
+323
+00:17:15,119 --> 00:17:20,548
+membership in the set or not in the set
+
+324
+00:17:17,548 --> 00:17:21,279
+if the bid is on you're in the set if
+
+325
+00:17:20,279 --> 00:17:29,990
+your bid is off you're not in the set
+
+326
+00:17:21,990 --> 00:17:32,400
+you weren't there okay so now what well
+
+327
+00:17:29,400 --> 00:17:34,429
+now I can pound to find a particular
+
+328
+00:17:32,429 --> 00:17:36,319
+position to be yours so let's say your
+
+329
+00:17:34,319 --> 00:17:39,298
+bit three I'll have some pound define
+
+330
+00:17:36,298 --> 00:17:41,359
+which name Josh that'll say pound to
+
+331
+00:17:39,359 --> 00:17:45,700
+find Josh to be one left shifted by
+
+332
+00:17:41,700 --> 00:17:49,419
+three now that's your bit and now I can
+
+333
+00:17:45,419 --> 00:17:52,259
+do and or to set your bit attendance
+
+334
+00:17:49,259 --> 00:17:54,558
+Eagles attendance or Josh bitwise or and
+
+335
+00:17:52,558 --> 00:17:57,750
+that flips are a bit on keeping all the
+
+336
+00:17:54,750 --> 00:18:00,269
+bits the same I can ask if you were
+
+337
+00:17:57,269 --> 00:18:06,269
+there right how would I find out if you
+
+338
+00:18:00,269 --> 00:18:09,359
+were there take the end josh present
+
+339
+00:18:06,359 --> 00:18:11,990
+equals attendance and josh because all
+
+340
+00:18:09,990 --> 00:18:13,429
+the rest of the bits of josh is zero
+
+341
+00:18:11,429 --> 00:18:15,470
+except for the one bit that represents
+
+342
+00:18:13,470 --> 00:18:17,929
+you and if that's also true in the
+
+343
+00:18:15,929 --> 00:18:22,940
+attendance set then the result will be
+
+344
+00:18:17,940 --> 00:18:29,048
+non zero or true we agree so that's what
+
+345
+00:18:22,048 --> 00:18:29,970
+this sly is talking about okay now what
+
+346
+00:18:29,970 --> 00:18:41,798
+okay a little more story that bitwise
+
+347
+00:18:32,798 --> 00:18:42,019
+operations and you can walk those bite
+
+348
+00:18:41,019 --> 00:18:44,880
+through those by hand if you like um
+
+349
+00:18:42,880 --> 00:18:48,710
+keep in mind the distinction between
+
+350
+00:18:44,710 --> 00:18:51,880
+bitwise operations okay and the logical
+
+351
+00:18:48,880 --> 00:18:55,490
+operations right notice to ampersand
+
+352
+00:18:51,490 --> 00:18:59,419
+signs versus one notice two pipes versus
+
+353
+00:18:55,419 --> 00:19:01,099
+one that's a key difference okay
+
+354
+00:18:59,099 --> 00:19:03,569
+because these are the logical operations
+
+355
+00:19:01,569 --> 00:19:06,730
+these don't look at the individual bits
+
+356
+00:19:03,730 --> 00:19:09,548
+these look at the integer as a whole and
+
+357
+00:19:06,548 --> 00:19:13,398
+ask the question is it zero or not if
+
+358
+00:19:09,398 --> 00:19:17,058
+it's zero it's false if it's not as a
+
+359
+00:19:13,058 --> 00:19:18,769
+whole it's true okay and so now what we
+
+360
+00:19:17,769 --> 00:19:22,970
+do is with your formal logical
+
+361
+00:19:18,970 --> 00:19:24,929
+operations but on the whole thing we
+
+362
+00:19:22,929 --> 00:19:27,940
+take the whole integer and view it as
+
+363
+00:19:24,940 --> 00:19:30,220
+true or false if all the bits are zero
+
+364
+00:19:27,220 --> 00:19:34,250
+its false if any bit is one it's true
+
+365
+00:19:30,250 --> 00:19:35,000
+and now we perform the operation that's
+
+366
+00:19:34,000 --> 00:19:38,349
+the difference between the two
+
+367
+00:19:35,349 --> 00:19:41,048
+ampersands and two pipes and you know
+
+368
+00:19:38,048 --> 00:19:43,529
+and the bang two ampersands is the
+
+369
+00:19:41,529 --> 00:19:47,119
+logical dealing with the whole thing is
+
+370
+00:19:43,119 --> 00:19:50,429
+one two pipes the bank versus the tilt
+
+371
+00:19:47,429 --> 00:19:53,950
+ok this takes the whole thing as opposed
+
+372
+00:19:50,950 --> 00:19:55,409
+to a single ampersand a single pipe or a
+
+373
+00:19:53,409 --> 00:20:01,929
+single bang which does the bitwise
+
+374
+00:19:55,929 --> 00:20:06,509
+operations okay so you can go ahead and
+
+375
+00:20:01,509 --> 00:20:08,359
+close your laptop excellent thank you
+
+376
+00:20:06,359 --> 00:20:11,380
+these very suspicious when you quit
+
+377
+00:20:08,380 --> 00:20:11,028
+taking notes of the instructor walks by
+
+378
+00:20:12,028 --> 00:20:19,048
+might leave the instructor to believe in
+
+379
+00:20:14,048 --> 00:20:21,558
+laptops being used for social media okay
+
+380
+00:20:19,558 --> 00:20:22,609
+I'll be have some more examples and you
+
+381
+00:20:21,609 --> 00:20:24,839
+guys can walk through in your own time
+
+382
+00:20:22,839 --> 00:20:25,490
+there um this is sort of an interesting
+
+383
+00:20:24,490 --> 00:20:31,839
+one that I do want to pause and talk
+
+384
+00:20:25,839 --> 00:20:32,210
+about that P and star P that's a very
+
+385
+00:20:31,210 --> 00:20:35,950
+very common construct for pointers
+
+386
+00:20:32,950 --> 00:20:38,380
+because referencing and no pointer is
+
+387
+00:20:35,380 --> 00:20:41,409
+bad right if you reference the null
+
+388
+00:20:38,409 --> 00:20:43,859
+point or what happens same falls
+
+389
+00:20:41,859 --> 00:20:44,480
+right the point Durer's value is 0 it's
+
+390
+00:20:43,480 --> 00:20:46,648
+a null pointer it's not a valid address
+
+391
+00:20:44,648 --> 00:20:48,960
+you dereference that and you get a seg
+
+392
+00:20:46,960 --> 00:20:53,509
+fault
+
+393
+00:20:48,509 --> 00:20:55,679
+okay so if we look at this P when an
+
+394
+00:20:53,679 --> 00:20:57,179
+operand to an ampersand ampersand
+
+395
+00:20:55,179 --> 00:21:00,429
+operation is going to be evaluated as
+
+396
+00:20:57,429 --> 00:21:04,190
+true or false if it's a null pointer its
+
+397
+00:21:00,190 --> 00:21:06,298
+false if it's not it's true C uses
+
+398
+00:21:04,298 --> 00:21:09,298
+what's called short-circuit evaluation
+
+399
+00:21:06,298 --> 00:21:10,220
+meaning it doesn't evaluate any more of
+
+400
+00:21:09,220 --> 00:21:14,808
+a logical expression than it needs to to
+
+401
+00:21:10,808 --> 00:21:16,798
+know the result if P is false
+
+402
+00:21:14,798 --> 00:21:21,298
+is there any way this expression can be
+
+403
+00:21:16,298 --> 00:21:27,669
+true no because false and anything is
+
+404
+00:21:21,669 --> 00:21:30,279
+false right so C stops there never
+
+405
+00:21:27,279 --> 00:21:32,159
+looking to see what star P is since it
+
+406
+00:21:30,159 --> 00:21:37,919
+never dereferences star P you never get
+
+407
+00:21:32,919 --> 00:21:42,558
+the seg fault does that make sense so
+
+408
+00:21:37,558 --> 00:21:45,279
+this value is going to be 0 or false if
+
+409
+00:21:42,279 --> 00:21:47,339
+P is null otherwise it's going to be we
+
+410
+00:21:45,339 --> 00:21:59,638
+repeat the value of whatever P points to
+
+411
+00:21:47,638 --> 00:21:59,980
+yes so
+
+412
+00:22:00,980 --> 00:22:08,940
+right so this is checking to see if P is
+
+413
+00:22:04,940 --> 00:22:11,980
+false or if the value is zero right as
+
+414
+00:22:08,980 --> 00:22:16,779
+opposed to if I would do just this if
+
+415
+00:22:11,779 --> 00:22:19,759
+star P okay then it would blow up with P
+
+416
+00:22:16,759 --> 00:22:21,369
+was null so if I want to take something
+
+417
+00:22:19,369 --> 00:22:23,500
+if I want to if I want to you know
+
+418
+00:22:21,500 --> 00:22:32,839
+borrow a car there's a problem with my
+
+419
+00:22:23,839 --> 00:22:34,059
+car count to zero you can do it P 10
+
+420
+00:22:32,059 --> 00:22:36,160
+star P that's that is perfectly valid
+
+421
+00:22:34,160 --> 00:22:38,140
+see most people would prefer this
+
+422
+00:22:36,140 --> 00:22:40,900
+construct because it's shorter but it's
+
+423
+00:22:38,900 --> 00:22:43,910
+you know you can do it with a you can do
+
+424
+00:22:40,910 --> 00:22:49,089
+it with an if statement just the same
+
+425
+00:22:43,089 --> 00:22:51,460
+yes well so what I mean look at this
+
+426
+00:22:49,460 --> 00:22:54,380
+expression this expression is going to
+
+427
+00:22:51,380 --> 00:22:55,170
+be a true or false expression because
+
+428
+00:22:54,170 --> 00:22:58,579
+that's the result of an ampersand amber
+
+429
+00:22:55,579 --> 00:23:01,400
+and percent operator so basically it's
+
+430
+00:22:58,400 --> 00:23:04,309
+like looking at star P as a true or
+
+431
+00:23:01,309 --> 00:23:06,730
+false value okay but we're checking to
+
+432
+00:23:04,730 --> 00:23:11,369
+make sure that it's valid before we do
+
+433
+00:23:06,369 --> 00:23:13,930
+does that make sense so it forces it to
+
+434
+00:23:11,930 --> 00:23:21,460
+false in the case we would otherwise be
+
+435
+00:23:13,460 --> 00:23:24,069
+invalid okay left shift and right shift
+
+436
+00:23:21,069 --> 00:23:27,349
+left arrow three that says take whatever
+
+437
+00:23:24,349 --> 00:23:28,019
+bits pattern we have and shoves three
+
+438
+00:23:27,019 --> 00:23:34,970
+zeros to the right of it in effect
+
+439
+00:23:28,970 --> 00:23:35,130
+pushing it to the left okay given that
+
+440
+00:23:34,130 --> 00:23:40,990
+all data types we saw have a fixed width
+
+441
+00:23:35,990 --> 00:23:43,539
+if I ship things inside to the laughter
+
+442
+00:23:40,539 --> 00:23:47,190
+okay this stuff on the left is just
+
+443
+00:23:43,190 --> 00:23:49,359
+going to disappear it's gonna fall off
+
+444
+00:23:47,359 --> 00:23:54,400
+the other side it's called the left
+
+445
+00:23:49,400 --> 00:23:55,289
+shift okay when it comes to a right
+
+446
+00:23:54,289 --> 00:23:57,400
+shift we're gonna have two different
+
+447
+00:23:55,400 --> 00:23:59,650
+types of right shift a logical right
+
+448
+00:23:57,650 --> 00:24:02,869
+shift is it is exactly the same we shove
+
+449
+00:23:59,869 --> 00:24:04,809
+some bits on the right on the we shove
+
+450
+00:24:02,809 --> 00:24:08,940
+some bits on the left pushing everything
+
+451
+00:24:04,940 --> 00:24:10,779
+to the right if I shove in one bit on
+
+452
+00:24:08,779 --> 00:24:15,730
+the left 1 bits gonna fall off the right
+
+453
+00:24:10,730 --> 00:24:15,269
+side okay
+
+454
+00:24:15,269 --> 00:24:22,099
+so in the common case a left shift has
+
+455
+00:24:20,099 --> 00:24:25,019
+the effect of multiplying by a power of
+
+456
+00:24:22,019 --> 00:24:27,710
+two if I left shift by one the thing in
+
+457
+00:24:25,710 --> 00:24:29,450
+the one position becomes a to the thing
+
+458
+00:24:27,450 --> 00:24:30,069
+in the 2 position becomes a for the
+
+459
+00:24:29,069 --> 00:24:33,769
+thing in the four position becomes an 8
+
+460
+00:24:30,769 --> 00:24:35,450
+so it has the effect of left shifting of
+
+461
+00:24:33,450 --> 00:24:39,819
+multiplying by 2 right for every time I
+
+462
+00:24:35,819 --> 00:24:41,898
+left shift until a point where I start
+
+463
+00:24:39,898 --> 00:24:43,788
+losing precision at the at the left hand
+
+464
+00:24:41,788 --> 00:24:50,769
+side a right shift therefore has the
+
+465
+00:24:43,769 --> 00:24:52,398
+effect of dividing by 2 okay obviously
+
+466
+00:24:50,398 --> 00:24:55,109
+truncating as things only fall off it
+
+467
+00:24:52,109 --> 00:24:57,470
+doesn't round up but as will learn about
+
+468
+00:24:55,470 --> 00:25:00,179
+shortly there's another number
+
+469
+00:24:57,179 --> 00:25:02,538
+representation okay called two's
+
+470
+00:25:00,538 --> 00:25:04,878
+complement and with two's complement
+
+471
+00:25:02,878 --> 00:25:06,589
+when we talk about it you'll learn that
+
+472
+00:25:04,589 --> 00:25:09,298
+it's really important to preserve the
+
+473
+00:25:06,298 --> 00:25:10,000
+left side bit if the left side bit is a
+
+474
+00:25:09,000 --> 00:25:13,980
+1 it's really important to keep it a 1
+
+475
+00:25:10,980 --> 00:25:15,500
+and if the left side the leftmost bit
+
+476
+00:25:13,500 --> 00:25:18,869
+starts out as a 0 it's really important
+
+477
+00:25:15,869 --> 00:25:22,179
+to keep it a 0 and we'll talk about why
+
+478
+00:25:18,179 --> 00:25:27,829
+soon ok meaning today and a rhythmic
+
+479
+00:25:22,829 --> 00:25:31,898
+right shift respects that so if the high
+
+480
+00:25:27,898 --> 00:25:35,259
+bit is a 1 it inserts once if the high
+
+481
+00:25:31,259 --> 00:25:38,069
+bits is a zero inserts zeros okay a
+
+482
+00:25:35,069 --> 00:25:44,519
+logical right shift doesn't it always
+
+483
+00:25:38,519 --> 00:25:45,099
+insert zeros and again when we talk
+
+484
+00:25:44,099 --> 00:25:48,298
+about two's complement in just a few
+
+485
+00:25:45,298 --> 00:25:55,558
+minutes we'll talk about why that is
+
+486
+00:25:48,558 --> 00:25:58,470
+ok if you shift by more or less than the
+
+487
+00:25:55,470 --> 00:26:01,048
+words by less than zero right that's
+
+488
+00:25:58,048 --> 00:26:02,230
+undefined in other words the C standard
+
+489
+00:26:01,230 --> 00:26:05,669
+says that if you try to shift by a
+
+490
+00:26:02,669 --> 00:26:07,669
+negative number there's no guarantee
+
+491
+00:26:05,669 --> 00:26:09,950
+that's equivalent to a right shift right
+
+492
+00:26:07,950 --> 00:26:10,628
+right left shift by negative 5 that's
+
+493
+00:26:09,628 --> 00:26:13,798
+not necessarily the same as right
+
+494
+00:26:10,798 --> 00:26:16,279
+shifting by 5 the result is undefined
+
+495
+00:26:13,279 --> 00:26:19,548
+similarly if I have a 32-bit type and
+
+496
+00:26:16,548 --> 00:26:23,138
+shift all my bits out there's no
+
+497
+00:26:19,138 --> 00:26:26,538
+guarantee that I'm left with zeros ok
+
+498
+00:26:23,538 --> 00:26:29,819
+the result of that is undefined
+
+499
+00:26:26,819 --> 00:26:32,529
+the reason for this is that part of the
+
+500
+00:26:29,529 --> 00:26:34,019
+philosophy of C was that the operations
+
+501
+00:26:32,019 --> 00:26:35,299
+the basic operations in C should be the
+
+502
+00:26:34,299 --> 00:26:38,799
+same as whatever the basic operations
+
+503
+00:26:35,799 --> 00:26:40,230
+are in the actual hardware they didn't
+
+504
+00:26:38,230 --> 00:26:42,390
+want to impose new requirements because
+
+505
+00:26:40,390 --> 00:26:44,309
+a new requirement could mean that one
+
+506
+00:26:42,309 --> 00:26:46,200
+operation and C like this would require
+
+507
+00:26:44,200 --> 00:26:48,119
+multiple operations on the processor and
+
+508
+00:26:46,119 --> 00:26:50,369
+they wanted to minimize that the the
+
+509
+00:26:48,369 --> 00:26:52,230
+situations where that was the case to
+
+510
+00:26:50,230 --> 00:26:54,420
+make these operators really align with
+
+511
+00:26:52,420 --> 00:26:56,460
+the processor operators and since
+
+512
+00:26:54,460 --> 00:26:58,619
+processors don't necessarily do these
+
+513
+00:26:56,619 --> 00:27:01,930
+things they didn't make them
+
+514
+00:26:58,930 --> 00:27:03,029
+requirements of the language that's they
+
+515
+00:27:01,029 --> 00:27:03,619
+didn't hide that complexity
+
+516
+00:27:10,619 --> 00:27:18,440
+okay so we see with with an original
+
+517
+00:27:13,440 --> 00:27:22,569
+argument of 0 1 1 0 0 0 1 0 if I left
+
+518
+00:27:18,569 --> 00:27:28,950
+shift by 3 this one is moving over 1 2 3
+
+519
+00:27:22,950 --> 00:27:31,048
+positions okay so these three positions
+
+520
+00:27:28,048 --> 00:27:34,409
+fall off the edge these 3 bits come over
+
+521
+00:27:31,409 --> 00:27:37,829
+here my new 3 bits are over here if I
+
+522
+00:27:34,829 --> 00:27:40,890
+right shift logical bike by 2 these two
+
+523
+00:27:37,890 --> 00:27:43,619
+positions are gonna fall off that 1 0
+
+524
+00:27:40,619 --> 00:27:46,140
+goes away everything else shifts to the
+
+525
+00:27:43,140 --> 00:27:48,700
+right and two zeros get put in here a
+
+526
+00:27:46,700 --> 00:27:51,808
+logical right shift is gonna do the same
+
+527
+00:27:48,808 --> 00:27:52,148
+thing in this case because rhythmatic
+
+528
+00:27:51,148 --> 00:27:54,230
+right --chips gonna do the same thing in
+
+529
+00:27:52,230 --> 00:27:57,028
+this case because my high order bit is
+
+530
+00:27:54,028 --> 00:28:02,599
+over 0 but if I come down here where my
+
+531
+00:27:57,599 --> 00:28:07,970
+high order bit is a 1 here I'm shifting
+
+532
+00:28:02,970 --> 00:28:10,710
+ones in instead of zeros and a rhythmic
+
+533
+00:28:07,710 --> 00:28:14,409
+shift when you do a right shift she adds
+
+534
+00:28:10,409 --> 00:28:16,519
+in whatever that bit already is okay
+
+535
+00:28:14,519 --> 00:28:19,470
+there is no such thing as an arithmetic
+
+536
+00:28:16,470 --> 00:28:21,980
+left shift you always put zeros in on a
+
+537
+00:28:19,980 --> 00:28:23,659
+left shift the lodger the owner of
+
+538
+00:28:21,659 --> 00:28:25,730
+thematic turn out to be the same we'll
+
+539
+00:28:23,730 --> 00:28:32,589
+talk about why shortly you have a
+
+540
+00:28:25,589 --> 00:28:32,859
+question of destruction okay okay
+
+541
+00:28:33,859 --> 00:28:41,808
+I knew I should have looked at these
+
+542
+00:28:38,808 --> 00:28:56,150
+slides before class they put math on my
+
+543
+00:28:41,150 --> 00:28:58,210
+slides and that's putting ethan yes well
+
+544
+00:28:56,210 --> 00:29:00,369
+if you shift by the word size the
+
+545
+00:28:58,369 --> 00:29:02,170
+expected behavior most humans would have
+
+546
+00:29:00,170 --> 00:29:03,690
+would be that'll be all zeroes but at
+
+547
+00:29:02,690 --> 00:29:05,769
+the point in time where they were
+
+548
+00:29:03,769 --> 00:29:08,869
+drafting the C standard there was some
+
+549
+00:29:05,869 --> 00:29:09,660
+processors that didn't do that but if
+
+550
+00:29:08,660 --> 00:29:13,890
+you tried to shift by more than the word
+
+551
+00:29:09,890 --> 00:29:31,490
+size it went do you guys get that on
+
+552
+00:29:13,490 --> 00:29:33,730
+tape you sure they got it okay okay and
+
+553
+00:29:31,730 --> 00:29:34,079
+so they didn't make it a requirement
+
+554
+00:29:33,079 --> 00:29:36,579
+because they didn't want a situation
+
+555
+00:29:34,579 --> 00:29:39,048
+where the processor had a shift
+
+556
+00:29:36,048 --> 00:29:41,319
+operation yet the C operation that the
+
+557
+00:29:39,319 --> 00:29:45,240
+correspondent to that had to do a shift
+
+558
+00:29:41,240 --> 00:29:47,349
+and then an assignment whose question
+
+559
+00:29:45,349 --> 00:29:49,109
+was that does that answer your question
+
+560
+00:29:47,109 --> 00:29:51,730
+okay and then once they did that they
+
+561
+00:29:49,730 --> 00:29:52,319
+wanted to carry that behavior forward
+
+562
+00:29:51,319 --> 00:29:54,880
+because they wanted the old they wanted
+
+563
+00:29:52,880 --> 00:29:55,109
+the new compilers to be backward
+
+564
+00:29:54,109 --> 00:30:01,849
+compatible compatible with the old
+
+565
+00:29:55,849 --> 00:30:01,410
+source and so that's where we are okay
+
+566
+00:30:02,410 --> 00:30:09,319
+this is terrible I've got the funny e
+
+567
+00:30:06,319 --> 00:30:20,440
+Riemann's something and subscripts and
+
+568
+00:30:09,440 --> 00:30:20,200
+superscripts man exponents
+
+569
+00:30:21,200 --> 00:30:24,519
+I think we've learned in third grade
+
+570
+00:30:22,519 --> 00:30:27,259
+that they use a dot instead of an X from
+
+571
+00:30:24,259 --> 00:30:29,558
+math for multiplication sometimes okay
+
+572
+00:30:27,558 --> 00:30:35,929
+this is designed to look academic and
+
+573
+00:30:29,929 --> 00:30:39,720
+complex it really is very easy okay if
+
+574
+00:30:35,720 --> 00:30:41,500
+you think about a binary number each
+
+575
+00:30:39,500 --> 00:30:45,599
+digit and a binary number represents a
+
+576
+00:30:41,599 --> 00:30:48,529
+power of two two to the zero to the 1/2
+
+577
+00:30:45,529 --> 00:30:56,710
+squared to the third to the fourth two
+
+578
+00:30:48,710 --> 00:30:59,058
+to the eighth and so on 1 2 4 8 16 32 64
+
+579
+00:30:56,058 --> 00:31:01,990
+128 blah blah blah that is the value
+
+580
+00:30:59,990 --> 00:31:05,579
+associated with the corresponding bit
+
+581
+00:31:01,579 --> 00:31:07,660
+position right bit position zero has a
+
+582
+00:31:05,660 --> 00:31:10,669
+value of two to the zero bit position
+
+583
+00:31:07,669 --> 00:31:13,069
+one has a value of 2 to the 1/5 position
+
+584
+00:31:10,069 --> 00:31:16,279
+2 2 2 2 2 squared bit position 3 to the
+
+585
+00:31:13,279 --> 00:31:20,669
+3rd or 8 and so on so if I want to know
+
+586
+00:31:16,669 --> 00:31:23,089
+the value of a binary number all I do is
+
+587
+00:31:20,089 --> 00:31:29,419
+I look at it bit after bit after bit and
+
+588
+00:31:23,419 --> 00:31:33,210
+I ask does you know is bit 0 1 is to say
+
+589
+00:31:29,210 --> 00:31:36,558
+is 2 to the 0 present if it is I add it
+
+590
+00:31:33,558 --> 00:31:39,380
+to my to my you to my value I then move
+
+591
+00:31:36,380 --> 00:31:41,169
+on to bit 1 is 2 to the 1 present is
+
+592
+00:31:39,169 --> 00:31:45,509
+that bit of 1 if so I add it to my
+
+593
+00:31:41,509 --> 00:31:49,230
+running sum is bit you know to present
+
+594
+00:31:45,230 --> 00:31:52,609
+if so add 4 to my running sum is bit 3
+
+595
+00:31:49,609 --> 00:31:56,579
+present if it's 1 I add 8 to my son if
+
+596
+00:31:52,579 --> 00:31:57,058
+it's 0 I don't and that's how I find the
+
+597
+00:31:56,058 --> 00:31:59,950
+value of a binary number just like
+
+598
+00:31:57,950 --> 00:32:01,660
+that's how I find the value of a decimal
+
+599
+00:31:59,660 --> 00:32:03,849
+number just like in kindergarten when
+
+600
+00:32:01,849 --> 00:32:05,619
+you took the number of you know the
+
+601
+00:32:03,619 --> 00:32:07,630
+number of single squares and added it to
+
+602
+00:32:05,630 --> 00:32:11,609
+the number of rows and added it to the
+
+603
+00:32:07,609 --> 00:32:11,890
+number of you know a bit of big squares
+
+604
+00:32:11,890 --> 00:32:19,259
+one unit plus 3 tens plus 4 hundreds
+
+605
+00:32:15,259 --> 00:32:25,009
+plus 3 thousands right that's all this
+
+606
+00:32:19,009 --> 00:32:27,160
+says start at bit 0 working your way to
+
+607
+00:32:25,160 --> 00:32:31,650
+the highest bit the width minus 1 why
+
+608
+00:32:27,650 --> 00:32:34,369
+the width minus 1 if I have 16 bits its
+
+609
+00:32:31,369 --> 00:32:36,609
+0 through 15 rather than 1 through 16
+
+610
+00:32:34,609 --> 00:32:42,710
+- to the zero that way we get the one
+
+611
+00:32:36,710 --> 00:32:45,470
+and so this basically says we're bid
+
+612
+00:32:42,470 --> 00:32:48,140
+zero through through bit 31 if we're
+
+613
+00:32:45,140 --> 00:32:52,859
+dealing with a 32-bit number right take
+
+614
+00:32:48,859 --> 00:32:54,759
+whether or not that bit is present
+
+615
+00:32:52,759 --> 00:32:58,288
+whether or not that bit is a 0 or a 1
+
+616
+00:32:54,288 --> 00:33:04,750
+and multiply it by the value of the bit
+
+617
+00:32:58,750 --> 00:33:07,308
+- 2 0 1 - 1 - 2 squared 4 - 2 third
+
+618
+00:33:04,308 --> 00:33:12,548
+eight and this is the 1 or 0 that's in
+
+619
+00:33:07,548 --> 00:33:14,159
+that bit position and that's all it says
+
+620
+00:33:12,159 --> 00:33:17,929
+find the value of a binary number by
+
+621
+00:33:14,929 --> 00:33:20,138
+walking from bit 0 through the last bit
+
+622
+00:33:17,138 --> 00:33:22,659
+adding the value of that position if and
+
+623
+00:33:20,659 --> 00:33:27,839
+only if the corresponding bid is 1
+
+624
+00:33:22,839 --> 00:33:30,169
+otherwise add 0 does that overly
+
+625
+00:33:27,169 --> 00:33:30,148
+complicated math make sense to everybody
+
+626
+00:33:31,148 --> 00:33:36,388
+okay now this is two's complement this
+
+627
+00:33:35,388 --> 00:33:38,859
+is the way we represent negative numbers
+
+628
+00:33:36,859 --> 00:33:41,720
+I'm going to switch over to the
+
+629
+00:33:38,720 --> 00:33:41,829
+chalkboard for a minute here
+
+630
+00:34:00,829 --> 00:34:03,250
+[Music]
+
+631
+00:34:10,250 --> 00:34:26,329
+let's start counting in binary 0 1 1 0 1
+
+632
+00:34:18,329 --> 00:34:32,329
+1 1 0 0 1 0 1 1 1 0 1 1 1
+
+633
+00:34:26,329 --> 00:34:33,010
+every agree ok and this is sort of like
+
+634
+00:34:32,010 --> 00:34:37,898
+if I were counting in you know in
+
+635
+00:34:33,898 --> 00:34:40,050
+decimal 1 2 3 4 5 6 7 8 9 and then I
+
+636
+00:34:37,050 --> 00:34:45,889
+carry 1 0 the difference is I end up
+
+637
+00:34:40,889 --> 00:34:51,449
+carrying much sooner here 0 1 carry 1
+
+638
+00:34:45,449 --> 00:34:55,710
+plus 1 is 0 carry the 1 1 and 0 is 1 1 1
+
+639
+00:34:51,710 --> 00:35:01,500
+plus 1 is 0 carry the 1 1 + 1 is 0 carry
+
+640
+00:34:55,500 --> 00:35:06,530
+the 1 1 0 0 make sense 1 0 0 + 1 is 1 0
+
+641
+00:35:01,530 --> 00:35:15,920
+1 1 0 1 + 1 is 1 and 1 is 0 carry the 1
+
+642
+00:35:06,920 --> 00:35:20,389
+1 + 0 is 1 1 1 1 0 + 1 is 1 1 1 1 1 1 +
+
+643
+00:35:15,389 --> 00:35:25,579
+1 is 1 + 1 is 0 carry the 1 1 M 1 is 0
+
+644
+00:35:20,579 --> 00:35:28,170
+carry the 1 1 M 1 is 0 carry the 1 we
+
+645
+00:35:25,170 --> 00:35:31,739
+agree in this example I'm generating new
+
+646
+00:35:28,739 --> 00:35:34,650
+bits as I need them but in a process or
+
+647
+00:35:31,650 --> 00:35:38,670
+I have a certain width 16 bits 32 bits
+
+648
+00:35:34,670 --> 00:35:41,699
+64 bits so let's say that I have a 3 bit
+
+649
+00:35:38,699 --> 00:35:41,710
+processor here
+
+650
+00:35:44,710 --> 00:36:01,510
+I actually had a memory 0 0 0 then 0 0 1
+
+651
+00:35:55,510 --> 00:36:03,059
+then 0 1 0 then 0 1 1 then 1 0 0 then 1
+
+652
+00:36:01,059 --> 00:36:07,909
+0 1 then 1 1 0 then 1 1 1 but when I do
+
+653
+00:36:03,909 --> 00:36:15,900
+this carry I have a problem I only have
+
+654
+00:36:07,900 --> 00:36:20,719
+3 bits I'm back to 0
+
+655
+00:36:15,719 --> 00:36:28,679
+do you see that I've started over and
+
+656
+00:36:20,679 --> 00:36:30,150
+now if I add 1 I'm back here right ok so
+
+657
+00:36:28,150 --> 00:36:36,059
+let me ask you something
+
+658
+00:36:30,059 --> 00:36:36,980
+if I have X plus y equals 0 what is y
+
+659
+00:36:40,980 --> 00:36:44,010
+everybody you breathe
+
+660
+00:36:51,010 --> 00:37:12,539
+I have 1 1 1 plus y equals 0 what is y
+
+661
+00:37:04,539 --> 00:37:14,579
+equal what's the obvious simple answer
+
+662
+00:37:12,579 --> 00:37:14,599
+I'm looking for
+
+663
+00:37:15,599 --> 00:37:24,849
+what did I do over here y equals
+
+664
+00:37:21,849 --> 00:37:34,460
+negative x right what am I looking for
+
+665
+00:37:24,460 --> 00:37:45,289
+here y equals negative 1 1 1 right
+
+666
+00:37:34,289 --> 00:37:55,280
+anybody disagree we all happy so what
+
+667
+00:37:45,280 --> 00:37:55,409
+did I add to 1 1 1 to make it 0 1
+
+668
+00:38:31,409 --> 00:38:34,559
+something's wrong
+
+669
+00:38:37,559 --> 00:38:48,719
+I just found that one equals negative
+
+670
+00:38:39,719 --> 00:38:48,989
+seven how did you guys know math class
+
+671
+00:38:50,989 --> 00:38:57,940
+Mike Bell thank you how many people in a
+
+672
+00:38:56,940 --> 00:39:01,989
+math class they should you like the
+
+673
+00:38:57,989 --> 00:39:05,699
+point nine bar equals equals equals one
+
+674
+00:39:01,699 --> 00:39:08,670
+guys remember that how do you how do you
+
+675
+00:39:05,670 --> 00:39:11,849
+believe them I still don't believe them
+
+676
+00:39:08,849 --> 00:39:13,179
+I did that prove a thousand times
+
+677
+00:39:11,179 --> 00:39:24,860
+okay this looks a little weird doesn't
+
+678
+00:39:13,860 --> 00:39:32,719
+it according to this one one one equals
+
+679
+00:39:24,719 --> 00:39:32,559
+negative one do you agree
+
+680
+00:39:36,559 --> 00:39:46,420
+okay let's go with that for a minute
+
+681
+00:39:41,420 --> 00:39:49,860
+let's assume that 1 1 1 is equal to
+
+682
+00:39:46,860 --> 00:39:49,650
+negative 1
+
+683
+00:39:59,650 --> 00:40:02,909
+ha
+
+684
+00:40:03,909 --> 00:40:41,518
+okay what's a negative one plus one okay
+
+685
+00:40:24,518 --> 00:40:57,349
+let's add one just for symmetry is this
+
+686
+00:40:41,349 --> 00:41:06,159
+working out do you guys agree this is
+
+687
+00:40:57,159 --> 00:41:08,849
+working okay okay so hypothetically
+
+688
+00:41:06,849 --> 00:41:09,108
+speaking if one one one is a negative
+
+689
+00:41:08,108 --> 00:41:14,929
+one
+
+690
+00:41:09,929 --> 00:41:17,858
+this sort of works right let's play
+
+691
+00:41:14,858 --> 00:41:17,800
+around some more
+
+692
+00:41:29,800 --> 00:41:48,099
+let's suggest that I take a number any
+
+693
+00:41:34,099 --> 00:41:53,050
+number and I complement it we agree that
+
+694
+00:41:48,050 --> 00:41:59,929
+those are complements and I add them
+
+695
+00:41:53,929 --> 00:42:06,269
+together what do I always get what's
+
+696
+00:41:59,269 --> 00:42:13,289
+that all one's right negative one we
+
+697
+00:42:06,289 --> 00:42:19,190
+agree so this would suggest that if I
+
+698
+00:42:13,190 --> 00:42:23,639
+take these two things and add them
+
+699
+00:42:19,639 --> 00:42:26,659
+together I get negative 1 what happens
+
+700
+00:42:23,659 --> 00:42:30,480
+if I take these things and I add and I
+
+701
+00:42:26,480 --> 00:42:39,650
+add them together and I add 1 what am I
+
+702
+00:42:30,650 --> 00:42:44,050
+gonna get every time do you agree if I
+
+703
+00:42:39,050 --> 00:42:46,329
+take a number and compliment it add the
+
+704
+00:42:44,329 --> 00:42:49,460
+two numbers together and add 1 I get all
+
+705
+00:42:46,460 --> 00:42:49,019
+zeros right
+
+706
+00:42:54,019 --> 00:43:03,469
+so X plus the complement of X plus one
+
+707
+00:43:01,469 --> 00:43:10,119
+is equal to zero
+
+708
+00:43:03,119 --> 00:43:15,579
+do we all agree therefore x equals
+
+709
+00:43:10,579 --> 00:43:23,090
+negative the complement of X plus one do
+
+710
+00:43:15,090 --> 00:43:32,659
+we agree so the complement of X plus one
+
+711
+00:43:23,659 --> 00:43:33,460
+equals negative X do we agree so now
+
+712
+00:43:32,460 --> 00:43:40,840
+let's say we Bates the system of math
+
+713
+00:43:33,840 --> 00:43:42,489
+based upon this where positive numbers
+
+714
+00:43:40,489 --> 00:43:45,329
+non-negative numbers or whatever they
+
+715
+00:43:42,329 --> 00:43:51,030
+are negative numbers are their
+
+716
+00:43:45,030 --> 00:43:57,179
+complement plus one well in theory if I
+
+717
+00:43:51,179 --> 00:43:59,119
+add 1 to the complement of a number plus
+
+718
+00:43:57,119 --> 00:44:00,280
+1 its negative value if I add 1 to
+
+719
+00:43:59,280 --> 00:44:02,239
+negative 5
+
+720
+00:44:00,239 --> 00:44:08,219
+should I get closer to or farther than
+
+721
+00:44:02,219 --> 00:44:10,239
+or farther away from 0 closer to right
+
+722
+00:44:08,239 --> 00:44:13,650
+if you add a positive number to a
+
+723
+00:44:10,650 --> 00:44:21,130
+negative number and you get closer to 0
+
+724
+00:44:13,130 --> 00:44:24,059
+these until you cross 0 okay and how
+
+725
+00:44:21,059 --> 00:44:24,579
+much closer should I get if I add 1
+
+726
+00:44:28,579 --> 00:44:39,989
+did you believe one okay so if this is X
+
+727
+00:44:35,989 --> 00:44:47,650
+and we know this is negative x we all
+
+728
+00:44:39,650 --> 00:44:51,030
+agree I'm sorry where's my negative x my
+
+729
+00:44:47,030 --> 00:45:01,530
+negative x is the complement of this
+
+730
+00:44:51,530 --> 00:45:04,250
+plus one right okay so my negative x is
+
+731
+00:45:01,250 --> 00:45:16,429
+going to be the complement of this 0 1 0
+
+732
+00:45:04,429 --> 00:45:20,670
+0 1 plus 1 1 and 1 is 0 carry a 1 do we
+
+733
+00:45:16,670 --> 00:45:29,059
+agree and we just showed that if we add
+
+734
+00:45:20,059 --> 00:45:36,150
+these together what do we get 0 0 carry
+
+735
+00:45:29,150 --> 00:45:40,050
+a 1 0 carry a 1 0 carry a 1 0 that one
+
+736
+00:45:36,050 --> 00:45:52,190
+drops off the other end okay all zeros
+
+737
+00:45:40,190 --> 00:45:59,869
+so now if I add 1 to this ok 0 1 0 1 1
+
+738
+00:45:52,869 --> 00:46:01,269
+and I add X to negative x plus 1 that's
+
+739
+00:45:59,269 --> 00:46:09,789
+basically what I did right what should I
+
+740
+00:46:01,789 --> 00:46:14,860
+get I should get 1 okay so what do I get
+
+741
+00:46:09,860 --> 00:46:14,070
+if I add X to negative X plus 1
+
+742
+00:46:18,070 --> 00:46:29,909
+zero and one is a 1 right everything
+
+743
+00:46:21,909 --> 00:46:29,929
+else is the same I get my 1 you see that
+
+744
+00:46:30,929 --> 00:46:36,219
+so this is what we call complement
+
+745
+00:46:33,219 --> 00:46:41,369
+arithmetic in complement arithmetic we
+
+746
+00:46:36,369 --> 00:46:44,739
+represent non-negative numbers as we
+
+747
+00:46:41,739 --> 00:46:49,920
+always did before we represent negative
+
+748
+00:46:44,920 --> 00:46:51,329
+numbers by complementing an adding 1 why
+
+749
+00:46:49,329 --> 00:46:56,719
+that makes them the additive inverse
+
+750
+00:46:51,719 --> 00:46:59,500
+does that make sense the only problem we
+
+751
+00:46:56,500 --> 00:47:01,110
+have with this is distinguishing what is
+
+752
+00:46:59,110 --> 00:47:04,840
+in two's complement representation and
+
+753
+00:47:01,840 --> 00:47:08,690
+what is in normal representation because
+
+754
+00:47:04,690 --> 00:47:10,190
+if I give you a number like 1 0 1 1 0
+
+755
+00:47:08,190 --> 00:47:13,630
+you don't know if that's a positive
+
+756
+00:47:10,630 --> 00:47:16,780
+number or a negative number you don't
+
+757
+00:47:13,780 --> 00:47:17,090
+know if you should to complim you know
+
+758
+00:47:16,090 --> 00:47:20,860
+subtract 1 and complement it to find its
+
+759
+00:47:17,860 --> 00:47:25,829
+real value or if you should take it at
+
+760
+00:47:20,829 --> 00:47:34,269
+face value so here's what we do we use
+
+761
+00:47:25,269 --> 00:47:37,510
+the highest bit as assignment if the
+
+762
+00:47:34,510 --> 00:47:40,269
+highest bit is a 1 we interpret it as
+
+763
+00:47:37,269 --> 00:47:44,570
+two's complement that is to say if we
+
+764
+00:47:40,570 --> 00:47:47,789
+want to know its value we subtract 1
+
+765
+00:47:44,789 --> 00:47:51,559
+negate it and then make it to negative
+
+766
+00:47:47,559 --> 00:47:59,760
+of the resulting value if the leading
+
+767
+00:47:51,760 --> 00:48:02,559
+bit is a 0 we leave it alone this says
+
+768
+00:47:59,559 --> 00:48:02,309
+that we have
+
+769
+00:48:03,309 --> 00:48:18,530
+negative numbers ranging from 1 0-0 0 or
+
+770
+00:48:09,530 --> 00:48:21,469
+whatever right 2 1 1 1 1 we have
+
+771
+00:48:18,469 --> 00:48:27,980
+non-negative numbers ranging from 0 0 0
+
+772
+00:48:21,980 --> 00:48:33,880
+0 to 0 1 1 1
+
+773
+00:48:27,880 --> 00:48:36,920
+do you agree if you add 1 to this
+
+774
+00:48:33,920 --> 00:48:42,500
+positive number the largest positive
+
+775
+00:48:36,500 --> 00:48:46,469
+number you get 1 0 0 0 which brings you
+
+776
+00:48:42,469 --> 00:48:49,760
+here that would be the most negative
+
+777
+00:48:46,760 --> 00:48:51,309
+number because remember how this works
+
+778
+00:48:49,309 --> 00:48:53,769
+this is the most negative number and as
+
+779
+00:48:51,769 --> 00:48:59,989
+we add things to it we bring it closer
+
+780
+00:48:53,989 --> 00:49:02,420
+to 0 does that make sense so in two's
+
+781
+00:48:59,420 --> 00:49:05,000
+complement arithmetic the bit pattern 1
+
+782
+00:49:02,000 --> 00:49:11,000
+followed by all zeros is always the most
+
+783
+00:49:05,000 --> 00:49:15,980
+negative number the bit pattern 0
+
+784
+00:49:11,980 --> 00:49:21,590
+followed by all ones is always the most
+
+785
+00:49:15,590 --> 00:49:25,019
+positive number does that make sense the
+
+786
+00:49:21,019 --> 00:49:29,849
+bit pattern 0 is 0 do you see why that
+
+787
+00:49:25,849 --> 00:49:32,840
+is the way it is a lot of people
+
+788
+00:49:29,840 --> 00:49:34,989
+memorize this stuff ok and they spend
+
+789
+00:49:32,989 --> 00:49:38,610
+their lifetime trying to memorize this
+
+790
+00:49:34,610 --> 00:49:42,659
+there's no reason to memorize it if you
+
+791
+00:49:38,659 --> 00:49:45,699
+think about it it makes sense if I know
+
+792
+00:49:42,699 --> 00:49:48,219
+that I'm using this as the sign bit
+
+793
+00:49:45,219 --> 00:49:50,190
+everything else follows from there I
+
+794
+00:49:48,190 --> 00:49:53,570
+know this is the most negative number
+
+795
+00:49:50,570 --> 00:50:03,210
+because anything I add to a negative
+
+796
+00:49:53,210 --> 00:50:05,050
+number brings it closer to 0 ok I know
+
+797
+00:50:03,050 --> 00:50:06,090
+this is the most positive number because
+
+798
+00:50:05,090 --> 00:50:14,829
+if I add want to be cut wraps around 2
+
+799
+00:50:06,829 --> 00:50:14,039
+negative does that make sense
+
+800
+00:50:18,039 --> 00:50:25,010
+on the non-negative side of the number
+
+801
+00:50:21,010 --> 00:50:30,420
+line we're adding to zero as we take all
+
+802
+00:50:25,420 --> 00:50:32,820
+zeros and start to add to it mink on the
+
+803
+00:50:30,820 --> 00:50:34,769
+negative side of the number line we're
+
+804
+00:50:32,769 --> 00:50:37,210
+starting with the most negative number
+
+805
+00:50:34,210 --> 00:50:42,510
+one zero zero zero and adding to it to
+
+806
+00:50:37,510 --> 00:50:51,940
+bring it back to zero where I have 1 1 1
+
+807
+00:50:42,940 --> 00:50:57,789
+1 plus 1 is 0 1 1 1 1 we already said
+
+808
+00:50:51,789 --> 00:50:57,039
+always represents what pattern what's
+
+809
+00:50:57,039 --> 00:51:05,369
+that
+
+810
+00:50:57,369 --> 00:51:15,650
+negative 1 right 1 1 1 1 right subtract
+
+811
+00:51:05,650 --> 00:51:15,108
+1 1 1 1 0 complement 0 0 0 1
+
+812
+00:51:23,108 --> 00:51:31,318
+so you can memorize this make your brain
+
+813
+00:51:27,318 --> 00:51:31,309
+full or you can realize why it all works
+
+814
+00:51:33,309 --> 00:51:37,400
+1 1 1 1 plus 1 is 0
+
+815
+00:51:39,400 --> 00:51:48,900
+anything plus 1 that 0 is equal to
+
+816
+00:51:41,900 --> 00:51:52,909
+negative 1 ok and we go from there
+
+817
+00:51:48,909 --> 00:51:54,039
+alright so that's gonna be our most
+
+818
+00:51:52,039 --> 00:51:56,130
+negative number all the way over
+
+819
+00:51:54,130 --> 00:52:09,750
+starting with that adding this back to
+
+820
+00:51:56,750 --> 00:52:12,440
+bring us closer to 0 ok all right
+
+821
+00:52:09,440 --> 00:52:12,309
+switching back over to slides
+
+822
+00:52:23,309 --> 00:52:29,590
+so as we look over on the right side of
+
+823
+00:52:25,590 --> 00:52:32,269
+this and we see another scary fraction
+
+824
+00:52:29,269 --> 00:52:34,340
+and a fraction equation what are we
+
+825
+00:52:32,340 --> 00:52:38,860
+looking at well there's nothing to be
+
+826
+00:52:34,860 --> 00:52:42,010
+scared of here this looks a lot like
+
+827
+00:52:38,010 --> 00:52:45,360
+this side right here we sum from 0 to
+
+828
+00:52:42,360 --> 00:52:48,090
+with minus 1 here we sum from 0 to with
+
+829
+00:52:45,090 --> 00:52:54,900
+minus 2 y with minus 2 that leftmost bit
+
+830
+00:52:48,900 --> 00:52:56,690
+is the sign bit whether the number is
+
+831
+00:52:54,690 --> 00:52:58,670
+negative or positive we're going to be
+
+832
+00:52:56,670 --> 00:53:01,079
+adding the things that aren't the sign
+
+833
+00:52:58,079 --> 00:53:06,440
+bit either adding them to 0 or adding
+
+834
+00:53:01,440 --> 00:53:08,269
+them to the most negative number so we
+
+835
+00:53:06,269 --> 00:53:10,099
+sum up those things does that make sense
+
+836
+00:53:08,099 --> 00:53:15,710
+in the event of a positive non-negative
+
+837
+00:53:10,710 --> 00:53:17,690
+number its 0 plus that sum in the event
+
+838
+00:53:15,690 --> 00:53:21,280
+of a negative number it's the most
+
+839
+00:53:17,280 --> 00:53:25,000
+negative number plus that sum now we
+
+840
+00:53:21,000 --> 00:53:28,320
+look at that sign bit the X to the X sub
+
+841
+00:53:25,320 --> 00:53:32,349
+W minus 1 bit the leftmost bit if it is
+
+842
+00:53:28,349 --> 00:53:35,250
+a 0 we start but with 0 and we add
+
+843
+00:53:32,250 --> 00:53:39,099
+everything from there so this term is
+
+844
+00:53:35,099 --> 00:53:42,719
+going to be a 0 and we add that so if
+
+845
+00:53:39,719 --> 00:53:46,869
+this bit is 0 its negative 0 which is 0
+
+846
+00:53:42,869 --> 00:53:48,320
+times something which is still 0 its 0
+
+847
+00:53:46,320 --> 00:53:53,469
+plus everything else
+
+848
+00:53:48,469 --> 00:53:59,039
+if however that leftmost bit is 1 it's
+
+849
+00:53:53,039 --> 00:54:00,159
+the most negative number right and so
+
+850
+00:53:59,159 --> 00:54:06,719
+we're gonna start there and add our way
+
+851
+00:54:00,719 --> 00:54:08,570
+back so this is gonna be 1 times 2 to
+
+852
+00:54:06,570 --> 00:54:12,940
+the W minus 1 times the bit position of
+
+853
+00:54:08,940 --> 00:54:13,059
+that leftmost bit that's going to give
+
+854
+00:54:12,059 --> 00:54:15,590
+us the most negative number right we
+
+855
+00:54:13,590 --> 00:54:18,599
+said the bit pattern 1 and all zeros is
+
+856
+00:54:15,599 --> 00:54:20,150
+always the most negative number so now
+
+857
+00:54:18,150 --> 00:54:24,159
+it's the most negative number plus all
+
+858
+00:54:20,159 --> 00:54:27,179
+of this which brings us closer to 0 does
+
+859
+00:54:24,179 --> 00:54:28,059
+that make sense we can't quite get to 0
+
+860
+00:54:27,059 --> 00:54:31,650
+because 0 is going to be the bit
+
+861
+00:54:28,650 --> 00:54:37,710
+patterns all 0 0 in the high-order bit
+
+862
+00:54:31,710 --> 00:54:46,248
+and 0 in all the low-order bits 0 plus 0
+
+863
+00:54:37,248 --> 00:54:49,349
+you see that what's the value of the
+
+864
+00:54:46,349 --> 00:54:52,619
+moat of the most negative number the
+
+865
+00:54:49,619 --> 00:54:58,498
+sign bits on this is all off what's the
+
+866
+00:54:52,498 --> 00:55:00,108
+value of negative one the sign bits on
+
+867
+00:54:58,108 --> 00:55:03,960
+and everything else is on these the most
+
+868
+00:55:00,960 --> 00:55:08,170
+negative number plus everything else
+
+869
+00:55:03,170 --> 00:55:22,219
+which leaves us one short of a zero make
+
+870
+00:55:08,219 --> 00:55:28,289
+sense okay now is zero negative or
+
+871
+00:55:22,289 --> 00:55:29,739
+positive so some mathematicians in the
+
+872
+00:55:28,739 --> 00:55:34,818
+class are trying to answer that question
+
+873
+00:55:29,818 --> 00:55:38,289
+legitimately with respect to our number
+
+874
+00:55:34,289 --> 00:55:41,969
+line zero comes out of the same side of
+
+875
+00:55:38,969 --> 00:55:46,509
+the number line as positive numbers
+
+876
+00:55:41,509 --> 00:55:50,199
+because it begins with a zero right it's
+
+877
+00:55:46,199 --> 00:55:54,009
+direct not two's complement that means
+
+878
+00:55:50,009 --> 00:55:56,420
+that we can represent a number that's
+
+879
+00:55:54,420 --> 00:55:58,489
+more our most negative number is more
+
+880
+00:55:56,489 --> 00:56:02,248
+negative than our most positive number
+
+881
+00:55:58,248 --> 00:56:06,159
+because our our non negative side of the
+
+882
+00:56:02,159 --> 00:56:09,529
+number range goes from zero to something
+
+883
+00:56:06,529 --> 00:56:12,449
+our negative side of the number range
+
+884
+00:56:09,449 --> 00:56:17,199
+goes from negative one to something
+
+885
+00:56:12,199 --> 00:56:19,429
+they're the same number of bits so the
+
+886
+00:56:17,429 --> 00:56:22,318
+zero comes out of the positive side of
+
+887
+00:56:19,318 --> 00:56:24,338
+the number line does that make sense
+
+888
+00:56:22,338 --> 00:56:29,869
+it's the non negative side of the number
+
+889
+00:56:24,869 --> 00:56:32,880
+line so my most my largest greatest you
+
+890
+00:56:29,880 --> 00:56:34,639
+know non negative number is going to be
+
+891
+00:56:32,639 --> 00:56:39,889
+one smaller and it's absolute value than
+
+892
+00:56:34,889 --> 00:56:40,119
+my greatest negative number because the
+
+893
+00:56:39,119 --> 00:56:45,409
+zero is coming out of that side of the
+
+894
+00:56:40,409 --> 00:56:45,130
+number line okay
+
+895
+00:56:47,130 --> 00:56:54,039
+that's why my most negative number is
+
+896
+00:56:50,039 --> 00:56:57,380
+one greater than my most positive number
+
+897
+00:56:54,380 --> 00:56:59,989
+do you see that don't memorize it
+
+898
+00:56:57,989 --> 00:57:01,190
+there's tons of this stuff that you can
+
+899
+00:56:59,190 --> 00:57:04,889
+mindlessly memorize but you don't need
+
+900
+00:57:01,889 --> 00:57:07,768
+to you just need to keep in mind that it
+
+901
+00:57:04,768 --> 00:57:11,920
+is what it is for a reason zero comes
+
+902
+00:57:07,920 --> 00:57:13,068
+out of this side of the number line it's
+
+903
+00:57:11,068 --> 00:57:16,858
+zero through something not 1 through
+
+904
+00:57:13,858 --> 00:57:18,079
+something right this is negative 1
+
+905
+00:57:16,079 --> 00:57:21,690
+through negative 2 to the W minus 1 this
+
+906
+00:57:18,690 --> 00:57:25,779
+is zero through to the W minus 1 minus 1
+
+907
+00:57:21,779 --> 00:57:29,018
+why I'm starting at 0 so I get 1 I get I
+
+908
+00:57:25,018 --> 00:57:31,809
+don't get quite as far okay
+
+909
+00:57:29,809 --> 00:57:34,978
+we talked about the fact that 0 is
+
+910
+00:57:31,978 --> 00:57:37,978
+always 0 we talked about the fact with
+
+911
+00:57:34,978 --> 00:57:39,018
+unsigned numbers all ones is migrators
+
+912
+00:57:37,018 --> 00:57:40,088
+bit pattern we talked about the other
+
+913
+00:57:39,088 --> 00:57:44,498
+bit patterns that are common right all
+
+914
+00:57:40,498 --> 00:57:46,789
+ones is going to be a negative 1 a 1 in
+
+915
+00:57:44,789 --> 00:57:51,409
+all zeros is going to be the most
+
+916
+00:57:46,409 --> 00:57:54,768
+negative number okay we talked about why
+
+917
+00:57:51,768 --> 00:57:56,449
+it's the most negative number plus all
+
+918
+00:57:54,449 --> 00:58:01,838
+the ones that brings us to a negative 1
+
+919
+00:57:56,838 --> 00:58:04,318
+plus 1 add 1 to a negative 1 and you see
+
+920
+00:58:01,318 --> 00:58:06,978
+all ones plus 1 is going to be 0 1 plus
+
+921
+00:58:04,978 --> 00:58:09,869
+1 is 0 carry the 1 1 + 1 0 carry the 1 1
+
+922
+00:58:06,869 --> 00:58:11,119
+0 carry the 1 1 plus 1 is 0 carry 1 1
+
+923
+00:58:09,119 --> 00:58:14,039
+plus 1 is 0 there's nowhere to carry the
+
+924
+00:58:11,039 --> 00:58:20,338
+1 we throw it away we're all zeros so it
+
+925
+00:58:14,338 --> 00:58:20,469
+all works out you guys see that ok
+
+926
+00:58:21,469 --> 00:58:27,619
+and so given a particular number of bits
+
+927
+00:58:25,619 --> 00:58:31,210
+you can figure out what the maximum
+
+928
+00:58:27,210 --> 00:58:36,440
+sizes are if you do this math you must
+
+929
+00:58:31,440 --> 00:58:39,179
+be drunk and smart you get it right must
+
+930
+00:58:36,179 --> 00:58:39,239
+be drunk smart and careful even while
+
+931
+00:58:39,239 --> 00:58:42,630
+drunk
+
+932
+00:58:39,630 --> 00:58:47,719
+um don't do that ok use the pound of
+
+933
+00:58:42,719 --> 00:58:49,639
+fives all right if you want to know the
+
+934
+00:58:47,639 --> 00:58:53,380
+maximum size of n sidelong your system
+
+935
+00:58:49,380 --> 00:58:56,789
+use you long max right that way when you
+
+936
+00:58:53,789 --> 00:58:58,518
+compile it on the next generation 128
+
+937
+00:58:56,518 --> 00:59:02,798
+bit processors 10 years from now right
+
+938
+00:58:58,798 --> 00:59:02,260
+it still works
+
+939
+00:59:12,260 --> 00:59:19,940
+so okay we talked about these conversion
+
+940
+00:59:17,940 --> 00:59:27,079
+things these are the functions we looked
+
+941
+00:59:19,079 --> 00:59:29,539
+at before here's what's worth seen if I
+
+942
+00:59:27,539 --> 00:59:31,400
+take my sign number and I take my
+
+943
+00:59:29,400 --> 00:59:32,170
+unsigned number and I take the bit
+
+944
+00:59:31,170 --> 00:59:35,820
+pattern here I have the bit patterns
+
+945
+00:59:32,820 --> 00:59:36,130
+ranging from zero to all ones for a
+
+946
+00:59:35,130 --> 00:59:38,360
+while it doesn't matter whether I'm
+
+947
+00:59:36,360 --> 00:59:44,489
+dealing with a sign type or unsigned
+
+948
+00:59:38,489 --> 00:59:46,010
+type it's exactly the same however once
+
+949
+00:59:44,010 --> 00:59:48,079
+I add one to this and I get one zero
+
+950
+00:59:46,079 --> 00:59:51,000
+zero in the case of an unsigned number I
+
+951
+00:59:48,000 --> 00:59:56,599
+keep growing 7 plus 1 is 8 plus 1 is 9
+
+952
+00:59:51,599 --> 00:59:58,519
+plus 1 is 2 n in heat in this case it
+
+953
+00:59:56,519 --> 00:00:02,650
+suddenly becomes the most negative
+
+954
+00:59:58,650 --> 00:00:06,039
+number why look at my bit pattern the
+
+955
+01:00:02,039 --> 01:00:11,570
+most negative number plus nothing you
+
+956
+01:00:06,570 --> 01:00:13,639
+guys see that okay and then from there
+
+957
+01:00:11,639 --> 01:00:16,289
+we continue monotonically increasing why
+
+958
+01:00:13,289 --> 01:00:18,860
+we're adding one eventually here we get
+
+959
+01:00:16,860 --> 01:00:21,960
+to the bit pattern 1 1 0 we add 1 it
+
+960
+01:00:18,960 --> 01:00:26,929
+becomes 0 here we get to negative 1 and
+
+961
+01:00:21,929 --> 01:00:26,010
+we add 0 in either case that makes sense
+
+962
+01:00:28,010 --> 01:00:39,710
+ok so if we look at two's complements
+
+963
+01:00:34,710 --> 01:00:39,130
+number line and the unsigned number line
+
+964
+01:00:40,130 --> 01:00:49,570
+okay we see that they overlap in a
+
+965
+01:00:45,570 --> 01:00:51,349
+particular range and then there's this
+
+966
+01:00:49,349 --> 01:00:53,840
+crossover that happens in the higher
+
+967
+01:00:51,840 --> 01:00:57,880
+part of that range we're the most
+
+968
+01:00:53,880 --> 01:01:01,329
+negative number if you look at it as an
+
+969
+01:00:57,329 --> 01:01:07,699
+unsigned number is a isn't is you know a
+
+970
+01:01:01,699 --> 01:01:10,619
+big unsigned number right so if I take a
+
+971
+01:01:07,619 --> 01:01:12,679
+look at my mug at my uh my my biggest on
+
+972
+01:01:10,679 --> 01:01:14,389
+my most negative number that's a 1 with
+
+973
+01:01:12,389 --> 01:01:14,829
+all zeros
+
+974
+01:01:16,829 --> 01:01:23,489
+okay that's gonna be immediately above
+
+975
+01:01:20,489 --> 01:01:27,619
+my two's-complement maximum why my
+
+976
+01:01:23,619 --> 01:01:34,550
+two's-complement maximum is 1 1 1 1 past
+
+977
+01:01:27,550 --> 01:01:39,449
+that is 1 0 0 0 ok so if I look at that
+
+978
+01:01:34,449 --> 01:01:43,519
+here I become negative 1 1 1 becomes 1 0
+
+979
+01:01:39,519 --> 01:01:46,090
+0 here I'm just adding a 1 1 1 1 becomes
+
+980
+01:01:43,090 --> 01:01:48,389
+1 0 0 0 great I'm not doing anything
+
+981
+01:01:46,389 --> 01:01:52,099
+different with that leading one here I
+
+982
+01:01:48,099 --> 01:01:55,349
+grow monotonically from there right here
+
+983
+01:01:52,349 --> 01:02:00,719
+okay what am i doing I'm adding back and
+
+984
+01:01:55,719 --> 01:02:04,789
+growing this way and see if you write a
+
+985
+01:02:00,789 --> 01:02:07,090
+number 2 3 4 5 that number by default is
+
+986
+01:02:04,090 --> 01:02:09,329
+signed constants by default are signed
+
+987
+01:02:07,329 --> 01:02:15,250
+and see if you want them to be unsigned
+
+988
+01:02:09,250 --> 01:02:18,789
+append a you after them okay having said
+
+989
+01:02:15,789 --> 01:02:20,369
+that my default types like int and long
+
+990
+01:02:18,369 --> 01:02:22,889
+and float are all signed if you want
+
+991
+01:02:20,889 --> 01:02:36,750
+them to be unsigned add the unsigned
+
+992
+01:02:22,750 --> 01:02:39,130
+qualifier if there's a mix of signed and
+
+993
+01:02:36,130 --> 01:02:40,579
+unsigned values in the same expression 1
+
+994
+01:02:39,579 --> 01:02:44,840
+variables assigned type and other
+
+995
+01:02:40,840 --> 01:02:48,860
+variables unsigned type the sign values
+
+996
+01:02:44,860 --> 01:02:50,610
+are cast to an unsigned so if you have
+
+997
+01:02:48,610 --> 01:02:52,409
+signed plus and unsigned it
+
+998
+01:02:50,409 --> 01:02:54,869
+automatically takes the sign value cast
+
+999
+01:02:52,869 --> 01:02:58,789
+it to an unsigned and then your math
+
+1000
+01:02:54,789 --> 01:02:58,179
+proceeds as unsigned arithmetic
+
+1001
+01:03:06,179 --> 01:03:17,639
+so zero versus zero unsigned negative
+
+1002
+01:03:09,639 --> 01:03:21,440
+one okay a constant so these are a set
+
+1003
+01:03:17,440 --> 01:03:22,010
+of puzzles and the question is what's
+
+1004
+01:03:21,010 --> 01:03:25,449
+the relationship between these two
+
+1005
+01:03:22,449 --> 01:03:27,300
+numbers zero sign and zero unsigned well
+
+1006
+01:03:25,300 --> 01:03:29,269
+their answer is they're both equal
+
+1007
+01:03:27,269 --> 01:03:31,380
+what's the do of the relationship
+
+1008
+01:03:29,380 --> 01:03:34,599
+between negative 1 and zero well
+
+1009
+01:03:31,599 --> 01:03:39,510
+negative 1 is less than zero okay and
+
+1010
+01:03:34,510 --> 01:03:42,670
+that's evaluated as signed right because
+
+1011
+01:03:39,670 --> 01:03:46,150
+this is signed and this is signed
+
+1012
+01:03:42,150 --> 01:03:48,420
+negative 1 and 0 unsigned well now I
+
+1013
+01:03:46,420 --> 01:03:51,730
+have an unsigned type so my negative 1
+
+1014
+01:03:48,730 --> 01:03:53,670
+is cast to it unsigned if I take a
+
+1015
+01:03:51,670 --> 01:03:55,710
+negative 1 bit pattern and I interpret
+
+1016
+01:03:53,710 --> 01:04:01,860
+it as unsigned it's a big number right
+
+1017
+01:03:55,860 --> 01:04:03,989
+it's bigger than 0 okay and you can walk
+
+1018
+01:04:01,989 --> 01:04:04,159
+through these the rest of these as an
+
+1019
+01:04:03,159 --> 01:04:05,630
+exercise to the reader if you have any
+
+1020
+01:04:04,630 --> 01:04:07,949
+questions email the list ask them to
+
+1021
+01:04:05,949 --> 01:04:09,630
+recitation on sp1 a presentation of
+
+1022
+01:04:07,630 --> 01:04:11,039
+Monday email the list to drop by for
+
+1023
+01:04:09,039 --> 01:04:13,199
+office hours but these are all just
+
+1024
+01:04:11,199 --> 01:04:15,000
+puzzles that came up the idea that the
+
+1025
+01:04:13,000 --> 01:04:18,849
+first thing you do is if you have mixed
+
+1026
+01:04:15,849 --> 01:04:19,039
+mode is convert side values to unsigned
+
+1027
+01:04:18,039 --> 01:04:24,780
+values and then you do the
+
+1028
+01:04:19,780 --> 01:04:28,880
+interpretation the bit pattern is
+
+1029
+01:04:24,880 --> 01:04:29,000
+maintained but it's reinterpreted it can
+
+1030
+01:04:28,000 --> 01:04:33,190
+have the effect of adding or subtracting
+
+1031
+01:04:29,190 --> 01:04:34,250
+2 to the width right in other words if I
+
+1032
+01:04:33,250 --> 01:04:37,659
+take a signed number and interpret it as
+
+1033
+01:04:34,659 --> 01:04:42,030
+an unsigned number the higher values are
+
+1034
+01:04:37,030 --> 01:04:43,579
+gonna become negative values in the
+
+1035
+01:04:42,579 --> 01:04:45,539
+event that I've an expression containing
+
+1036
+01:04:43,539 --> 01:04:48,579
+assigned an unsigned integer the int is
+
+1037
+01:04:45,579 --> 01:04:57,400
+cast unsigned first then the arithmetic
+
+1038
+01:04:48,400 --> 01:04:58,309
+proceeds is unsigned but it um I forgot
+
+1039
+01:04:57,309 --> 01:05:01,480
+to ask how far they got in the other
+
+1040
+01:04:58,480 --> 01:05:05,150
+section is there's actually two days of
+
+1041
+01:05:01,150 --> 01:05:07,469
+notes we'll go for another five notes
+
+1042
+01:05:05,469 --> 01:05:11,059
+we may not all line with them exactly
+
+1043
+01:05:07,059 --> 01:05:17,849
+that's okay this time normally we will
+
+1044
+01:05:11,849 --> 01:05:23,199
+all right so sign extension if I have a
+
+1045
+01:05:17,199 --> 01:05:27,619
+32-bit number okay a four byte type a
+
+1046
+01:05:23,619 --> 01:05:31,130
+four byte int and I cast it to a long
+
+1047
+01:05:27,130 --> 01:05:34,599
+long somehow there are more bits what do
+
+1048
+01:05:31,599 --> 01:05:37,440
+I put into those extra high order bits
+
+1049
+01:05:34,440 --> 01:05:40,420
+well if it's an unsigned number I put in
+
+1050
+01:05:37,420 --> 01:05:42,570
+zeros because I want to add nothing to
+
+1051
+01:05:40,570 --> 01:05:45,909
+keep the value the same if it's a sign
+
+1052
+01:05:42,909 --> 01:05:47,190
+number I want to do sign extension I
+
+1053
+01:05:45,190 --> 01:05:51,190
+want to take that high order bit and
+
+1054
+01:05:47,190 --> 01:05:53,070
+extend it to fill that space why if it's
+
+1055
+01:05:51,070 --> 01:05:55,260
+an unsigned number I'm sorry if it's a
+
+1056
+01:05:53,260 --> 01:05:59,179
+if it's a non-negative number that high
+
+1057
+01:05:55,179 --> 01:06:02,110
+order bid is going to be zero so by sign
+
+1058
+01:05:59,110 --> 01:06:05,070
+extending I'm adding in zeroes perfect
+
+1059
+01:06:02,070 --> 01:06:07,800
+but if it's a one this is a negative
+
+1060
+01:06:05,800 --> 01:06:11,829
+number represented in two's complement
+
+1061
+01:06:07,829 --> 01:06:13,110
+if I add zeros it will be interpreted as
+
+1062
+01:06:11,110 --> 01:06:15,090
+a not as a non-negative number right
+
+1063
+01:06:13,090 --> 01:06:19,519
+because the high order bits will no
+
+1064
+01:06:15,519 --> 01:06:22,119
+longer be assigned bit so it's clear my
+
+1065
+01:06:19,119 --> 01:06:25,329
+high-water bit needs to stay a one the
+
+1066
+01:06:22,329 --> 01:06:27,090
+good news is remember how this works one
+
+1067
+01:06:25,090 --> 01:06:36,519
+followed by as many zeros as you have is
+
+1068
+01:06:27,519 --> 01:06:39,730
+always what the most negative number so
+
+1069
+01:06:36,730 --> 01:06:41,039
+if I take the most negative number and I
+
+1070
+01:06:39,039 --> 01:06:44,260
+add in and I pad the rest of it with
+
+1071
+01:06:41,260 --> 01:06:47,679
+ones I'm bringing myself back to where I
+
+1072
+01:06:44,679 --> 01:06:52,889
+was before now adding the rest of the
+
+1073
+01:06:47,889 --> 01:06:55,840
+bits does that make sense so in the case
+
+1074
+01:06:52,840 --> 01:06:59,769
+of a negative number I sign extent
+
+1075
+01:06:55,769 --> 01:07:00,139
+because that means all those ones added
+
+1076
+01:06:59,139 --> 01:07:02,400
+together starts out with a much more
+
+1077
+01:07:00,400 --> 01:07:04,230
+negative number but I add a bunch of
+
+1078
+01:07:02,230 --> 01:07:07,360
+stuff to it which gives me exactly what
+
+1079
+01:07:04,360 --> 01:07:08,929
+I had before plus exactly what I had
+
+1080
+01:07:07,929 --> 01:07:10,289
+before
+
+1081
+01:07:08,289 --> 01:07:14,599
+so I've done nothing to the value of
+
+1082
+01:07:10,599 --> 01:07:14,650
+that number did that make sense
+
+1083
+01:07:17,650 --> 01:07:22,838
+if I have a bit pattern all ones for
+
+1084
+01:07:20,838 --> 01:07:24,730
+example does it matter if I have two
+
+1085
+01:07:22,730 --> 01:07:33,380
+ones or three ones or four ones or five
+
+1086
+01:07:24,380 --> 01:07:41,349
+ones or ten ones what's that know what
+
+1087
+01:07:33,349 --> 01:07:44,588
+does that what is that value what's that
+
+1088
+01:07:41,588 --> 01:07:47,750
+- one negative one right
+
+1089
+01:07:44,750 --> 01:07:51,630
+always so if I have the bit pattern all
+
+1090
+01:07:47,630 --> 01:07:56,289
+ones except the last bit of zero what's
+
+1091
+01:07:51,289 --> 01:07:57,019
+that gonna be give it out - - always
+
+1092
+01:07:56,019 --> 01:07:59,650
+does that make sense
+
+1093
+01:07:57,650 --> 01:08:02,568
+it doesn't matter how many ones are
+
+1094
+01:07:59,568 --> 01:08:04,780
+there because I'm adding back to the
+
+1095
+01:08:02,780 --> 01:08:05,550
+most negative number if I have more ones
+
+1096
+01:08:04,550 --> 01:08:07,690
+I'm starting out with a more negative
+
+1097
+01:08:05,690 --> 01:08:13,608
+number but then adding a bunch more to
+
+1098
+01:08:07,608 --> 01:08:21,639
+it and so here we see a sign extension
+
+1099
+01:08:13,639 --> 01:08:24,250
+example okay no magic to this okay I
+
+1100
+01:08:21,250 --> 01:08:28,710
+have 15 to 13 when I sign extend the
+
+1101
+01:08:24,710 --> 01:08:30,310
+zero extends to a zero I have negative
+
+1102
+01:08:28,310 --> 01:08:37,770
+15 to 13 when I sign extend the one
+
+1103
+01:08:30,770 --> 01:08:39,670
+expands to more ones if I convert from a
+
+1104
+01:08:37,670 --> 01:08:42,859
+larger type to a smaller type it's gonna
+
+1105
+01:08:39,859 --> 01:08:48,829
+try the reverse of this and simply whack
+
+1106
+01:08:42,829 --> 01:08:53,350
+off the high-order bits that works as
+
+1107
+01:08:48,350 --> 01:08:55,298
+long as they weren't needed if however
+
+1108
+01:08:53,298 --> 01:08:57,548
+they weren't all ones or aren't weren't
+
+1109
+01:08:55,548 --> 01:08:59,798
+all zeros and I whack off something else
+
+1110
+01:08:57,798 --> 01:09:05,689
+I've changed the value of that number
+
+1111
+01:08:59,689 --> 01:09:11,569
+right okay
+
+1112
+01:09:05,569 --> 01:09:13,699
+so summary if it's an unsigned number we
+
+1113
+01:09:11,699 --> 01:09:15,260
+add zeroes there's no two's complement
+
+1114
+01:09:13,260 --> 01:09:18,180
+there if it's a signed number we do sign
+
+1115
+01:09:15,180 --> 01:09:20,180
+extension that way if it's a high bid to
+
+1116
+01:09:18,180 --> 01:09:21,579
+0 we add zeroes if the hybrids have one
+
+1117
+01:09:20,579 --> 01:09:37,869
+it's a two's complement number we add
+
+1118
+01:09:21,869 --> 01:09:37,680
+once no loss in sign extending yes yes
+
+1119
+01:09:42,680 --> 01:09:47,880
+when you talk about you talk about left
+
+1120
+01:09:44,880 --> 01:09:48,069
+shifting a right trip thing so when I
+
+1121
+01:09:47,069 --> 01:09:50,930
+when I write shift I have to do the sign
+
+1122
+01:09:48,930 --> 01:09:52,909
+extension and you're exactly right this
+
+1123
+01:09:50,909 --> 01:09:53,500
+is why to make sure that if I have a
+
+1124
+01:09:52,500 --> 01:10:01,819
+two's complement number I preserve the
+
+1125
+01:09:53,819 --> 01:10:03,529
+value so if it's so this is interesting
+
+1126
+01:10:01,529 --> 01:10:06,210
+question if I use the right shift
+
+1127
+01:10:03,210 --> 01:10:11,390
+operator is it an arithmetic or a
+
+1128
+01:10:06,390 --> 01:10:13,100
+logical right shift in in C in Java
+
+1129
+01:10:11,100 --> 01:10:15,050
+they're different operators there's two
+
+1130
+01:10:13,050 --> 01:10:17,119
+greater there's two you know greater
+
+1131
+01:10:15,119 --> 01:10:21,819
+than signs versus three in C there's
+
+1132
+01:10:17,819 --> 01:10:23,180
+only one Operator and my memory of the
+
+1133
+01:10:21,180 --> 01:10:26,010
+standard actually is that it doesn't
+
+1134
+01:10:23,010 --> 01:10:29,659
+require it be anything although
+
+1135
+01:10:26,659 --> 01:10:32,250
+generally it's interpreted most modern
+
+1136
+01:10:29,250 --> 01:10:37,460
+languages interpreted as an arithmetic
+
+1137
+01:10:32,460 --> 01:10:41,350
+shift meet and a-rhythm-etic shit even
+
+1138
+01:10:37,350 --> 01:10:44,729
+for unsigned let me not tell any lies
+
+1139
+01:10:41,729 --> 01:10:47,399
+let me tell you to try because the
+
+1140
+01:10:44,399 --> 01:10:48,279
+standard doesn't actually say but there
+
+1141
+01:10:47,279 --> 01:10:50,420
+is a convention of seemingly among
+
+1142
+01:10:48,420 --> 01:10:58,609
+compiler writers to give it a try then
+
+1143
+01:10:50,609 --> 01:11:00,260
+you'll know let is know next class my
+
+1144
+01:10:58,260 --> 01:11:03,720
+belief is that it's going to do sign
+
+1145
+01:11:00,720 --> 01:11:07,060
+extension in all cases but let's
+
+1146
+01:11:03,060 --> 01:11:10,590
+checking on that okay truncating it's
+
+1147
+01:11:07,590 --> 01:11:12,109
+the same thing it's basically a mod
+
+1148
+01:11:10,109 --> 01:11:14,449
+operation if those leading bits are not
+
+1149
+01:11:12,449 --> 01:11:16,460
+all ones or a signed number not all
+
+1150
+01:11:14,460 --> 01:11:17,170
+zeros for an unsigned number and it
+
+1151
+01:11:16,170 --> 01:11:19,220
+actually loses stuff
+
+1152
+01:11:17,220 --> 01:11:24,050
+it keeps the remainder right
+
+1153
+01:11:19,050 --> 01:11:27,149
+and throws away sort of how many times
+
+1154
+01:11:24,149 --> 01:11:27,649
+it spins around it's modular arithmetic
+
+1155
+01:11:33,649 --> 01:11:41,390
+okay you can walk through that example
+
+1156
+01:11:36,390 --> 01:11:44,670
+in your honor that's a long version of
+
+1157
+01:11:41,670 --> 01:11:45,550
+the old same thing we had before we'll
+
+1158
+01:11:44,550 --> 01:11:48,750
+pick up with addition to get
+
+1159
+01:11:45,750 --> 01:11:51,270
+multiplication shifting next class have
+
+1160
+01:11:48,270 --> 01:11:51,000
+a great day everybody
+Subtitles End: mo.dbxdb.com
+
