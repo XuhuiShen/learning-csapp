@@ -1,0 +1,5953 @@
+1
+00:00:00,000 --> 00:00:00,030
+ Youtube subtitles download by mo.dbxdb.com 
+
+2
+00:00:00,030 --> 00:00:08,159
+welcome to this exciting fourth edition
+
+3
+00:00:02,159 --> 00:00:11,069
+15 18 - 13 15 5 13 we're today and only
+
+4
+00:00:08,069 --> 00:00:19,179
+today we get to talk about
+
+5
+00:00:11,179 --> 00:00:25,279
+floating-point numbers yeah I'm excited
+
+6
+00:00:19,279 --> 00:00:27,050
+all right the background okay look
+
+7
+00:00:25,050 --> 00:00:29,059
+fractions are a pain in the ass you
+
+8
+00:00:27,059 --> 00:00:32,429
+learned that in like fourth grade right
+
+9
+00:00:29,429 --> 00:00:35,759
+I mean they are just a pain they're
+
+10
+00:00:32,759 --> 00:00:36,039
+still a pain they always were a pain at
+
+11
+00:00:35,039 --> 00:00:38,870
+the end of the day our numbering system
+
+12
+00:00:36,870 --> 00:00:41,070
+that we like to think of things in is
+
+13
+00:00:38,070 --> 00:00:43,730
+decimal right and the problem with the
+
+14
+00:00:41,730 --> 00:00:44,079
+decimal based numbering system is it
+
+15
+00:00:43,079 --> 00:00:53,670
+can't represent everything perfectly
+
+16
+00:00:44,670 --> 00:00:58,180
+cleanly right like 1/3 repeating right
+
+17
+00:00:53,180 --> 00:01:00,649
+what a pain in the ass okay a binary
+
+18
+00:00:58,649 --> 00:01:02,180
+number system is gonna be the same way
+
+19
+00:01:00,180 --> 00:01:03,219
+there's some fractions that are just not
+
+20
+00:01:02,219 --> 00:01:06,660
+perfectly representable in Pounder
+
+21
+00:01:03,660 --> 00:01:09,720
+powers of two furthermore when we are
+
+22
+00:01:06,720 --> 00:01:12,659
+imagining the set of real numbers we had
+
+23
+00:01:09,659 --> 00:01:15,750
+infinite precision right if I give you
+
+24
+00:01:12,750 --> 00:01:20,299
+any pair of you know of real numbers you
+
+25
+00:01:15,299 --> 00:01:25,430
+can put a number between them infinite
+
+26
+00:01:20,430 --> 00:01:27,650
+precision right the numbers go all the
+
+27
+00:01:25,650 --> 00:01:31,479
+way left they go all the way right and
+
+28
+00:01:27,479 --> 00:01:33,619
+there's no distance between them but
+
+29
+00:01:31,619 --> 00:01:34,060
+that doesn't work in a world of finite
+
+30
+00:01:33,060 --> 00:01:36,799
+memory it's not only do we have this
+
+31
+00:01:34,799 --> 00:01:39,299
+problem we can't represent things that
+
+32
+00:01:36,299 --> 00:01:41,030
+aren't powers of two perfectly but we
+
+33
+00:01:39,030 --> 00:01:44,369
+also can't represent things to some
+
+34
+00:01:41,369 --> 00:01:46,220
+arbitrary level of precision all right
+
+35
+00:01:44,220 --> 00:01:48,110
+and so there are two ways we can
+
+36
+00:01:46,110 --> 00:01:50,450
+basically deal with this one is what is
+
+37
+00:01:48,450 --> 00:01:52,970
+called fixed point numbers and in others
+
+38
+00:01:50,970 --> 00:01:55,819
+what are called floating point numbers
+
+39
+00:01:52,819 --> 00:01:56,530
+okay fixed point numbers are essentially
+
+40
+00:01:55,530 --> 00:01:59,578
+a different way of thinking about
+
+41
+00:01:56,578 --> 00:02:03,640
+integers okay I remember I was a little
+
+42
+00:01:59,640 --> 00:02:05,780
+kid my grandfather ran a business and he
+
+43
+00:02:03,780 --> 00:02:07,040
+used one of these old-school adding
+
+44
+00:02:05,040 --> 00:02:09,468
+machines and he would sit there and he
+
+45
+00:02:07,468 --> 00:02:11,270
+would add up the different stuff he was
+
+46
+00:02:09,270 --> 00:02:13,220
+selling he sold coins and he would add
+
+47
+00:02:11,220 --> 00:02:15,800
+up the coins was adding machine right
+
+48
+00:02:13,800 --> 00:02:17,449
+though the value like this is a $20 coin
+
+49
+00:02:15,449 --> 00:02:19,370
+there's 25 dollar coins there's a $32
+
+50
+00:02:17,370 --> 00:02:21,229
+coin this was 18 dollar coin this is a
+
+51
+00:02:19,229 --> 00:02:22,090
+52 cent coin blah-blah-blah-blah-blah
+
+52
+00:02:21,090 --> 00:02:23,620
+and just pound it all in on this adding
+
+53
+00:02:22,620 --> 00:02:26,699
+machine and then he would have the total
+
+54
+00:02:23,699 --> 00:02:28,669
+on this little ribbon right and when he
+
+55
+00:02:26,669 --> 00:02:29,289
+was typing in these numbers like twenty
+
+56
+00:02:28,289 --> 00:02:31,970
+two dollars and thirty five dollars and
+
+57
+00:02:29,970 --> 00:02:33,050
+forty five dollars and forty five
+
+58
+00:02:31,050 --> 00:02:36,000
+dollars and twenty seven cents he would
+
+59
+00:02:33,000 --> 00:02:46,509
+never hit the decimal point it was 4200
+
+60
+00:02:36,509 --> 00:02:47,080
+3700 sixty-three 27 why is it that he
+
+61
+00:02:46,080 --> 00:02:49,250
+would never hit the decimal point I mean
+
+62
+00:02:47,250 --> 00:02:52,530
+it's 63 dollars and 27 cents
+
+63
+00:02:49,530 --> 00:02:56,259
+63 dollars and 27 you know out of a
+
+64
+00:02:52,259 --> 00:03:05,370
+hundred cents 63 point two seven why did
+
+65
+00:02:56,370 --> 00:03:06,669
+he never hit the decimal point ever the
+
+66
+00:03:05,669 --> 00:03:12,990
+whole time I watched him as a little kid
+
+67
+00:03:06,990 --> 00:03:14,750
+he never used the decimal point in some
+
+68
+00:03:12,750 --> 00:03:15,069
+sense he was just valuing everything his
+
+69
+00:03:14,069 --> 00:03:19,720
+sense right what's another way of
+
+70
+00:03:15,720 --> 00:03:22,949
+thinking of that it's a fixed point he
+
+71
+00:03:19,949 --> 00:03:24,110
+knew the right two digits were gonna be
+
+72
+00:03:22,110 --> 00:03:28,660
+pennies why would he waste his time
+
+73
+00:03:24,660 --> 00:03:32,310
+hitting the decimal point okay
+
+74
+00:03:28,310 --> 00:03:34,430
+that's the fixed point system we have
+
+75
+00:03:32,430 --> 00:03:35,259
+two digits past the you know the decimal
+
+76
+00:03:34,259 --> 00:03:37,849
+we have that we have though you know we
+
+77
+00:03:35,849 --> 00:03:41,770
+have the the integer component here and
+
+78
+00:03:37,770 --> 00:03:42,250
+then we have the next n digits some
+
+79
+00:03:41,250 --> 00:03:46,660
+fixed number of digits of the fractional
+
+80
+00:03:42,660 --> 00:03:47,709
+component that's it okay if you're
+
+81
+00:03:46,709 --> 00:03:49,699
+thinking about numbers in terms of
+
+82
+00:03:47,699 --> 00:03:52,380
+powers of two you just think of it in
+
+83
+00:03:49,380 --> 00:03:55,169
+terms of scientific notation okay if I
+
+84
+00:03:52,169 --> 00:03:58,949
+have a fixed you know point system and I
+
+85
+00:03:55,949 --> 00:04:00,050
+want three you know three places worth
+
+86
+00:03:58,050 --> 00:04:02,630
+of decimal right you can imagine that
+
+87
+00:04:00,630 --> 00:04:04,130
+whatever a number I have is actually
+
+88
+00:04:02,130 --> 00:04:08,880
+multiplied by 10 to the negative third
+
+89
+00:04:04,880 --> 00:04:09,789
+right I just don't write the 10 to the
+
+90
+00:04:08,789 --> 00:04:12,870
+negative third part because I know it
+
+91
+00:04:09,870 --> 00:04:12,630
+it's fixed point
+
+92
+00:04:14,630 --> 00:04:20,250
+the problem with fixed point is not very
+
+93
+00:04:17,250 --> 00:04:22,699
+flexible you fix the point right it
+
+94
+00:04:20,699 --> 00:04:25,228
+worked great for my grandfather because
+
+95
+00:04:22,228 --> 00:04:27,350
+he didn't deal with half cents right
+
+96
+00:04:25,350 --> 00:04:33,690
+nothing he sold was worth you know 63
+
+97
+00:04:27,690 --> 00:04:35,209
+27 and you know 1/2 cents $63 you know
+
+98
+00:04:33,209 --> 00:04:36,579
+27 and 1
+
+99
+00:04:35,579 --> 00:04:39,930
+you know eighth of a cent didn't work
+
+100
+00:04:36,930 --> 00:04:40,060
+that way right he always had 2 digits
+
+101
+00:04:39,060 --> 00:04:44,949
+after the decimal but sometimes it's not
+
+102
+00:04:40,949 --> 00:04:45,579
+the way it works you might work with
+
+103
+00:04:44,579 --> 00:04:48,959
+some very small values and then some
+
+104
+00:04:45,959 --> 00:04:50,660
+very large values and since you have a
+
+105
+00:04:48,660 --> 00:04:53,399
+fixed amount of memory you have a
+
+106
+00:04:50,399 --> 00:04:55,250
+decision to make how much of that memory
+
+107
+00:04:53,250 --> 00:04:58,350
+do I want to use to represent the range
+
+108
+00:04:55,350 --> 00:05:00,709
+the bigness of the value and how much of
+
+109
+00:04:58,709 --> 00:05:02,000
+that memory do I want to reuse to
+
+110
+00:05:00,000 --> 00:05:05,850
+represent the precision am I looking
+
+111
+00:05:02,850 --> 00:05:08,970
+through a telescope or a microscope if
+
+112
+00:05:05,970 --> 00:05:09,040
+I'm looking for a microscope I don't
+
+113
+00:05:08,040 --> 00:05:11,810
+want to have a fixed point system with a
+
+114
+00:05:09,810 --> 00:05:16,220
+lot of digits to the left of the decimal
+
+115
+00:05:11,220 --> 00:05:18,620
+place there's nothing that big it's all
+
+116
+00:05:16,620 --> 00:05:21,420
+a fraction if I'm looking through a
+
+117
+00:05:18,420 --> 00:05:24,870
+telescope at a planet right
+
+118
+00:05:21,870 --> 00:05:26,120
+I can't measure accurately enough to
+
+119
+00:05:24,120 --> 00:05:28,220
+care about fractions I need to measure
+
+120
+00:05:26,220 --> 00:05:31,649
+big things I need all of my decimal
+
+121
+00:05:28,649 --> 00:05:33,079
+plate of my all by my storage to the
+
+122
+00:05:31,079 --> 00:05:35,569
+left of that decimal place right and
+
+123
+00:05:33,569 --> 00:05:38,668
+then for things in between you might
+
+124
+00:05:35,668 --> 00:05:40,100
+want to move that so that's the freedom
+
+125
+00:05:38,100 --> 00:05:43,279
+we have with a floating-point system
+
+126
+00:05:40,279 --> 00:05:46,139
+does that make sense it lets that point
+
+127
+00:05:43,139 --> 00:05:51,410
+float so we can capture larger numbers
+
+128
+00:05:46,410 --> 00:05:51,918
+and smaller numbers with more accuracy
+
+129
+00:05:51,918 --> 00:05:57,569
+but it has some natural challenges right
+
+130
+00:05:54,569 --> 00:05:59,360
+because I'm doing math and I'm letting
+
+131
+00:05:57,360 --> 00:06:04,850
+my decimal place or in this case my
+
+132
+00:05:59,850 --> 00:06:05,139
+binary place you know float around the
+
+133
+00:06:04,139 --> 00:06:08,610
+problem is that if I have a really big
+
+134
+00:06:05,610 --> 00:06:09,220
+number it doesn't have the capacity to
+
+135
+00:06:08,220 --> 00:06:13,480
+have a lot of precision when it comes to
+
+136
+00:06:09,480 --> 00:06:15,589
+the fractions right and if I have a
+
+137
+00:06:13,589 --> 00:06:17,329
+fractional number it doesn't have the
+
+138
+00:06:15,329 --> 00:06:19,940
+capacity to store something big so when
+
+139
+00:06:17,940 --> 00:06:25,290
+I multiply those two there's a natural
+
+140
+00:06:19,290 --> 00:06:26,319
+tension right am I going to lose the you
+
+141
+00:06:25,319 --> 00:06:28,490
+know lose the ability to have the
+
+142
+00:06:26,490 --> 00:06:29,350
+magnitude you know the integers with
+
+143
+00:06:28,350 --> 00:06:32,790
+what am I going to lose the ability to
+
+144
+00:06:29,790 --> 00:06:36,940
+have the precision in the fraction how
+
+145
+00:06:32,940 --> 00:06:39,990
+how is that point gonna float and so in
+
+146
+00:06:36,990 --> 00:06:41,990
+a lot of math where we understand what
+
+147
+00:06:39,990 --> 00:06:43,160
+the range is
+
+148
+00:06:41,160 --> 00:06:46,380
+and the range is fairly stable we use
+
+149
+00:06:43,380 --> 00:06:48,860
+fixed point arithmetic okay we don't we
+
+150
+00:06:46,860 --> 00:06:54,870
+don't use floating point numbers we
+
+151
+00:06:48,870 --> 00:06:55,300
+simply use integers and as part of our
+
+152
+00:06:54,300 --> 00:06:59,740
+code we understand where that point
+
+153
+00:06:55,740 --> 00:07:01,610
+actually is but in a lot of math we
+
+154
+00:06:59,610 --> 00:07:03,110
+don't either because we haven't done the
+
+155
+00:07:01,110 --> 00:07:06,870
+analysis so the problem is dynamic we
+
+156
+00:07:03,870 --> 00:07:08,120
+need that decimal point to float or that
+
+157
+00:07:06,120 --> 00:07:12,850
+binary point to float and so we use rely
+
+158
+00:07:08,850 --> 00:07:13,209
+upon floating point numbers so like
+
+159
+00:07:12,209 --> 00:07:14,620
+integers floating point numbers are
+
+160
+00:07:13,620 --> 00:07:16,759
+going to be different than real numbers
+
+161
+00:07:14,759 --> 00:07:17,680
+you know in that they're not boundless
+
+162
+00:07:16,680 --> 00:07:19,819
+they have a minimum value and they have
+
+163
+00:07:17,819 --> 00:07:22,670
+a maximum value
+
+164
+00:07:19,670 --> 00:07:24,230
+unlike integers there's gonna be what we
+
+165
+00:07:22,230 --> 00:07:27,600
+call rounding right really a type of
+
+166
+00:07:24,600 --> 00:07:30,209
+approximation okay that's gonna happen
+
+167
+00:07:27,209 --> 00:07:32,990
+because with numbers closer to zero our
+
+168
+00:07:30,990 --> 00:07:34,459
+number line is going to be more dense
+
+169
+00:07:32,459 --> 00:07:37,860
+there's simply more point on our number
+
+170
+00:07:34,860 --> 00:07:42,319
+line with numbers farther from zero
+
+171
+00:07:37,319 --> 00:07:46,690
+they're gonna be farther apart to get us
+
+172
+00:07:42,690 --> 00:07:48,769
+that magnitude okay at the end of the
+
+173
+00:07:46,769 --> 00:07:50,779
+day we're dealing with binary everything
+
+174
+00:07:48,779 --> 00:07:51,310
+we're dealing with is coded as zero zero
+
+175
+00:07:50,310 --> 00:07:53,870
+zero zero zero one zero one one one zero
+
+176
+00:07:51,870 --> 00:07:55,670
+one one one whatever there are discrete
+
+177
+00:07:53,670 --> 00:07:58,980
+points on our number line we can't
+
+178
+00:07:55,980 --> 00:07:59,230
+change that if we have a 16-bit number
+
+179
+00:07:58,230 --> 00:08:01,579
+we have a certain number of points in
+
+180
+00:07:59,579 --> 00:08:02,019
+that number line if we have a 32-bit
+
+181
+00:08:01,019 --> 00:08:03,610
+number we have another number of points
+
+182
+00:08:02,610 --> 00:08:08,750
+in that number line right we have a
+
+183
+00:08:03,750 --> 00:08:10,130
+64-bit number right you get a greater
+
+184
+00:08:08,130 --> 00:08:11,560
+number of points on the number line but
+
+185
+00:08:10,560 --> 00:08:13,360
+that's it
+
+186
+00:08:11,360 --> 00:08:15,709
+given some width of number we have a
+
+187
+00:08:13,709 --> 00:08:17,000
+certain number of points in their number
+
+188
+00:08:15,000 --> 00:08:20,370
+line we can change the way we label them
+
+189
+00:08:17,370 --> 00:08:24,009
+we can change how we interpret them but
+
+190
+00:08:20,009 --> 00:08:26,750
+we can't give ourselves more okay we can
+
+191
+00:08:24,750 --> 00:08:28,220
+take this bunch closer to you know this
+
+192
+00:08:26,220 --> 00:08:30,050
+bunch over here and label them in
+
+193
+00:08:28,050 --> 00:08:33,209
+smaller steps and this bunch over here
+
+194
+00:08:30,209 --> 00:08:35,149
+and label them in bigger steps but we
+
+195
+00:08:33,149 --> 00:08:40,929
+can't change the total number of points
+
+196
+00:08:35,929 --> 00:08:41,830
+okay so the I Triple E is an engineering
+
+197
+00:08:40,830 --> 00:08:43,909
+organization right how many you how many
+
+198
+00:08:41,909 --> 00:08:46,469
+you know computer electrical engineers
+
+199
+00:08:43,469 --> 00:08:47,110
+we have any raise your hands all right
+
+200
+00:08:46,110 --> 00:08:50,549
+so you guys know this organization right
+
+201
+00:08:47,549 --> 00:08:52,000
+what is it
+
+202
+00:08:50,000 --> 00:08:53,289
+yo it out what what is i triple e stand
+
+203
+00:08:52,289 --> 00:09:02,919
+for
+
+204
+00:08:53,919 --> 00:09:04,739
+oh come on don't look it up who's it
+
+205
+00:09:02,739 --> 00:09:08,028
+who's double who's a couple in here
+
+206
+00:09:04,028 --> 00:09:09,948
+you've heard of this the yeah forget the
+
+207
+00:09:08,948 --> 00:09:10,789
+prepositions like the institute of
+
+208
+00:09:09,789 --> 00:09:12,899
+electrical institute of electrical
+
+209
+00:09:10,899 --> 00:09:17,458
+electronics engineers I don't know this
+
+210
+00:09:12,458 --> 00:09:18,350
+Oliver for I forget right okay
+
+211
+00:09:17,350 --> 00:09:20,519
+the professional organization for
+
+212
+00:09:18,519 --> 00:09:23,350
+Electrical and Electronics Engineers
+
+213
+00:09:20,350 --> 00:09:24,139
+right computer engineers right and so
+
+214
+00:09:23,139 --> 00:09:27,548
+you know as an engineering organization
+
+215
+00:09:24,548 --> 00:09:30,068
+they care a lot about understanding
+
+216
+00:09:27,068 --> 00:09:31,279
+tolerances right they care a lot about
+
+217
+00:09:30,279 --> 00:09:33,869
+understanding how error creeps into
+
+218
+00:09:31,869 --> 00:09:34,789
+things because one thing you learn as an
+
+219
+00:09:33,789 --> 00:09:37,808
+engineers there's no such thing as
+
+220
+00:09:34,808 --> 00:09:39,058
+perfect right you guys learn that like
+
+221
+00:09:37,058 --> 00:09:41,698
+your first engineering class I remember
+
+222
+00:09:39,698 --> 00:09:42,198
+that's mine right there's no such thing
+
+223
+00:09:41,198 --> 00:09:44,850
+as perfect everything is something plus
+
+224
+00:09:42,850 --> 00:09:45,678
+or minus some tolerance and when you
+
+225
+00:09:44,678 --> 00:09:48,548
+build something you have to worry about
+
+226
+00:09:45,548 --> 00:09:51,970
+how those tolerances stack because that
+
+227
+00:09:48,970 --> 00:09:52,609
+error can slowly add up right and so
+
+228
+00:09:51,609 --> 00:09:54,600
+they were concerned about that in the
+
+229
+00:09:52,600 --> 00:09:56,308
+numbering system they were concerned how
+
+230
+00:09:54,308 --> 00:09:58,589
+rounding what happens if we have an
+
+231
+00:09:56,589 --> 00:10:01,779
+actual value that falls between two
+
+232
+00:09:58,779 --> 00:10:03,028
+points in our number line it's gonna go
+
+233
+00:10:01,028 --> 00:10:05,369
+here it's gonna go here there's no point
+
+234
+00:10:03,369 --> 00:10:07,470
+here they were concerned about how that
+
+235
+00:10:05,470 --> 00:10:09,869
+rounding stacked up and creeped in and
+
+236
+00:10:07,869 --> 00:10:12,970
+affected computation they were concerned
+
+237
+00:10:09,970 --> 00:10:15,938
+there be a numbering system right that
+
+238
+00:10:12,938 --> 00:10:17,369
+can be well understood such that
+
+239
+00:10:15,369 --> 00:10:19,379
+engineers using computer systems to do
+
+240
+00:10:17,379 --> 00:10:21,749
+math could understand what the results
+
+241
+00:10:19,749 --> 00:10:31,909
+meant and so they developed a standard
+
+242
+00:10:21,909 --> 00:10:33,149
+for floating-point numbers okay and so
+
+243
+00:10:31,149 --> 00:10:35,389
+there's a couple of classic examples of
+
+244
+00:10:33,389 --> 00:10:38,470
+numbering systems that had in some way
+
+245
+00:10:35,470 --> 00:10:40,589
+shape or form problems the bottom line
+
+246
+00:10:38,589 --> 00:10:41,208
+is if you if you go and do reading on
+
+247
+00:10:40,208 --> 00:10:45,438
+the web you're gonna find a lot of
+
+248
+00:10:41,438 --> 00:10:49,489
+examples you know in space programs and
+
+249
+00:10:45,489 --> 00:10:52,089
+in military applications where numerical
+
+250
+00:10:49,089 --> 00:10:54,869
+problems cause things to blow up okay in
+
+251
+00:10:52,869 --> 00:10:57,249
+one way shape or form
+
+252
+00:10:54,249 --> 00:10:58,038
+cause systems to fail why do you tend to
+
+253
+00:10:57,038 --> 00:11:00,298
+find it in these applications well these
+
+254
+00:10:58,298 --> 00:11:02,418
+applications tend to push the limits
+
+255
+00:11:00,418 --> 00:11:04,589
+right if you're dealing with commercial
+
+256
+00:11:02,589 --> 00:11:06,448
+aviation we try to keep things nice and
+
+257
+00:11:04,448 --> 00:11:07,009
+safe although there have occasionally
+
+258
+00:11:06,009 --> 00:11:09,779
+been problems we have a much
+
+259
+00:11:07,779 --> 00:11:11,490
+our margin of safety then if we're
+
+260
+00:11:09,490 --> 00:11:13,440
+exploring you know outer space with an
+
+261
+00:11:11,440 --> 00:11:15,269
+unmanned probe in that case we just
+
+262
+00:11:13,269 --> 00:11:16,039
+wanna get as far as we can and collect
+
+263
+00:11:15,039 --> 00:11:17,690
+all the data we can and if it blows up
+
+264
+00:11:16,690 --> 00:11:20,950
+there's nobody aboard we'll build a new
+
+265
+00:11:17,950 --> 00:11:22,590
+one right military applications
+
+266
+00:11:20,590 --> 00:11:24,090
+sometimes you have to take more risk
+
+267
+00:11:22,090 --> 00:11:27,779
+because there's risk and getting shot at
+
+268
+00:11:24,779 --> 00:11:28,250
+right and so you willing to have a
+
+269
+00:11:27,250 --> 00:11:30,389
+system that might fail a little more
+
+270
+00:11:28,389 --> 00:11:31,039
+often if it gets you shot at a little
+
+271
+00:11:30,039 --> 00:11:32,990
+less often you've got to balance the
+
+272
+00:11:31,990 --> 00:11:36,830
+risks when you're in a hazardous
+
+273
+00:11:32,830 --> 00:11:39,490
+environment but the bottom line is you
+
+274
+00:11:36,490 --> 00:11:40,190
+know in NASA with the air in five the
+
+275
+00:11:39,190 --> 00:11:43,659
+Patriot missile system there were
+
+276
+00:11:40,659 --> 00:11:44,120
+situations where numerical problems
+
+277
+00:11:43,120 --> 00:11:47,860
+prevented the system from working and
+
+278
+00:11:44,860 --> 00:11:49,350
+then things blew up in one case that
+
+279
+00:11:47,350 --> 00:11:55,149
+cost 500 million in another case 28
+
+280
+00:11:49,149 --> 00:11:56,330
+people died these things matter if I
+
+281
+00:11:55,330 --> 00:11:57,080
+look at this number
+
+282
+00:11:56,080 --> 00:11:59,700
+it shouldn't shock and amaze you that's
+
+283
+00:11:57,700 --> 00:12:02,200
+a binary number everything is in ones
+
+284
+00:11:59,200 --> 00:12:02,570
+and zeros only that little subscript -
+
+285
+00:12:03,570 --> 00:12:08,090
+okay no shock and amazement this over
+
+286
+00:12:07,090 --> 00:12:10,409
+here is what we call the binary point
+
+287
+00:12:08,409 --> 00:12:14,360
+like the decimal point but it's a binary
+
+288
+00:12:10,360 --> 00:12:16,230
+number binary point going from the
+
+289
+00:12:14,230 --> 00:12:18,179
+binary point to the left we have 2 to
+
+290
+00:12:16,179 --> 00:12:22,339
+the 0 to the 1 2 squared to the cube
+
+291
+00:12:18,339 --> 00:12:24,450
+right 1 2 4 8 16 going to the right of
+
+292
+00:12:22,450 --> 00:12:33,909
+the binary point we have 1/2 1/4 1/8
+
+293
+00:12:24,909 --> 00:12:35,100
+1/16 right to the negative powers so our
+
+294
+00:12:33,100 --> 00:12:37,080
+Sun is just the same as it was before
+
+295
+00:12:35,080 --> 00:12:40,149
+except instead of starting at zero at
+
+296
+00:12:37,149 --> 00:12:42,559
+zero we started some negative number and
+
+297
+00:12:40,559 --> 00:12:45,669
+we add up the value of crosshair
+
+298
+00:12:42,669 --> 00:12:45,630
+positions
+
+299
+00:12:45,630 --> 00:12:53,320
+ok so if we start here right that's 1/2
+
+300
+00:12:50,320 --> 00:12:59,559
+that's 1/4 that's why we have one one
+
+301
+00:12:53,559 --> 00:13:00,080
+eight zero one quarters one one-half one
+
+302
+00:12:59,080 --> 00:13:04,580
+one one two
+
+303
+00:13:00,580 --> 00:13:07,630
+no fours and 1/8 the value of this and
+
+304
+00:13:04,630 --> 00:13:07,470
+decimal is 11 and five-eighths
+
+305
+00:13:16,470 --> 00:13:23,200
+okay so you know / shifting right still
+
+306
+00:13:20,200 --> 00:13:26,860
+works okay we have the two to the zero
+
+307
+00:13:23,860 --> 00:13:27,080
+and to the right we have one over two to
+
+308
+00:13:26,080 --> 00:13:30,850
+the negative one so dividing by two
+
+309
+00:13:27,850 --> 00:13:32,820
+still works - you know right shift still
+
+310
+00:13:30,820 --> 00:13:34,230
+works - divided left shift still works
+
+311
+00:13:32,230 --> 00:13:37,600
+as a multiply in this particular simple
+
+312
+00:13:34,600 --> 00:13:40,509
+example if I have something that's all
+
+313
+00:13:37,509 --> 00:13:45,389
+ones repeating that's a fraction below
+
+314
+00:13:40,389 --> 00:13:46,009
+one right how small well if I would add
+
+315
+00:13:45,009 --> 00:13:49,600
+point in this example point zero zero
+
+316
+00:13:46,600 --> 00:13:52,779
+zero zero zero one then that would
+
+317
+00:13:49,779 --> 00:13:54,269
+become one right if this is one
+
+318
+00:13:52,269 --> 00:13:57,549
+repeating forever we say it's an epsilon
+
+319
+00:13:54,549 --> 00:14:02,909
+away from one of course I can't repeat
+
+320
+00:13:57,909 --> 00:14:04,500
+forever because why yeah we have a
+
+321
+00:14:02,500 --> 00:14:06,269
+finite amount of memory so we talked
+
+322
+00:14:04,269 --> 00:14:08,669
+about Epsilon you know in in this type
+
+323
+00:14:06,669 --> 00:14:12,620
+of context we're generally talking about
+
+324
+00:14:08,620 --> 00:14:14,759
+some known small value some small value
+
+325
+00:14:12,759 --> 00:14:16,019
+that either we've defined as meaningful
+
+326
+00:14:14,019 --> 00:14:19,419
+in our application or as mathematically
+
+327
+00:14:16,419 --> 00:14:23,809
+defined based upon the data sizes we
+
+328
+00:14:19,809 --> 00:14:25,799
+actually have just like with decimal
+
+329
+00:14:23,799 --> 00:14:26,899
+numbers right in decimal numbers we can
+
+330
+00:14:25,899 --> 00:14:28,950
+only represent things that can be
+
+331
+00:14:26,950 --> 00:14:30,529
+represented as sums of powers of 10
+
+332
+00:14:28,529 --> 00:14:32,159
+binary numbers we can only represent
+
+333
+00:14:30,159 --> 00:14:34,009
+things that are sums of powers of two
+
+334
+00:14:32,009 --> 00:14:36,090
+right we had a problem if we were
+
+335
+00:14:34,090 --> 00:14:38,759
+dealing with like one-third that can't
+
+336
+00:14:36,759 --> 00:14:42,320
+be represented as a sum of a power of 10
+
+337
+00:14:38,320 --> 00:14:43,250
+so it's point three repeating okay we
+
+338
+00:14:42,250 --> 00:14:45,630
+have the same problem with one-third as
+
+339
+00:14:43,630 --> 00:14:47,880
+it turns out in binary you can look at
+
+340
+00:14:45,880 --> 00:14:54,830
+this and you can see it's 0 1 0 1 0 1 0
+
+341
+00:14:47,830 --> 00:14:57,490
+1 0 what the 0 1 repeats forever 1/5 you
+
+342
+00:14:54,490 --> 00:15:01,360
+can see the 0 1 0 0 1 1 repeats forever
+
+343
+00:14:57,360 --> 00:15:03,059
+1/10 right still we see a 0 0 1 1
+
+344
+00:15:01,059 --> 00:15:03,049
+repeats forever
+
+345
+00:15:04,049 --> 00:15:09,009
+ok what are you looking at
+
+346
+00:15:18,009 --> 00:15:22,839
+so my suggestion to you I don't like I'm
+
+347
+00:15:20,839 --> 00:15:25,190
+not gonna work that right now to find
+
+348
+00:15:22,190 --> 00:15:28,759
+out put it into a computer take a look
+
+349
+00:15:25,759 --> 00:15:38,159
+print it out in hexadecimal then you'll
+
+350
+00:15:28,159 --> 00:15:38,799
+know zero X percent X what's that
+
+351
+00:15:38,799 --> 00:15:42,880
+one-fifth to one tenth is right shifted
+
+352
+00:15:40,880 --> 00:15:44,970
+by a bit that's correct
+
+353
+00:15:42,970 --> 00:15:46,809
+look I'm standing two feet from the
+
+354
+00:15:44,809 --> 00:15:49,009
+slide the ones and zeros all bleed
+
+355
+00:15:46,009 --> 00:15:53,458
+together so the example is off by a zero
+
+356
+00:15:49,458 --> 00:15:55,299
+enjoy I didn't expect you guys to do all
+
+357
+00:15:53,299 --> 00:15:57,159
+the examples the point was that for some
+
+358
+00:15:55,159 --> 00:15:59,080
+fractions you have bits repeating and
+
+359
+00:15:57,080 --> 00:16:02,059
+that it can be a pattern of bits that
+
+360
+00:15:59,059 --> 00:16:05,860
+repeat not just a single bit okay I
+
+361
+00:16:02,860 --> 00:16:07,330
+Triple E 754 is the floating point
+
+362
+00:16:05,330 --> 00:16:08,159
+standard it was established from 1985
+
+363
+00:16:07,159 --> 00:16:10,630
+for all the reasons we talked about
+
+364
+00:16:08,630 --> 00:16:12,669
+these engineers need to understand what
+
+365
+00:16:10,669 --> 00:16:14,589
+the tolerances are they need to
+
+366
+00:16:12,589 --> 00:16:16,089
+understand how much error can creep in
+
+367
+00:16:14,089 --> 00:16:19,220
+at this point the standard is supported
+
+368
+00:16:16,220 --> 00:16:21,309
+by all major CPUs why because people who
+
+369
+00:16:19,309 --> 00:16:23,289
+are doing scientific computation right
+
+370
+00:16:21,289 --> 00:16:25,028
+need to have a standard they understand
+
+371
+00:16:23,028 --> 00:16:26,339
+if every processor implements a slightly
+
+372
+00:16:25,339 --> 00:16:28,958
+different standard it's gonna be really
+
+373
+00:16:26,958 --> 00:16:30,850
+hard for somebody who's a program are
+
+374
+00:16:28,850 --> 00:16:32,919
+trying to get something right because
+
+375
+00:16:30,919 --> 00:16:38,330
+there's a lot of detail that comes into
+
+376
+00:16:32,330 --> 00:16:39,330
+these situations right it's a nice
+
+377
+00:16:38,330 --> 00:16:41,500
+standard in the sense that it has
+
+378
+00:16:39,500 --> 00:16:43,028
+support for running for rounding
+
+379
+00:16:41,028 --> 00:16:44,909
+underflow and overflow it's not a nice
+
+380
+00:16:43,909 --> 00:16:47,899
+standard in the sense that it's
+
+381
+00:16:44,899 --> 00:16:48,360
+floating-point units are very complex it
+
+382
+00:16:47,360 --> 00:16:51,740
+takes a lot of transistors to get those
+
+383
+00:16:48,740 --> 00:16:51,690
+things built and get them right
+
+384
+00:16:52,690 --> 00:16:56,940
+floating-point representation is
+
+385
+00:16:54,940 --> 00:17:00,870
+essentially a form of scientific
+
+386
+00:16:56,870 --> 00:17:02,799
+notation okay if you think about
+
+387
+00:17:00,799 --> 00:17:05,269
+scientific notation remember that for
+
+388
+00:17:02,269 --> 00:17:08,390
+like fourth grade or something 2.5 times
+
+389
+00:17:05,390 --> 00:17:10,019
+10 to the third
+
+390
+00:17:08,019 --> 00:17:16,609
+why do they call scientific notation
+
+391
+00:17:10,609 --> 00:17:21,910
+scientific notation why did you use it
+
+392
+00:17:16,910 --> 00:17:21,338
+like in chemistry and physics and yeah
+
+393
+00:17:26,338 --> 00:17:29,660
+okay so one reason is right in science
+
+394
+00:17:28,660 --> 00:17:30,890
+you very big numbers and very small
+
+395
+00:17:29,890 --> 00:17:32,849
+numbers and this effective way to
+
+396
+00:17:30,849 --> 00:17:35,650
+represent both it's a lot more fun to
+
+397
+00:17:32,650 --> 00:17:37,289
+have you know two point five times ten
+
+398
+00:17:35,289 --> 00:17:40,210
+to the negative thirteenth then have to
+
+399
+00:17:37,210 --> 00:17:41,269
+write out a huge number of zeros what
+
+400
+00:17:40,269 --> 00:17:42,559
+else is really nice about scientific
+
+401
+00:17:41,559 --> 00:17:45,720
+notation
+
+402
+00:17:42,720 --> 00:17:54,789
+think about freshman chemistry class as
+
+403
+00:17:45,789 --> 00:17:58,549
+a high school student yeah significant
+
+404
+00:17:54,549 --> 00:18:02,109
+figures right sig figs remember sig figs
+
+405
+00:17:58,109 --> 00:18:04,710
+they're back it's revenge of the sig
+
+406
+00:18:02,710 --> 00:18:06,660
+figs today okay
+
+407
+00:18:04,660 --> 00:18:08,250
+this idea that when you measure things
+
+408
+00:18:06,250 --> 00:18:10,859
+you know the met number you have right
+
+409
+00:18:08,859 --> 00:18:12,450
+has a certain number of digits that you
+
+410
+00:18:10,450 --> 00:18:13,700
+trust right into most of the signs and
+
+411
+00:18:12,700 --> 00:18:15,599
+you have a certain number of digits you
+
+412
+00:18:13,599 --> 00:18:17,160
+trust and then when you approximate
+
+413
+00:18:15,160 --> 00:18:20,890
+right you say I can exactly measure I
+
+414
+00:18:17,890 --> 00:18:22,009
+can exactly observe this thermometer is
+
+415
+00:18:20,009 --> 00:18:24,390
+passed the two and it looks like it's
+
+416
+00:18:22,390 --> 00:18:26,220
+about halfway to three so I'm going to
+
+417
+00:18:24,220 --> 00:18:28,440
+call two point five I trust the two I'm
+
+418
+00:18:26,440 --> 00:18:32,869
+estimating the point the the half passed
+
+419
+00:18:28,869 --> 00:18:34,259
+that the five right and so you have one
+
+420
+00:18:32,259 --> 00:18:37,750
+estimated digit or something right um
+
+421
+00:18:34,750 --> 00:18:39,450
+and what was the detail chemistry but
+
+422
+00:18:37,450 --> 00:18:41,279
+chemistry a little weird right if you
+
+423
+00:18:39,279 --> 00:18:42,079
+took chemistry class they they really
+
+424
+00:18:41,079 --> 00:18:46,640
+took the sigfig thing seriously didn't
+
+425
+00:18:42,640 --> 00:18:51,049
+they they had a special way of rounding
+
+426
+00:18:46,049 --> 00:18:53,970
+anybody remember how they rounded what
+
+427
+00:18:51,970 --> 00:18:55,380
+did you do if you had something that you
+
+428
+00:18:53,380 --> 00:18:58,660
+had you know you've done something that
+
+429
+00:18:55,660 --> 00:18:59,150
+computation and you had three digits you
+
+430
+00:18:58,150 --> 00:19:01,799
+know then the computation had three
+
+431
+00:18:59,799 --> 00:19:03,119
+digits you only allowed two significant
+
+432
+00:19:01,119 --> 00:19:06,970
+figures you had to get rid of a digit
+
+433
+00:19:03,970 --> 00:19:12,549
+what you do did you always round up did
+
+434
+00:19:06,549 --> 00:19:12,990
+you always round down what did you do
+
+435
+00:19:12,990 --> 00:19:15,440
+yeah
+
+436
+00:19:23,440 --> 00:19:27,309
+yeah you have you have you have the
+
+437
+00:19:25,309 --> 00:19:29,529
+basic idea so look if it's less than
+
+438
+00:19:27,529 --> 00:19:31,390
+half you round down because it's less
+
+439
+00:19:29,390 --> 00:19:35,819
+than half it's closer to smaller it is
+
+440
+00:19:31,819 --> 00:19:39,660
+greater than half you round up because
+
+441
+00:19:35,660 --> 00:19:42,920
+it's more there than not right but if it
+
+442
+00:19:39,920 --> 00:19:46,079
+is exactly half it's not fair to always
+
+443
+00:19:42,079 --> 00:19:47,579
+round up because you get a bias you're
+
+444
+00:19:46,579 --> 00:19:49,930
+taking something that's half and always
+
+445
+00:19:47,930 --> 00:19:51,609
+making it bigger when really it's just
+
+446
+00:19:49,609 --> 00:19:52,170
+as close to the smaller number one point
+
+447
+00:19:51,170 --> 00:19:55,700
+five is every bit as close to one as it
+
+448
+00:19:52,700 --> 00:20:01,480
+is to two why do we round up to two
+
+449
+00:19:55,480 --> 00:20:03,339
+that's good for the taxman I guess right
+
+450
+00:20:01,339 --> 00:20:06,559
+so chemists I think I've I remember
+
+451
+00:20:03,559 --> 00:20:10,650
+correctly chemist round even there's to
+
+452
+00:20:06,650 --> 00:20:13,309
+say if I have 0.5 if I have 1.5 I round
+
+453
+00:20:10,309 --> 00:20:17,910
+two - I round toward the even so I round
+
+454
+00:20:13,910 --> 00:20:20,450
+from 1.5 up to two but if I have 2.5 I
+
+455
+00:20:17,450 --> 00:20:25,569
+round down to even instead of going up
+
+456
+00:20:20,569 --> 00:20:27,250
+to three I go down to two the philosophy
+
+457
+00:20:25,250 --> 00:20:31,799
+there is that I'm rounding up as often
+
+458
+00:20:27,799 --> 00:20:37,940
+as I round down so I'm not introducing a
+
+459
+00:20:31,940 --> 00:20:38,460
+bias does that make sense so in a lot of
+
+460
+00:20:37,460 --> 00:20:40,690
+ways what we're doing here you're gonna
+
+461
+00:20:38,690 --> 00:20:42,400
+see he's gonna follow exactly that model
+
+462
+00:20:40,400 --> 00:20:47,710
+okay this is gonna be base 2 instead of
+
+463
+00:20:42,710 --> 00:20:47,430
+base 10 all right
+
+464
+00:20:48,430 --> 00:20:58,210
+but basically what I'm gonna have is I'm
+
+465
+00:20:52,210 --> 00:21:00,250
+going to have some fraction ok times 2
+
+466
+00:20:58,250 --> 00:21:01,470
+to some exponent and then it's gonna be
+
+467
+00:21:00,470 --> 00:21:04,579
+negative or positive
+
+468
+00:21:01,579 --> 00:21:05,250
+just like sig figs right just like
+
+469
+00:21:04,250 --> 00:21:07,839
+scientific notation with significant
+
+470
+00:21:05,839 --> 00:21:08,279
+figures right you know we might have
+
+471
+00:21:07,279 --> 00:21:11,690
+three-point and decimal and I have three
+
+472
+00:21:08,690 --> 00:21:12,210
+point five times ten to the third or
+
+473
+00:21:11,210 --> 00:21:15,829
+negative three point five times ten to
+
+474
+00:21:12,829 --> 00:21:19,470
+the third now in this notation right
+
+475
+00:21:15,470 --> 00:21:23,190
+we're going to have one point you know
+
+476
+00:21:19,190 --> 00:21:27,960
+101 1 101 times 10 to the something or x
+
+477
+00:21:23,960 --> 00:21:30,910
+- 2 something I'm sorry okay know what
+
+478
+00:21:27,910 --> 00:21:32,049
+we're gonna actually find is it sort of
+
+479
+00:21:30,049 --> 00:21:34,509
+interesting right what do we do with
+
+480
+00:21:32,509 --> 00:21:36,009
+leading zeros by the number if I have
+
+481
+00:21:34,009 --> 00:21:40,920
+number zero zero one zero do I
+
+482
+00:21:36,920 --> 00:21:41,700
+care about the leading zeros what do I
+
+483
+00:21:40,700 --> 00:21:46,930
+do with leading zeros I'm trying to put
+
+484
+00:21:41,930 --> 00:21:48,130
+something a scientific notation throw
+
+485
+00:21:46,130 --> 00:21:50,650
+them away right I shift until they're
+
+486
+00:21:48,650 --> 00:21:52,869
+not there if I have zero zero you know
+
+487
+00:21:50,869 --> 00:21:56,549
+if I have you know zero zero one zero
+
+488
+00:21:52,549 --> 00:21:58,779
+that's a ten right well if you think
+
+489
+00:21:56,779 --> 00:22:01,009
+about binary numbers
+
+490
+00:21:58,009 --> 00:22:07,240
+this means that everything we represent
+
+491
+00:22:01,240 --> 00:22:12,640
+in scientific notation in binary except
+
+492
+00:22:07,640 --> 00:22:14,609
+for zero is going to begin with what one
+
+493
+00:22:12,609 --> 00:22:18,900
+so actually we don't need to store the 1
+
+494
+00:22:14,900 --> 00:22:21,170
+because we know it's there that makes
+
+495
+00:22:18,170 --> 00:22:25,170
+sense either I'm storing zero or begins
+
+496
+00:22:21,170 --> 00:22:29,789
+with the 1 okay so in representing one
+
+497
+00:22:25,789 --> 00:22:32,359
+of these numbers I have a fractional
+
+498
+00:22:29,359 --> 00:22:34,359
+component that's just like the
+
+499
+00:22:32,359 --> 00:22:36,339
+fractional component for scientific
+
+500
+00:22:34,339 --> 00:22:38,609
+notations in chemistry class like 2.5
+
+501
+00:22:36,609 --> 00:22:40,599
+except for the fact we're thinking of it
+
+502
+00:22:38,599 --> 00:22:43,430
+in binary and we know it begins with the
+
+503
+00:22:40,430 --> 00:22:46,990
+1 so we're just going to ignore that 1
+
+504
+00:22:43,990 --> 00:22:48,579
+then we multiply it like before in
+
+505
+00:22:46,579 --> 00:22:50,349
+scientific notation 2.5 times 10 to the
+
+506
+00:22:48,349 --> 00:22:53,720
+third now we multiply it by some
+
+507
+00:22:50,720 --> 00:22:56,539
+exponent except now instead of 10 to
+
+508
+00:22:53,539 --> 00:23:00,539
+something it's 2 2 to something positive
+
+509
+00:22:56,539 --> 00:23:02,940
+or negative okay if it's positive right
+
+510
+00:23:00,940 --> 00:23:03,690
+that's going to make the number bigger
+
+511
+00:23:02,690 --> 00:23:06,829
+if it's negative that's gonna make the
+
+512
+00:23:03,829 --> 00:23:10,109
+number of fraction so I have some
+
+513
+00:23:06,109 --> 00:23:11,039
+fraction times 2 to an exponent and that
+
+514
+00:23:10,039 --> 00:23:12,269
+whole thing is gonna be negative or
+
+515
+00:23:11,269 --> 00:23:14,589
+positive as indicated by the sign bit
+
+516
+00:23:12,589 --> 00:23:17,660
+sign bits on it's negative if it's not
+
+517
+00:23:14,660 --> 00:23:22,869
+it's not negative does that make sense
+
+518
+00:23:17,869 --> 00:23:25,480
+so far now we have one small trick I
+
+519
+00:23:22,480 --> 00:23:29,220
+need to be able to represent a negative
+
+520
+00:23:25,220 --> 00:23:33,930
+exponent right if I can't represent a
+
+521
+00:23:29,930 --> 00:23:36,039
+negative exponent what can't I represent
+
+522
+00:23:33,039 --> 00:23:42,309
+fractions yes how did you say that
+
+523
+00:23:36,309 --> 00:23:44,019
+fractions exactly right okay so somehow
+
+524
+00:23:42,019 --> 00:23:46,089
+this exponent needs to be able to
+
+525
+00:23:44,089 --> 00:23:47,400
+represent these exponent bits to be able
+
+526
+00:23:46,400 --> 00:23:50,779
+to represent positive and negative
+
+527
+00:23:47,779 --> 00:23:50,299
+exponents
+
+528
+00:23:50,299 --> 00:23:57,490
+so remember I said the size the number
+
+529
+00:23:55,490 --> 00:23:59,740
+of bits in a binary number tells us how
+
+530
+00:23:57,740 --> 00:24:02,420
+many points we have in a number line
+
+531
+00:23:59,420 --> 00:24:05,059
+the only decision we get to make is how
+
+532
+00:24:02,059 --> 00:24:09,420
+we label them the natural way of
+
+533
+00:24:05,420 --> 00:24:13,230
+labeling these things is from 0 to some
+
+534
+00:24:09,230 --> 00:24:16,849
+positive number right but we don't want
+
+535
+00:24:13,849 --> 00:24:20,400
+that because we want to have negative
+
+536
+00:24:16,400 --> 00:24:25,529
+numbers so we want to shift our labeling
+
+537
+00:24:20,529 --> 00:24:29,930
+so that 0 is in the middle and we have
+
+538
+00:24:25,930 --> 00:24:34,000
+some positive numbers and some negative
+
+539
+00:24:29,000 --> 00:24:36,789
+numbers ok so I want to have about as
+
+540
+00:24:34,789 --> 00:24:38,259
+many positive numbers as negative
+
+541
+00:24:36,259 --> 00:24:40,079
+numbers right that seems fair
+
+542
+00:24:38,079 --> 00:24:43,130
+it's like the way we used to play me
+
+543
+00:24:40,130 --> 00:24:49,130
+like symmetry right so if I think about
+
+544
+00:24:43,130 --> 00:24:51,339
+let's say a 3 bit number what is a range
+
+545
+00:24:49,339 --> 00:25:00,940
+of values of that number just normally
+
+546
+00:24:51,940 --> 00:25:04,500
+from 0 to what 7 okay so if I do nothing
+
+547
+00:25:00,500 --> 00:25:10,369
+I have 0 7 but ideally I don't want 0 to
+
+548
+00:25:04,369 --> 00:25:16,880
+7 okay if I subtract 3 I have negative 3
+
+549
+00:25:10,880 --> 00:25:19,279
+2 what for if I subtract 4 I have
+
+550
+00:25:16,279 --> 00:25:22,839
+negative 4 to 3 does that make sense
+
+551
+00:25:19,839 --> 00:25:25,849
+that's what we call the bias the amount
+
+552
+00:25:22,849 --> 00:25:27,039
+we're going to subtract to shift our
+
+553
+00:25:25,039 --> 00:25:33,740
+number line so that 0 is approximately
+
+554
+00:25:27,740 --> 00:25:39,319
+Center okay now the question is what
+
+555
+00:25:33,319 --> 00:25:43,170
+should that bias be okay I'll come back
+
+556
+00:25:39,170 --> 00:25:43,529
+to this in a minute okay
+
+557
+00:25:47,529 --> 00:25:56,630
+but we have one math this slide attempts
+
+558
+00:25:53,630 --> 00:25:58,150
+to convince you that you need to do some
+
+559
+00:25:56,150 --> 00:26:03,910
+weird stuff with math to figure out what
+
+560
+00:25:58,910 --> 00:26:08,980
+the bias should be here's the thing you
+
+561
+00:26:03,980 --> 00:26:12,599
+don't we know we want the range to be
+
+562
+00:26:08,599 --> 00:26:14,349
+approximately even right we want about
+
+563
+00:26:12,349 --> 00:26:16,210
+as many negative numbers as positive
+
+564
+00:26:14,210 --> 00:26:18,308
+numbers we know it's not going to be
+
+565
+00:26:16,308 --> 00:26:23,349
+perfectly even because zero comes out of
+
+566
+00:26:18,349 --> 00:26:24,150
+which side of the number line the well
+
+567
+00:26:23,150 --> 00:26:31,440
+the non negative side the pot the
+
+568
+00:26:24,440 --> 00:26:36,609
+otherwise positive side right so okay if
+
+569
+00:26:31,609 --> 00:26:36,839
+we look at a number okay
+
+570
+00:26:37,839 --> 00:26:44,029
+this is a little weird so if we look at
+
+571
+00:26:41,029 --> 00:26:46,329
+a a tack a bit number there's two say a
+
+572
+00:26:44,329 --> 00:26:48,819
+4 bit number 5 bit number 6 bit number
+
+573
+00:26:46,819 --> 00:26:52,200
+let's go back to my 3 bit number a
+
+574
+00:26:48,200 --> 00:26:55,099
+number that's 0 0 0 through 1 1 1 this
+
+575
+00:26:52,099 --> 00:26:58,160
+thing suggests that the bias should be 2
+
+576
+00:26:55,160 --> 00:27:03,130
+to the K minus 1 let's look at that for
+
+577
+00:26:58,130 --> 00:27:10,829
+a moment 2 to the 3 minus 1 is 2 squared
+
+578
+00:27:03,829 --> 00:27:15,539
+which is 4 ok so I have a 3 bit number
+
+579
+00:27:10,539 --> 00:27:18,740
+right which represents 0 to 7 this says
+
+580
+00:27:15,740 --> 00:27:20,798
+if I look at the 2 to the K the bias you
+
+581
+00:27:18,798 --> 00:27:26,869
+know that part that's gonna be 4 or
+
+582
+00:27:20,869 --> 00:27:26,890
+about halfway right would you agree
+
+583
+00:27:26,890 --> 00:27:36,819
+halfway in that range is gonna be 3 or 4
+
+584
+00:27:30,819 --> 00:27:39,589
+we all agree so to the K by itself right
+
+585
+00:27:36,589 --> 00:27:46,880
+2 to the K minus 1 is gonna be 4
+
+586
+00:27:39,880 --> 00:27:50,069
+if I give you a 4 bit number what's the
+
+587
+00:27:46,069 --> 00:27:50,089
+range of a 4 bit number 1 2 4 8 the
+
+588
+00:27:50,089 --> 00:27:55,960
+high-order bit is 8
+
+589
+00:27:50,960 --> 00:28:00,210
+what's my biggest number 15 it's 0 to 15
+
+590
+00:27:55,210 --> 00:28:00,980
+okay so what's gonna be about halfway
+
+591
+00:28:00,980 --> 00:28:06,230
+seven or eight right well if I take 2 to
+
+592
+00:28:04,230 --> 00:28:18,809
+the K 2 to the 4 minus 1 that's 2 to the
+
+593
+00:28:06,809 --> 00:28:20,119
+3 that's 8 right we agree y bydd 0 bit 1
+
+594
+00:28:18,119 --> 00:28:22,490
+bit 2 bit 3 that's the value of my high
+
+595
+00:28:20,490 --> 00:28:28,950
+water bit which equals all my low order
+
+596
+00:28:22,950 --> 00:28:33,950
+bits plus 1 does that make sense so my
+
+597
+00:28:28,950 --> 00:28:36,750
+bias as we've decided to do this you
+
+598
+00:28:33,750 --> 00:28:38,119
+know my choice between having my bias be
+
+599
+00:28:36,119 --> 00:28:42,190
+slightly higher and slightly lower what
+
+600
+00:28:38,190 --> 00:28:46,660
+choice are we making here if the bias is
+
+601
+00:28:42,660 --> 00:28:52,529
+2 to the K minus 1 power minus 1 what
+
+602
+00:28:46,529 --> 00:28:53,380
+have we chosen to do with the bias make
+
+603
+00:28:52,380 --> 00:28:57,640
+it slightly more than half or slightly
+
+604
+00:28:53,640 --> 00:29:01,599
+less than half slightly less than half
+
+605
+00:28:57,599 --> 00:29:04,319
+right so that's what we know given any
+
+606
+00:29:01,319 --> 00:29:06,799
+number all this says is the bias is
+
+607
+00:29:04,799 --> 00:29:09,920
+going to be slightly less than half
+
+608
+00:29:06,920 --> 00:29:12,450
+can't be exactly half we're going to go
+
+609
+00:29:09,450 --> 00:29:14,450
+in favor of slightly less than half so
+
+610
+00:29:12,450 --> 00:29:21,490
+if I tell you I have a 32 bit number
+
+611
+00:29:14,490 --> 00:29:26,599
+what's the bias going to be well 2 to
+
+612
+00:29:21,599 --> 00:29:28,339
+the 31 minus 1 but don't get wrapped up
+
+613
+00:29:26,339 --> 00:29:30,950
+in that instead think like what's the
+
+614
+00:29:28,950 --> 00:29:32,680
+biggest value this number can have
+
+615
+00:29:30,680 --> 00:29:35,759
+what's a little less than half of that
+
+616
+00:29:32,759 --> 00:29:37,279
+and that'll make sense because just
+
+617
+00:29:35,279 --> 00:29:40,309
+shifting the number line by half way
+
+618
+00:29:37,309 --> 00:29:43,109
+okay since our bias is a little less
+
+619
+00:29:40,109 --> 00:29:44,230
+than half we're going to have slightly
+
+620
+00:29:43,230 --> 00:29:48,670
+fewer negative numbers and positive
+
+621
+00:29:44,670 --> 00:29:54,720
+numbers does that make sense so you can
+
+622
+00:29:48,720 --> 00:30:00,390
+see that here from negative 126 to 127
+
+623
+00:29:54,390 --> 00:30:02,349
+or negative 1022 to 1023 do you see that
+
+624
+00:30:00,349 --> 00:30:06,670
+so that's how we're gonna represent our
+
+625
+00:30:02,670 --> 00:30:11,930
+exponent when we think about our
+
+626
+00:30:06,930 --> 00:30:13,420
+exponents okay if we need an exponent of
+
+627
+00:30:11,420 --> 00:30:17,950
+4 we're not actually going
+
+628
+00:30:13,950 --> 00:30:21,638
+store for in this exponent field we're
+
+629
+00:30:17,638 --> 00:30:22,240
+going to adjust it by the bias that way
+
+630
+00:30:21,240 --> 00:30:27,409
+we have the ability to represent a
+
+631
+00:30:22,409 --> 00:30:28,119
+negative number um there are a few
+
+632
+00:30:27,119 --> 00:30:30,529
+different I Triple E standard single
+
+633
+00:30:28,529 --> 00:30:32,028
+precision double precision and extended
+
+634
+00:30:30,028 --> 00:30:37,909
+precision these are how the bits break
+
+635
+00:30:32,909 --> 00:30:39,919
+out okay single precision is 23 bits for
+
+636
+00:30:37,919 --> 00:30:42,028
+the fraction eight bits for the exponent
+
+637
+00:30:39,028 --> 00:30:44,839
+one bit for design double precision 52
+
+638
+00:30:42,839 --> 00:30:46,940
+bits for the fraction eleven bits for
+
+639
+00:30:44,940 --> 00:30:50,909
+the exponent one bit for the sign
+
+640
+00:30:46,909 --> 00:30:52,759
+extended precision 64 bits for the
+
+641
+00:30:50,759 --> 00:30:57,470
+fraction 15 bits for the exponent one
+
+642
+00:30:52,470 --> 00:30:57,898
+bit to the side okay
+
+643
+00:30:59,898 --> 00:31:04,210
+so we've said we want things to work a
+
+644
+00:31:03,210 --> 00:31:06,009
+little differently
+
+645
+00:31:04,009 --> 00:31:08,028
+I'm just give ahead a little bit here
+
+646
+00:31:06,028 --> 00:31:11,009
+again I'm never goodbye playing never
+
+647
+00:31:08,009 --> 00:31:13,880
+good playing with the rules there we go
+
+648
+00:31:11,880 --> 00:31:15,558
+we've said we want things to work a
+
+649
+00:31:13,558 --> 00:31:18,599
+little differently right we want a lot
+
+650
+00:31:15,599 --> 00:31:21,450
+of points very close to zero one of the
+
+651
+00:31:18,450 --> 00:31:22,359
+points to be very close together as we
+
+652
+00:31:21,359 --> 00:31:26,888
+get farther away from zero we want the
+
+653
+00:31:22,888 --> 00:31:28,250
+points to be more distant so we can get
+
+654
+00:31:26,250 --> 00:31:30,500
+to bigger numbers greater precision for
+
+655
+00:31:28,500 --> 00:31:32,388
+small numbers less precision for big
+
+656
+00:31:30,388 --> 00:31:35,339
+numbers okay
+
+657
+00:31:32,339 --> 00:31:37,638
+so the way we get more points like this
+
+658
+00:31:35,638 --> 00:31:38,138
+right is not that we get more points we
+
+659
+00:31:37,138 --> 00:31:41,250
+have the same number points we just
+
+660
+00:31:38,250 --> 00:31:43,398
+label them closer together so you can
+
+661
+00:31:41,398 --> 00:31:48,558
+see that there's a pretty big dividing
+
+662
+00:31:43,558 --> 00:31:52,109
+line there okay there's what we call
+
+663
+00:31:48,109 --> 00:31:54,169
+normalized and denormalize numbers the
+
+664
+00:31:52,169 --> 00:31:56,000
+denormalized numbers are very close to
+
+665
+00:31:54,000 --> 00:31:59,099
+zero the normalized numbers are farther
+
+666
+00:31:56,099 --> 00:32:00,009
+away the denormalize numbers give us
+
+667
+00:31:59,009 --> 00:32:03,319
+things that are very close to each other
+
+668
+00:32:00,319 --> 00:32:11,179
+the normalized numbers give us things
+
+669
+00:32:03,179 --> 00:32:14,308
+that are farther away okay so let's take
+
+670
+00:32:11,308 --> 00:32:16,038
+a look at normalized values normalized
+
+671
+00:32:14,038 --> 00:32:20,619
+values are going to exist when the
+
+672
+00:32:16,619 --> 00:32:22,190
+exponent bits are not all zero and the
+
+673
+00:32:20,190 --> 00:32:24,169
+exponent bits are not all one those are
+
+674
+00:32:22,169 --> 00:32:28,799
+going to be used for special things okay
+
+675
+00:32:24,799 --> 00:32:28,230
+and we'll talk about that in a minute
+
+676
+00:32:29,230 --> 00:32:35,910
+the exponent is going to be encoded as
+
+677
+00:32:31,910 --> 00:32:39,000
+the actual exponent we compute to do the
+
+678
+00:32:35,000 --> 00:32:41,140
+whatever - the bias why - the bias again
+
+679
+00:32:39,140 --> 00:32:44,240
+that lets us have the negative part of
+
+680
+00:32:41,240 --> 00:32:45,179
+the range so we write if I compute a
+
+681
+00:32:44,179 --> 00:32:47,740
+bias if I compute an exponent of four
+
+682
+00:32:45,740 --> 00:32:49,539
+and I have a bias of something what I'm
+
+683
+00:32:47,539 --> 00:32:53,819
+recording is four minus the bias in the
+
+684
+00:32:49,819 --> 00:32:56,058
+actual bit field okay we talked about
+
+685
+00:32:53,058 --> 00:33:03,089
+why the bias is to K minus one slightly
+
+686
+00:32:56,089 --> 00:33:05,289
+less than half okay okay we already
+
+687
+00:33:03,289 --> 00:33:06,000
+talked about the fact that you know in a
+
+688
+00:33:05,000 --> 00:33:11,440
+binary number I'm gonna be leading with
+
+689
+00:33:06,440 --> 00:33:14,869
+a 1 right because I'm not gonna shift my
+
+690
+00:33:11,869 --> 00:33:17,480
+zeroes away so I'm not gonna bother to
+
+691
+00:33:14,480 --> 00:33:19,089
+store the leading one it's implied if
+
+692
+00:33:17,089 --> 00:33:23,130
+I'm try five I'm thinking one point one
+
+693
+00:33:19,130 --> 00:33:26,329
+one zero one times two to the fourth I'm
+
+694
+00:33:23,329 --> 00:33:29,839
+gonna store point zero one one x to the
+
+695
+00:33:26,839 --> 00:33:31,240
+fourth and when I go to interpret it I'm
+
+696
+00:33:29,240 --> 00:33:33,069
+going to interpret it as one point zero
+
+697
+00:33:31,069 --> 00:33:34,079
+one one times two to the fourth so we
+
+698
+00:33:33,079 --> 00:33:43,460
+don't actually store that leading one we
+
+699
+00:33:34,460 --> 00:33:48,490
+just assume it okay so if I'm trying to
+
+700
+00:33:43,490 --> 00:33:56,429
+encode 15 to 13 binary point zero I
+
+701
+00:33:48,429 --> 00:34:00,058
+write this out in binary okay I shift
+
+702
+00:33:56,058 --> 00:34:01,440
+until I have a leading one I count the
+
+703
+00:34:00,440 --> 00:34:09,910
+number of times I shifted and that's my
+
+704
+00:34:01,910 --> 00:34:11,800
+exponent right now my exponent is 13 but
+
+705
+00:34:09,800 --> 00:34:13,329
+I'm not gonna record a 13 into my
+
+706
+00:34:11,329 --> 00:34:18,789
+exponent bits I'm going to adjust it by
+
+707
+00:34:13,789 --> 00:34:25,530
+my bias okay my exponents 13 my bias is
+
+708
+00:34:18,530 --> 00:34:27,668
+127 I'm gonna store a 140 okay why do I
+
+709
+00:34:25,668 --> 00:34:30,980
+add a 140 because I'm gonna subtract a
+
+710
+00:34:27,980 --> 00:34:32,619
+140 when I interpret it why do I have to
+
+711
+00:34:30,619 --> 00:34:34,239
+subtract things when I interpret it to
+
+712
+00:34:32,239 --> 00:34:38,070
+get my range to back up so part of it
+
+713
+00:34:34,070 --> 00:34:39,239
+can become negative okay so I
+
+714
+00:34:38,239 --> 00:34:42,559
+start out with my number and I write it
+
+715
+00:34:39,559 --> 00:34:44,230
+out in binary I shift to get a leading
+
+716
+00:34:42,230 --> 00:34:46,148
+one and keep track of the number of
+
+717
+00:34:44,148 --> 00:34:50,280
+times I shifted that's my power of two
+
+718
+00:34:46,280 --> 00:34:53,000
+exponent I take that and add it to my to
+
+719
+00:34:50,000 --> 00:34:55,418
+my bias I'm adding it to my bias now so
+
+720
+00:34:53,418 --> 00:34:58,519
+I subtract my bias later which is what
+
+721
+00:34:55,519 --> 00:35:01,940
+gives me the shift of my range I store
+
+722
+00:34:58,940 --> 00:35:02,369
+my exponent plus bias in the exponent
+
+723
+00:35:01,369 --> 00:35:06,739
+field
+
+724
+00:35:02,739 --> 00:35:10,139
+okay 140 in binary is one zero zero zero
+
+725
+00:35:06,139 --> 00:35:15,369
+one one zero zero boom okay this is my
+
+726
+00:35:10,369 --> 00:35:16,079
+fractional components I ignore the
+
+727
+00:35:15,079 --> 00:35:19,550
+leading one it's one point whatever is
+
+728
+00:35:16,550 --> 00:35:21,460
+here and I write out the rest if I run
+
+729
+00:35:19,460 --> 00:35:23,739
+out of room because I have more bits of
+
+730
+00:35:21,739 --> 00:35:25,389
+my fractional component than I have here
+
+731
+00:35:23,389 --> 00:35:25,059
+what do I do
+
+732
+00:35:28,059 --> 00:35:34,050
+what's that okay well for the moment
+
+733
+00:35:33,050 --> 00:35:37,340
+let's just say I throw the extras away
+
+734
+00:35:34,340 --> 00:35:40,360
+and then we're gonna get to the rounding
+
+735
+00:35:37,360 --> 00:35:40,289
+fair enough okay
+
+736
+00:35:44,289 --> 00:35:49,059
+now this is what's called normalized
+
+737
+00:35:47,059 --> 00:35:51,280
+numbers remember that on my number line
+
+738
+00:35:49,280 --> 00:35:55,380
+the normalized numbers are the ones
+
+739
+00:35:51,380 --> 00:35:57,130
+farther from zero that are giving me the
+
+740
+00:35:55,130 --> 00:36:02,199
+big steps that let me capture a large
+
+741
+00:35:57,199 --> 00:36:06,929
+range okay denormalized numbers exist
+
+742
+00:36:02,929 --> 00:36:13,530
+where the exponent is all zero okay if
+
+743
+00:36:06,530 --> 00:36:15,699
+the exponent is zero okay then I'm
+
+744
+00:36:13,699 --> 00:36:22,679
+dealing with this denormalized range in
+
+745
+00:36:15,679 --> 00:36:24,219
+the demobilize reign range my exponent
+
+746
+00:36:22,219 --> 00:36:28,108
+by E is actually going to be is actually
+
+747
+00:36:24,108 --> 00:36:30,820
+going to be zero minus my bias okay what
+
+748
+00:36:28,820 --> 00:36:31,289
+that's a little confusing I think that's
+
+749
+00:36:30,289 --> 00:36:35,639
+probably the most confusing thing in
+
+750
+00:36:31,639 --> 00:36:41,780
+this deck okay my exponent is held at
+
+751
+00:36:35,780 --> 00:36:43,210
+zero okay do you see that the exponent
+
+752
+00:36:41,210 --> 00:36:47,940
+bits are always zero I'm close to zero
+
+753
+00:36:43,940 --> 00:36:51,840
+I'm dealing with a fraction I'm not
+
+754
+00:36:47,840 --> 00:36:51,260
+bigger than one here right
+
+755
+00:36:51,260 --> 00:36:55,940
+we'll deal with the details in a minute
+
+756
+00:36:52,940 --> 00:36:56,969
+but I'm dealing with a fraction all
+
+757
+00:36:55,969 --> 00:37:01,420
+right
+
+758
+00:36:56,420 --> 00:37:03,099
+so if I do that I make my exponent zero
+
+759
+00:37:01,099 --> 00:37:05,380
+minus the bias because that makes my
+
+760
+00:37:03,380 --> 00:37:10,570
+denormalized range meet my normalized
+
+761
+00:37:05,570 --> 00:37:13,059
+range I'll show you that in a second
+
+762
+00:37:10,059 --> 00:37:15,309
+okay if I didn't do that then the two
+
+763
+00:37:13,309 --> 00:37:20,170
+ranges wouldn't meet I'd have a gap in
+
+764
+00:37:15,170 --> 00:37:22,239
+my number line okay so now I'm going to
+
+765
+00:37:20,239 --> 00:37:27,250
+assume a leading zero instead of a
+
+766
+00:37:22,250 --> 00:37:33,800
+leading one I'm gonna shift until I have
+
+767
+00:37:27,800 --> 00:37:38,469
+a zero point one something okay so now
+
+768
+00:37:33,469 --> 00:37:38,030
+that's my fraction and then I go from
+
+769
+00:37:38,030 --> 00:37:41,530
+there
+
+770
+00:37:38,530 --> 00:37:44,210
+the thing about the denormalized range
+
+771
+00:37:41,210 --> 00:37:46,480
+is that because my exponent is fixed my
+
+772
+00:37:44,480 --> 00:37:49,070
+numbers are spaced the same distance
+
+773
+00:37:46,070 --> 00:37:51,369
+apart does that make sense if I'm
+
+774
+00:37:49,369 --> 00:37:53,289
+changing my exponent making it bigger
+
+775
+00:37:51,289 --> 00:37:54,420
+and bigger and bigger the points on my
+
+776
+00:37:53,420 --> 00:37:59,679
+number line are getting farther and
+
+777
+00:37:54,679 --> 00:38:02,329
+farther away if I hold my exponent
+
+778
+00:37:59,329 --> 00:38:04,000
+constant then the points in the number
+
+779
+00:38:02,000 --> 00:38:06,309
+line are equally spaced that's why this
+
+780
+00:38:04,309 --> 00:38:13,619
+is called the denormalized range it's
+
+781
+00:38:06,619 --> 00:38:17,059
+not normalized it's not stretched okay
+
+782
+00:38:13,059 --> 00:38:19,150
+if my exponent is all ones this is a
+
+783
+00:38:17,150 --> 00:38:20,068
+special thing you say you remember an
+
+784
+00:38:19,068 --> 00:38:22,900
+integer math we had all this weirdness
+
+785
+00:38:20,900 --> 00:38:25,730
+if we wrapped around we overflowed or we
+
+786
+00:38:22,730 --> 00:38:29,280
+under flowed that doesn't work for
+
+787
+00:38:25,280 --> 00:38:31,300
+engineers if it gets so hot right that
+
+788
+00:38:29,300 --> 00:38:37,670
+you can't compute it it's not okay to
+
+789
+00:38:31,670 --> 00:38:39,789
+say it's cold right we can't point out
+
+790
+00:38:37,789 --> 00:38:42,079
+thermometer at this you know that the
+
+791
+00:38:39,079 --> 00:38:44,230
+Sun and say it's it's you know it's you
+
+792
+00:38:42,230 --> 00:38:46,838
+know you know it's it's you know
+
+793
+00:38:44,838 --> 00:38:48,880
+absolute zero Kelvin or something right
+
+794
+00:38:46,880 --> 00:38:50,739
+just doesn't work that way we can't wrap
+
+795
+00:38:48,739 --> 00:38:53,869
+around like that so what happens with I
+
+796
+00:38:50,869 --> 00:38:54,150
+Triple E math is that if you overflow
+
+797
+00:38:53,150 --> 00:38:57,858
+there's a bit that says we've overflowed
+
+798
+00:38:54,858 --> 00:39:01,230
+and it keeps track of the sign positive
+
+799
+00:38:57,230 --> 00:39:04,039
+overflow or negative overflow positive
+
+800
+00:39:01,039 --> 00:39:05,369
+or negative infinity okay
+
+801
+00:39:04,369 --> 00:39:07,690
+is also something called not a number
+
+802
+00:39:05,690 --> 00:39:09,940
+it's what you get if you divide by zero
+
+803
+00:39:07,940 --> 00:39:11,529
+or take the square root of negative of
+
+804
+00:39:09,529 --> 00:39:12,239
+negative one or something like that
+
+805
+00:39:11,239 --> 00:39:16,858
+where you just can't represent the
+
+806
+00:39:12,858 --> 00:39:18,130
+answer and again it keeps track of the
+
+807
+00:39:16,130 --> 00:39:22,349
+sign and so there's a positive man and a
+
+808
+00:39:18,349 --> 00:39:26,969
+negative net the really bizarre thing
+
+809
+00:39:22,969 --> 00:39:30,779
+and this is bizarre is that there's
+
+810
+00:39:26,779 --> 00:39:33,009
+actually a positive and negative zero
+
+811
+00:39:30,009 --> 00:39:36,230
+it's unavoidable because 0 is the bit
+
+812
+00:39:33,230 --> 00:39:39,650
+pattern all zeros right but the sign bit
+
+813
+00:39:36,650 --> 00:39:39,730
+can be on or off
+
+814
+00:39:39,730 --> 00:39:45,440
+so really bizarrely there's actually a
+
+815
+00:39:42,440 --> 00:39:48,289
+positive and negative zero where the the
+
+816
+00:39:45,289 --> 00:39:53,349
+the non negative zero is the same as the
+
+817
+00:39:48,349 --> 00:39:55,960
+integer zero all bits are zeros okay so
+
+818
+00:39:53,960 --> 00:39:57,159
+our number line looks like this
+
+819
+00:39:55,159 --> 00:40:00,798
+the denormalized range which is equally
+
+820
+00:39:57,798 --> 00:40:02,048
+spaced the normalized range we have big
+
+821
+00:40:00,048 --> 00:40:06,900
+spaces negative infinity positive zero
+
+822
+00:40:02,900 --> 00:40:09,858
+infinity and then man you can't really
+
+823
+00:40:06,858 --> 00:40:10,079
+say that like not a numbers positive or
+
+824
+00:40:09,079 --> 00:40:12,880
+negative there's an N on the negative
+
+825
+00:40:10,880 --> 00:40:14,190
+side there's an N on the positive side
+
+826
+00:40:12,190 --> 00:40:16,179
+but like is the square root of negative
+
+827
+00:40:14,179 --> 00:40:17,880
+one positive or negative like that
+
+828
+00:40:16,880 --> 00:40:21,630
+doesn't work right
+
+829
+00:40:17,630 --> 00:40:22,108
+and so then you can call it negative
+
+830
+00:40:21,108 --> 00:40:35,699
+name I'm positive man but like a
+
+831
+00:40:22,699 --> 00:40:37,088
+mathematician will get upset yes you
+
+832
+00:40:35,088 --> 00:40:38,548
+what else do you gonna do how many bits
+
+833
+00:40:37,548 --> 00:40:40,900
+are you gonna do going to dedicate to
+
+834
+00:40:38,900 --> 00:40:43,719
+representing things that you can't know
+
+835
+00:40:40,719 --> 00:40:45,460
+if you'd if you're trying to compute the
+
+836
+00:40:43,460 --> 00:40:47,440
+trajectory for a missile and you end up
+
+837
+00:40:45,440 --> 00:40:52,900
+with an an where do you want that
+
+838
+00:40:47,900 --> 00:40:55,880
+missile to land right I mean you better
+
+839
+00:40:52,880 --> 00:40:55,559
+know that you don't know
+
+840
+00:41:06,559 --> 00:41:12,349
+um okay so you asked me why is Nana
+
+841
+00:41:10,349 --> 00:41:14,500
+range rather than a specific number and
+
+842
+00:41:12,500 --> 00:41:15,429
+the IP the honest answer to that
+
+843
+00:41:14,429 --> 00:41:17,989
+question the downside for you that
+
+844
+00:41:15,989 --> 00:41:19,699
+questions I don't know I think the
+
+845
+00:41:17,699 --> 00:41:21,650
+answer is that once she started doing
+
+846
+00:41:19,650 --> 00:41:23,389
+special things it makes it a very hard
+
+847
+00:41:21,389 --> 00:41:25,280
+to implement in hardware and be
+
+848
+00:41:23,280 --> 00:41:26,320
+sometimes very very high yeah it makes
+
+849
+00:41:25,320 --> 00:41:28,639
+it hard to implement in hardware I think
+
+850
+00:41:26,639 --> 00:41:30,289
+is what it comes to the rules become
+
+851
+00:41:28,289 --> 00:41:33,179
+complex and it becomes hard to get right
+
+852
+00:41:30,179 --> 00:41:39,539
+and that's a bad day that's the best
+
+853
+00:41:33,539 --> 00:41:42,809
+answer I can suspect so this becomes a
+
+854
+00:41:39,809 --> 00:41:44,989
+lot easier with examples here is an 8
+
+855
+00:41:42,989 --> 00:41:47,969
+bit number there is no such thing as an
+
+856
+00:41:44,969 --> 00:41:49,010
+I Triple E 8 bit standard but we're
+
+857
+00:41:47,010 --> 00:41:51,010
+gonna follow an I Triple E like standard
+
+858
+00:41:49,010 --> 00:41:53,630
+we have 4 bits for the exponent and 3
+
+859
+00:41:51,630 --> 00:41:59,519
+bits for the fraction 1 bit for the sign
+
+860
+00:41:53,519 --> 00:42:02,929
+bit this slide I think is worth a ton
+
+861
+00:41:59,929 --> 00:42:07,730
+use me this tie the slide I think is
+
+862
+00:42:02,730 --> 00:42:09,230
+worth the time ok so we see our sign bit
+
+863
+00:42:07,230 --> 00:42:14,539
+we see our exponent bits we see our
+
+864
+00:42:09,539 --> 00:42:17,670
+fraction bits okay if you look at this
+
+865
+00:42:14,670 --> 00:42:19,849
+you see where we go from the largest
+
+866
+00:42:17,849 --> 00:42:24,980
+denormalized number to the smallest
+
+867
+00:42:19,980 --> 00:42:27,840
+normalized number okay when does this
+
+868
+00:42:24,840 --> 00:42:31,570
+happen this happens when the 1 1 1
+
+869
+00:42:27,570 --> 00:42:33,230
+becomes 1 0 0 0 do you see that you
+
+870
+00:42:31,230 --> 00:42:35,809
+remember I told you that the bias is 0
+
+871
+00:42:33,809 --> 00:42:38,250
+minus the bias because it makes the
+
+872
+00:42:35,250 --> 00:42:41,250
+number line continuous this is what I
+
+873
+00:42:38,250 --> 00:42:43,730
+was talking about if that by is for
+
+874
+00:42:41,730 --> 00:42:45,710
+anything other than what it is the two
+
+875
+00:42:43,710 --> 00:42:47,420
+normalized range wouldn't meet the
+
+876
+00:42:45,420 --> 00:42:50,940
+denormalized range nicely like this
+
+877
+00:42:47,940 --> 00:42:53,610
+where you can see that as we go from 0
+
+878
+00:42:50,610 --> 00:42:57,639
+right to the all zeros in a 1 we add 1
+
+879
+00:42:53,639 --> 00:43:00,719
+5/12 right add 1 to that we get 1 0 to 5
+
+880
+00:42:57,719 --> 00:43:03,750
+12 right add 1 to that we get 3 5/12
+
+881
+00:43:00,750 --> 00:43:05,090
+right four or five twelve five five
+
+882
+00:43:03,090 --> 00:43:09,340
+twelve right add 1 to that we get 6 5 12
+
+883
+00:43:05,340 --> 00:43:12,920
+7 5 12 and then even as we transition
+
+884
+00:43:09,920 --> 00:43:18,349
+to the normalized range we do that by
+
+885
+00:43:12,349 --> 00:43:24,108
+adding still one five twelve okay so
+
+886
+00:43:18,108 --> 00:43:25,559
+it's a nice smooth transition there so
+
+887
+00:43:24,559 --> 00:43:27,818
+there are several interesting points
+
+888
+00:43:25,818 --> 00:43:31,829
+right the closest point to zero has the
+
+889
+00:43:27,829 --> 00:43:34,670
+bit pattern all zeros into one right the
+
+890
+00:43:31,670 --> 00:43:35,039
+largest denormalized number has all ones
+
+891
+00:43:34,039 --> 00:43:39,599
+to the fractional component nothing for
+
+892
+00:43:35,599 --> 00:43:41,349
+the exponent right the smallest the
+
+893
+00:43:39,349 --> 00:43:44,059
+normalized number has a one for the
+
+894
+00:43:41,059 --> 00:43:44,500
+exponent and zero for all the fractions
+
+895
+00:43:44,500 --> 00:43:56,369
+okay you know the closest to you know
+
+896
+00:43:52,369 --> 00:43:57,690
+two one below one right you know we can
+
+897
+00:43:56,690 --> 00:43:59,469
+see a bit pattern for I don't know
+
+898
+00:43:57,469 --> 00:44:01,630
+that's particularly interesting the
+
+899
+00:43:59,630 --> 00:44:03,849
+largest normalize number right again we
+
+900
+00:44:01,849 --> 00:44:06,079
+can look at this bit pattern and we can
+
+901
+00:44:03,079 --> 00:44:08,318
+see it's all ones here right all ones
+
+902
+00:44:06,318 --> 00:44:14,389
+here zero here why if that becomes a one
+
+903
+00:44:08,389 --> 00:44:16,568
+it becomes infinity okay smooth
+
+904
+00:44:14,568 --> 00:44:24,280
+transitions really an interesting
+
+905
+00:44:16,280 --> 00:44:28,798
+observation okay and we can zoom in here
+
+906
+00:44:24,798 --> 00:44:33,159
+and see what we mean about the
+
+907
+00:44:28,159 --> 00:44:36,079
+denormalized range having equal space
+
+908
+00:44:33,079 --> 00:44:41,130
+things right and the normalized range
+
+909
+00:44:36,130 --> 00:44:42,568
+getting spread out floating point zero
+
+910
+00:44:41,568 --> 00:44:44,980
+is the same as integer zero as long as
+
+911
+00:44:42,980 --> 00:44:48,358
+we're talking about the non negative
+
+912
+00:44:44,358 --> 00:44:50,500
+zero so this means that we can almost
+
+913
+00:44:48,500 --> 00:44:52,298
+use the unsigned integer comparison we
+
+914
+00:44:50,298 --> 00:44:54,280
+can almost compare an unsigned you know
+
+915
+00:44:52,280 --> 00:44:56,048
+an unsigned integer zero to an integer
+
+916
+00:44:54,048 --> 00:44:59,690
+zero but we must consider the negative
+
+917
+00:44:56,690 --> 00:45:02,710
+zero versus zero
+
+918
+00:44:59,710 --> 00:45:04,000
+Nan's are problematic of course what do
+
+919
+00:45:02,000 --> 00:45:04,769
+you do is something that's not a number
+
+920
+00:45:05,769 --> 00:45:14,719
+otherwise we're pretty okay now let's
+
+921
+00:45:11,719 --> 00:45:14,949
+talk about rounding
+
+922
+00:45:15,949 --> 00:45:20,809
+so first we want to understand what is
+
+923
+00:45:18,809 --> 00:45:23,730
+if we had a more precision than we have
+
+924
+00:45:20,730 --> 00:45:24,429
+what is the exact result or at least the
+
+925
+00:45:23,429 --> 00:45:28,630
+result in more precision than we
+
+926
+00:45:24,630 --> 00:45:37,019
+actually need okay
+
+927
+00:45:28,019 --> 00:45:39,559
+then we need to make it fit okay if we
+
+928
+00:45:37,559 --> 00:45:40,360
+can't write we need to we need around
+
+929
+00:45:39,360 --> 00:45:42,409
+that so it fits in the fractional
+
+930
+00:45:40,409 --> 00:45:45,690
+component right there's to say we need
+
+931
+00:45:42,690 --> 00:45:52,150
+to lose fractional bits in order to make
+
+932
+00:45:45,150 --> 00:45:53,079
+it work we talked about rounding okay we
+
+933
+00:45:52,079 --> 00:45:58,639
+talked about rounding towards zero and
+
+934
+00:45:53,639 --> 00:46:01,110
+away from zero okay so think about the
+
+935
+00:45:58,110 --> 00:46:04,079
+case of a dollar $40 $60 fifty to fifty
+
+936
+00:46:01,079 --> 00:46:09,980
+negative 150 okay if I have a dollar
+
+937
+00:46:04,980 --> 00:46:11,119
+sixty and I round toward zero right
+
+938
+00:46:09,119 --> 00:46:16,849
+that's gonna take the dollar sixty down
+
+939
+00:46:11,849 --> 00:46:19,230
+to a dollar right it's gonna take
+
+940
+00:46:16,230 --> 00:46:20,170
+negative a dollar fifty down to it you
+
+941
+00:46:19,170 --> 00:46:22,940
+know it's gonna take negative fifty down
+
+942
+00:46:20,940 --> 00:46:26,980
+to a negative one dollar closer to zero
+
+943
+00:46:22,980 --> 00:46:28,039
+note that this became bigger more
+
+944
+00:46:26,039 --> 00:46:31,889
+positive by fifty cents right and this
+
+945
+00:46:28,889 --> 00:46:32,349
+became smaller by sixty cents that's
+
+946
+00:46:31,349 --> 00:46:34,940
+because the rule is round toward zero
+
+947
+00:46:32,940 --> 00:46:37,980
+right in that case which is rounding in
+
+948
+00:46:34,980 --> 00:46:40,079
+opposite directions depending upon which
+
+949
+00:46:37,079 --> 00:46:42,559
+way you are in the number line okay the
+
+950
+00:46:40,559 --> 00:46:44,239
+non negative side is a number line
+
+951
+00:46:42,239 --> 00:46:46,519
+you're rounding down the negative side
+
+952
+00:46:44,519 --> 00:46:48,010
+of the number line you're rounding up
+
+953
+00:46:46,010 --> 00:46:51,900
+okay if we always round down always
+
+954
+00:46:48,900 --> 00:46:53,239
+round toward negative infinity right
+
+955
+00:46:51,239 --> 00:46:56,670
+then we're always rounding you know
+
+956
+00:46:53,670 --> 00:47:00,190
+always rounding to the negative side of
+
+957
+00:46:56,190 --> 00:47:01,329
+the number line right then we see a buck
+
+958
+00:47:00,329 --> 00:47:03,710
+forty becomes dollar a buck sixty
+
+959
+00:47:01,710 --> 00:47:06,150
+becomes dollar buck 50 becomes dollar
+
+960
+00:47:03,150 --> 00:47:08,000
+250 becomes two dollars and negative 150
+
+961
+00:47:06,000 --> 00:47:10,519
+now goes negative two things were always
+
+962
+00:47:08,519 --> 00:47:13,139
+going left the negative side of the
+
+963
+00:47:10,139 --> 00:47:14,079
+number line if we round up it's the
+
+964
+00:47:13,079 --> 00:47:16,820
+opposite right buck forty becomes two
+
+965
+00:47:14,820 --> 00:47:19,980
+buck 50 becomes two buck 15 becomes two
+
+966
+00:47:16,980 --> 00:47:20,230
+to 50 becomes three right on the
+
+967
+00:47:19,230 --> 00:47:23,010
+negative side of the number line
+
+968
+00:47:20,010 --> 00:47:24,010
+negative 150 becomes negative one why
+
+969
+00:47:23,010 --> 00:47:28,389
+we're rounding in the direction of the
+
+970
+00:47:24,389 --> 00:47:29,019
+greater value positive infinity the
+
+971
+00:47:28,019 --> 00:47:33,429
+default rounding mode
+
+972
+00:47:29,429 --> 00:47:36,929
+in I triple-a is to the nearest even and
+
+973
+00:47:33,929 --> 00:47:39,088
+it's to the nearest even for the same
+
+974
+00:47:36,088 --> 00:47:42,690
+reason okay that it was to the nearest
+
+975
+00:47:39,690 --> 00:47:44,210
+even in your chemistry class to avoid
+
+976
+00:47:42,210 --> 00:47:46,550
+that bias if we always round up we
+
+977
+00:47:44,550 --> 00:47:47,260
+always round down and we always round in
+
+978
+00:47:46,260 --> 00:47:49,130
+some weird way
+
+979
+00:47:47,130 --> 00:48:01,530
+eventually the always is going to
+
+980
+00:47:49,530 --> 00:48:01,280
+generate a bias yeah
+
+981
+00:48:02,280 --> 00:48:31,159
+that wasn't fun at all a jump when I
+
+982
+00:48:17,159 --> 00:48:41,889
+wake you up that's the deal ah let's
+
+983
+00:48:31,889 --> 00:48:44,010
+raise alive nah I think everybody here
+
+984
+00:48:41,010 --> 00:48:54,210
+is to sleep was already in the semester
+
+985
+00:48:44,210 --> 00:48:55,059
+all right so the default rounding mode
+
+986
+00:48:54,059 --> 00:49:02,500
+and I Triple E is going to be to round
+
+987
+00:48:55,500 --> 00:49:04,070
+toward the even okay so if we look at
+
+988
+00:49:02,070 --> 00:49:06,019
+this and we're trying to round this
+
+989
+00:49:04,019 --> 00:49:08,809
+number to two decimal points it's clear
+
+990
+00:49:06,809 --> 00:49:10,090
+that it should be rounded down
+
+991
+00:49:08,090 --> 00:49:17,760
+everything after that is less than half
+
+992
+00:49:10,760 --> 00:49:19,219
+in this case okay it should be rounded
+
+993
+00:49:17,219 --> 00:49:22,710
+up it's half plus something closer to
+
+994
+00:49:19,710 --> 00:49:27,949
+the bigger number in this case it's
+
+995
+00:49:22,949 --> 00:49:29,809
+exactly half oh it's not closer to the
+
+996
+00:49:27,809 --> 00:49:30,219
+bigger number any closer the bigger
+
+997
+00:49:29,219 --> 00:49:34,630
+number there's a smaller number or vice
+
+998
+00:49:30,630 --> 00:49:36,949
+versa so what do we do we round toward
+
+999
+00:49:34,949 --> 00:49:38,210
+the even given the choice between
+
+1000
+00:49:36,210 --> 00:49:40,460
+rounding down to one point two three and
+
+1001
+00:49:38,460 --> 00:49:45,380
+rounding up to one point two four what
+
+1002
+00:49:40,380 --> 00:49:50,510
+do we do two fours even we round up okay
+
+1003
+00:49:45,510 --> 00:49:52,599
+here one point to 400 exactly halfway
+
+1004
+00:49:50,599 --> 00:49:54,769
+given the choice between rounding down
+
+1005
+00:49:52,769 --> 00:49:56,719
+to one point two four and up to one
+
+1006
+00:49:54,719 --> 00:49:59,940
+point two five we round down to one
+
+1007
+00:49:56,940 --> 00:50:02,789
+point two four in one case we round it
+
+1008
+00:49:59,789 --> 00:50:07,969
+up in one case we rounded down that's
+
+1009
+00:50:02,969 --> 00:50:09,409
+how we broke the bias in binary it's
+
+1010
+00:50:07,409 --> 00:50:13,119
+sort of more fun because that one
+
+1011
+00:50:09,119 --> 00:50:16,349
+represents exactly half so one followed
+
+1012
+00:50:13,349 --> 00:50:19,349
+by all zeroes is half that's the case we
+
+1013
+00:50:16,349 --> 00:50:25,619
+even write a one followed by anything is
+
+1014
+00:50:19,619 --> 00:50:28,108
+more than half we round up alright so if
+
+1015
+00:50:25,108 --> 00:50:30,289
+I take a look at this one zero binary
+
+1016
+00:50:28,289 --> 00:50:32,929
+point zero zero zero one zero and I want
+
+1017
+00:50:30,929 --> 00:50:35,880
+to round to two digits I cover this up
+
+1018
+00:50:32,880 --> 00:50:37,579
+and I ask is that more is it is it less
+
+1019
+00:50:35,579 --> 00:50:39,318
+than half greater than half or exactly
+
+1020
+00:50:37,318 --> 00:50:43,088
+half well it's less than half because
+
+1021
+00:50:39,088 --> 00:50:51,949
+that's not a one round down no question
+
+1022
+00:50:43,949 --> 00:50:53,719
+asked okay here 10.00 cover up well
+
+1023
+00:50:51,719 --> 00:50:57,880
+that's clearly more than half because
+
+1024
+00:50:53,880 --> 00:51:00,478
+it's half plus something I round up ten
+
+1025
+00:50:57,478 --> 00:51:05,869
+point zero one in this case I cover it I
+
+1026
+00:51:00,869 --> 00:51:08,210
+end up with exactly half okay
+
+1027
+00:51:05,210 --> 00:51:12,219
+now the choice is between rounding down
+
+1028
+00:51:08,219 --> 00:51:18,659
+to 10.1 one losing the half or rounding
+
+1029
+00:51:12,659 --> 00:51:20,150
+up to 11.00 okay
+
+1030
+00:51:18,150 --> 00:51:23,460
+well the question is what am I going to
+
+1031
+00:51:20,460 --> 00:51:27,548
+do I'm gonna round toward even is that
+
+1032
+00:51:23,548 --> 00:51:29,358
+even know it has a 1 in the ones place
+
+1033
+00:51:27,358 --> 00:51:34,998
+right so that's gonna have to get
+
+1034
+00:51:29,998 --> 00:51:36,170
+rounded up to 11.00 that case confuses
+
+1035
+00:51:34,170 --> 00:51:37,239
+people a little bit right people for
+
+1036
+00:51:36,239 --> 00:51:40,559
+some reason want to get into this case
+
+1037
+00:51:37,559 --> 00:51:44,228
+and think that it's somehow between you
+
+1038
+00:51:40,228 --> 00:51:50,940
+know 10.1 one and 10.1 0.10 is going the
+
+1039
+00:51:44,940 --> 00:51:54,068
+wrong direction right okay here we have
+
+1040
+00:51:50,068 --> 00:51:57,509
+10.10 100 so when I cover this I'm in
+
+1041
+00:51:54,509 --> 00:52:01,659
+that half case again my choice is now
+
+1042
+00:51:57,659 --> 00:52:04,469
+between rounding down to 10.10 or up to
+
+1043
+00:52:01,469 --> 00:52:06,739
+10.1 one point one one has a 1 in the
+
+1044
+00:52:04,739 --> 00:52:12,889
+rightmost place so it's odd
+
+1045
+00:52:06,889 --> 00:52:15,699
+so I round down to 10.10 yes
+
+1046
+00:52:12,699 --> 00:52:23,789
+choose two and 70 cases like rounding
+
+1047
+00:52:15,789 --> 00:52:52,320
+19.5 isn't oranges are like apples
+
+1048
+00:52:23,320 --> 00:52:55,989
+aren't they I guess help me out this is
+
+1049
+00:52:52,989 --> 00:52:57,239
+that if I have ninety-nine point you
+
+1050
+00:52:55,239 --> 00:52:59,099
+know nine nine five right or something
+
+1051
+00:52:57,099 --> 00:53:02,260
+then I'm gonna end up adding a little
+
+1052
+00:52:59,260 --> 00:53:03,199
+bit to round up in the same way we do it
+
+1053
+00:53:02,199 --> 00:53:08,059
+over here
+
+1054
+00:53:03,059 --> 00:53:13,199
+exactly okay um floating point
+
+1055
+00:53:08,199 --> 00:53:14,389
+multiplication what to say if we're
+
+1056
+00:53:13,389 --> 00:53:16,829
+doing floating point multiplication it's
+
+1057
+00:53:14,829 --> 00:53:19,929
+not really in the abstract anything
+
+1058
+00:53:16,929 --> 00:53:23,210
+complicated we do exactly the same thing
+
+1059
+00:53:19,210 --> 00:53:27,818
+we find the actual true result okay and
+
+1060
+00:53:23,818 --> 00:53:30,219
+then we get it represented as a floating
+
+1061
+00:53:27,219 --> 00:53:35,338
+point number we shift until we have the
+
+1062
+00:53:30,338 --> 00:53:37,170
+right form we find that bias we record
+
+1063
+00:53:35,170 --> 00:53:39,929
+our our exponent we record as much of
+
+1064
+00:53:37,929 --> 00:53:42,039
+the fraction as we can
+
+1065
+00:53:39,039 --> 00:53:45,309
+rounding even these that's what the
+
+1066
+00:53:42,309 --> 00:53:48,269
+Tripoli's I Triple E standard requires
+
+1067
+00:53:45,269 --> 00:53:48,150
+okay
+
+1068
+00:53:52,150 --> 00:53:57,400
+[Music]
+
+1069
+00:53:54,400 --> 00:53:57,610
+okay
+
+1070
+00:53:58,610 --> 00:54:03,280
+so you know if we're too big we shift
+
+1071
+00:54:01,280 --> 00:54:04,079
+you know we shifted right too small we
+
+1072
+00:54:03,079 --> 00:54:06,699
+shift to the left that changes their
+
+1073
+00:54:04,699 --> 00:54:11,530
+exponent we overflow if it's out of
+
+1074
+00:54:06,530 --> 00:54:15,179
+range we make our fraction fit rounding
+
+1075
+00:54:11,179 --> 00:54:17,530
+is necessary okay floating point and C
+
+1076
+00:54:15,530 --> 00:54:18,300
+float is a single precision number
+
+1077
+00:54:17,300 --> 00:54:19,230
+according to the I Triple E standard
+
+1078
+00:54:18,230 --> 00:54:23,670
+devil's gonna be a double precision
+
+1079
+00:54:19,670 --> 00:54:28,269
+number if we're casting between a a
+
+1080
+00:54:23,269 --> 00:54:30,760
+double or a float in an INT okay it's
+
+1081
+00:54:28,760 --> 00:54:32,230
+obviously the case that if I go from a
+
+1082
+00:54:30,230 --> 00:54:34,030
+double the float to an int the int
+
+1083
+00:54:32,030 --> 00:54:38,159
+cannot handle the fractional convinced
+
+1084
+00:54:34,159 --> 00:54:41,539
+right if I float is 1.5 and I'm trying
+
+1085
+00:54:38,539 --> 00:54:44,179
+to cast that to an end it can't handle
+
+1086
+00:54:41,179 --> 00:54:49,480
+the half it's an int okay so it's going
+
+1087
+00:54:44,480 --> 00:54:51,190
+to truncate the fractional part it's not
+
+1088
+00:54:49,190 --> 00:54:53,889
+going to round I Triple E standard about
+
+1089
+00:54:51,889 --> 00:54:56,989
+this rounding even only works within the
+
+1090
+00:54:53,989 --> 00:54:57,269
+I Triple E floating point space if I
+
+1091
+00:54:56,269 --> 00:54:59,679
+take a floating point number and I try
+
+1092
+00:54:57,679 --> 00:55:00,210
+to stick it into an integer it's not
+
+1093
+00:54:59,210 --> 00:55:02,260
+gonna fit and what doesn't fit it's
+
+1094
+00:55:00,260 --> 00:55:07,929
+gonna fall out okay so it's gonna be
+
+1095
+00:55:02,929 --> 00:55:09,280
+truncation what happens if you have not
+
+1096
+00:55:07,280 --> 00:55:11,440
+a number who knows
+
+1097
+00:55:09,440 --> 00:55:15,860
+it'll probably turn out to be team n
+
+1098
+00:55:11,860 --> 00:55:17,289
+okay what if I try to cast an INT into a
+
+1099
+00:55:15,289 --> 00:55:20,869
+double that's okay because as it turns
+
+1100
+00:55:17,869 --> 00:55:22,030
+out a double is much wider than an int
+
+1101
+00:55:20,030 --> 00:55:24,789
+right twice the width so the full
+
+1102
+00:55:22,789 --> 00:55:25,230
+integer component of an INT
+
+1103
+00:55:24,230 --> 00:55:30,969
+can fit into the integer component of a
+
+1104
+00:55:25,969 --> 00:55:33,920
+double I will not lose anything okay if
+
+1105
+00:55:30,920 --> 00:55:34,019
+I try to go from an int to a float now I
+
+1106
+00:55:33,019 --> 00:55:37,789
+have a problem because an int and a
+
+1107
+00:55:34,789 --> 00:55:39,639
+float are the same size but the float
+
+1108
+00:55:37,639 --> 00:55:41,889
+loses the bit to the sign and loses a
+
+1109
+00:55:39,889 --> 00:55:44,989
+bunch of bits to the exponent so the
+
+1110
+00:55:41,989 --> 00:55:48,900
+integer component is smaller so I can't
+
+1111
+00:55:44,900 --> 00:55:51,349
+actually fit it into a float okay and so
+
+1112
+00:55:48,349 --> 00:55:52,139
+when that happens it's going to enter a
+
+1113
+00:55:51,139 --> 00:55:54,670
+floating-point number which is going to
+
+1114
+00:55:52,670 --> 00:55:55,650
+enter the I Triple E rules so it's gonna
+
+1115
+00:55:54,650 --> 00:56:00,820
+round according to the rounding mode
+
+1116
+00:55:55,820 --> 00:56:00,500
+round even okay
+
+1117
+00:56:04,500 --> 00:56:09,980
+what to say
+
+1118
+00:56:05,980 --> 00:56:14,338
+floating-point numbers are painful if
+
+1119
+00:56:09,338 --> 00:56:16,139
+you actually care about getting things
+
+1120
+00:56:14,139 --> 00:56:17,150
+exactly right right I coached the
+
+1121
+00:56:16,150 --> 00:56:19,559
+programming here from any teammate here
+
+1122
+00:56:17,559 --> 00:56:21,088
+for many many years and one of the
+
+1123
+00:56:19,088 --> 00:56:23,760
+classic ways that we that you know CMU
+
+1124
+00:56:21,760 --> 00:56:25,829
+you know blew problems that we otherwise
+
+1125
+00:56:23,829 --> 00:56:27,630
+should have gotten right was we would
+
+1126
+00:56:25,630 --> 00:56:32,039
+use floating-point arithmetic and we
+
+1127
+00:56:27,039 --> 00:56:35,949
+were asked does X equal equal Y and we
+
+1128
+00:56:32,949 --> 00:56:37,949
+would do computation here and
+
+1129
+00:56:35,949 --> 00:56:41,659
+computation here and they were
+
+1130
+00:56:37,659 --> 00:56:43,710
+equivalent but because the math was done
+
+1131
+00:56:41,710 --> 00:56:46,809
+in different ways the rounding happened
+
+1132
+00:56:43,809 --> 00:56:51,659
+differently and so they weren't exactly
+
+1133
+00:56:46,659 --> 00:56:52,010
+equal they were close because one of
+
+1134
+00:56:51,010 --> 00:56:55,989
+them stirred out with small numbers and
+
+1135
+00:56:52,989 --> 00:56:57,088
+blew up and got big and then got small
+
+1136
+00:56:55,088 --> 00:56:59,789
+again and rounded in one particular way
+
+1137
+00:56:57,789 --> 00:57:00,679
+that way another one of them started out
+
+1138
+00:56:59,679 --> 00:57:02,880
+with lard and uh numbers and multiply
+
+1139
+00:57:00,880 --> 00:57:04,650
+them rounded more and then multiply the
+
+1140
+00:57:02,650 --> 00:57:07,599
+small numbers and got smaller and lost
+
+1141
+00:57:04,599 --> 00:57:08,659
+more precision right and then if you do
+
+1142
+00:57:07,659 --> 00:57:10,829
+these in different orders you may lose
+
+1143
+00:57:08,829 --> 00:57:13,630
+the same amount of precision but lose it
+
+1144
+00:57:10,630 --> 00:57:16,690
+in different ways okay now you're
+
+1145
+00:57:13,690 --> 00:57:18,358
+rounding all that happens weird so with
+
+1146
+00:57:16,358 --> 00:57:20,250
+with floating-point numbers you really
+
+1147
+00:57:18,250 --> 00:57:22,469
+shouldn't use equal equal you really
+
+1148
+00:57:20,469 --> 00:57:25,690
+should subtract the two and ask if
+
+1149
+00:57:22,690 --> 00:57:26,059
+they're less than Epsilon if the
+
+1150
+00:57:25,059 --> 00:57:28,260
+difference is less than some epsilon
+
+1151
+00:57:26,260 --> 00:57:30,659
+right this is a natural thing to do for
+
+1152
+00:57:28,659 --> 00:57:35,039
+engineers because engineers are used to
+
+1153
+00:57:30,039 --> 00:57:35,619
+thinking in terms of tolerances right
+
+1154
+00:57:37,619 --> 00:57:43,119
+you know keep the washing machine drawer
+
+1155
+00:57:40,119 --> 00:57:46,150
+door locked until the water level is
+
+1156
+00:57:43,150 --> 00:57:47,000
+less than X not until the water levels
+
+1157
+00:57:46,000 --> 00:57:49,559
+absolutely zero because it may be a
+
+1158
+00:57:47,559 --> 00:57:52,710
+little bit left at the bottom right
+
+1159
+00:57:49,710 --> 00:57:54,358
+unlock the stove after cleaning when the
+
+1160
+00:57:52,358 --> 00:57:55,039
+temperature is below blah not when the
+
+1161
+00:57:54,039 --> 00:58:02,510
+temperature is exactly the same as the
+
+1162
+00:57:55,510 --> 00:58:06,219
+room that's good enough to be safe right
+
+1163
+00:58:02,219 --> 00:58:09,849
+the two sensors right you know that are
+
+1164
+00:58:06,849 --> 00:58:11,039
+measuring air flow right should be
+
+1165
+00:58:09,039 --> 00:58:14,369
+within some epsilon of each other
+
+1166
+00:58:11,369 --> 00:58:16,260
+they're not perfectly calibrated
+
+1167
+00:58:14,260 --> 00:58:19,579
+but if they're more different than that
+
+1168
+00:58:16,579 --> 00:58:22,510
+maybe the plane's wing is gonna stall
+
+1169
+00:58:19,510 --> 00:58:24,429
+okay so engineers naturally think in
+
+1170
+00:58:22,429 --> 00:58:26,289
+terms of tolerances but computer
+
+1171
+00:58:24,289 --> 00:58:29,239
+scientists sometimes you know we're used
+
+1172
+00:58:26,239 --> 00:58:32,780
+to discrete math we don't think about
+
+1173
+00:58:29,780 --> 00:58:36,599
+tolerances right one is one zero zero
+
+1174
+00:58:32,599 --> 00:58:39,829
+Dada right and so we have a hard time
+
+1175
+00:58:36,829 --> 00:58:42,079
+with this type of thing and so you know
+
+1176
+00:58:39,079 --> 00:58:44,409
+we think of math as you know all you
+
+1177
+00:58:42,409 --> 00:58:46,570
+know as we learned and it just and as we
+
+1178
+00:58:44,570 --> 00:58:48,159
+use it and so we tend to forget about
+
+1179
+00:58:46,159 --> 00:58:49,019
+that and so you know it really actually
+
+1180
+00:58:48,019 --> 00:58:52,519
+when you're doing floating-point code
+
+1181
+00:58:49,519 --> 00:58:53,099
+right you shouldn't you shouldn't ask
+
+1182
+00:58:52,099 --> 00:58:55,570
+does it actually equal zero you should
+
+1183
+00:58:53,570 --> 00:59:00,369
+ask is it close enough to zero for my
+
+1184
+00:58:55,369 --> 00:59:01,079
+purpose okay other things that happen is
+
+1185
+00:59:00,079 --> 00:59:05,519
+you have to pay attention to how things
+
+1186
+00:59:01,519 --> 00:59:07,989
+round after I guessed were the end of my
+
+1187
+00:59:05,989 --> 00:59:10,369
+undergraduate and as I was beginning
+
+1188
+00:59:07,369 --> 00:59:13,190
+grad school I did research in neural
+
+1189
+00:59:10,190 --> 00:59:15,159
+networks for a while and I took this
+
+1190
+00:59:13,159 --> 00:59:16,019
+neural network that we were built built
+
+1191
+00:59:15,019 --> 00:59:18,219
+as a neural network according to a paper
+
+1192
+00:59:16,219 --> 00:59:19,230
+and I demonstrated to my bosses when we
+
+1193
+00:59:18,230 --> 00:59:20,760
+do that great you know you have this
+
+1194
+00:59:19,760 --> 00:59:25,960
+this great implementation there's a
+
+1195
+00:59:20,960 --> 00:59:27,000
+neural network architecture now you know
+
+1196
+00:59:25,000 --> 00:59:28,289
+try to solve this problem with it okay
+
+1197
+00:59:27,289 --> 00:59:33,699
+here I did here's my results well great
+
+1198
+00:59:28,699 --> 00:59:34,559
+how long did it take you nine hours okay
+
+1199
+00:59:33,559 --> 00:59:37,579
+that's not good enough
+
+1200
+00:59:34,579 --> 00:59:38,039
+go optimize that codes you can you know
+
+1201
+00:59:37,039 --> 00:59:42,690
+it can take less than you know less than
+
+1202
+00:59:38,690 --> 00:59:45,949
+a minute okay and so I did a whole bunch
+
+1203
+00:59:42,949 --> 00:59:46,289
+of optimization and then I came back
+
+1204
+00:59:45,289 --> 00:59:50,670
+like three weeks later and I'm like like
+
+1205
+00:59:46,670 --> 00:59:52,119
+that good news and bad news for you okay
+
+1206
+00:59:50,119 --> 00:59:58,909
+well what's the good news I can do it in
+
+1207
+00:59:52,909 --> 00:00:06,099
+about 45 seconds what's the bad news it
+
+1208
+00:59:58,099 --> 00:00:07,079
+never actually converges you know and to
+
+1209
+01:00:06,079 --> 01:00:08,519
+which one of the bosses replied well if
+
+1210
+01:00:07,519 --> 01:00:10,750
+I wanted the wrong answer I could do it
+
+1211
+01:00:08,750 --> 01:00:13,730
+much faster turned around to his
+
+1212
+01:00:10,730 --> 01:00:13,739
+keyboard and did printf hello world
+
+1213
+01:00:15,739 --> 01:00:20,139
+and so we talked about this for a while
+
+1214
+01:00:18,139 --> 01:00:21,539
+and you know we looked at the results
+
+1215
+01:00:20,539 --> 01:00:23,769
+and look at some of the numbers and some
+
+1216
+01:00:21,769 --> 01:00:25,809
+of the cases and whatever and one of my
+
+1217
+01:00:23,809 --> 01:00:27,579
+bosses said well you know it looks like
+
+1218
+01:00:25,579 --> 01:00:29,500
+there might be some type of numerical
+
+1219
+01:00:27,500 --> 01:00:31,360
+analysis problem there he you know
+
+1220
+01:00:29,360 --> 01:00:33,579
+are you using floats for this I'm like
+
+1221
+01:00:31,579 --> 01:00:35,320
+yeah he's like I think you haven't have
+
+1222
+01:00:33,320 --> 01:00:38,000
+a numerical analysis problem I didn't
+
+1223
+01:00:35,000 --> 01:00:39,659
+understand what he meant and then I went
+
+1224
+01:00:38,659 --> 01:00:41,679
+back and looked at it and learned
+
+1225
+01:00:39,679 --> 01:00:45,530
+something about floats and realized that
+
+1226
+01:00:41,530 --> 01:00:47,440
+what I done I gotten to the point where
+
+1227
+01:00:45,440 --> 01:00:49,630
+I drove values down to where they were
+
+1228
+01:00:47,630 --> 01:00:52,480
+really close to zero and noise took over
+
+1229
+01:00:49,480 --> 01:00:55,429
+the way I did the multiplication right
+
+1230
+01:00:52,429 --> 01:00:57,400
+generated noise that was then dominating
+
+1231
+01:00:55,400 --> 01:00:58,199
+the computation and that's why beyond a
+
+1232
+01:00:57,199 --> 01:01:01,789
+certain point I actually couldn't get a
+
+1233
+01:00:58,789 --> 01:01:03,369
+viable result I couldn't get enough
+
+1234
+01:01:01,369 --> 01:01:06,769
+convergence for our purposes and so I
+
+1235
+01:01:03,769 --> 01:01:11,110
+rewrote it using integers and fixed
+
+1236
+01:01:06,110 --> 01:01:13,659
+point and so I've seen this crop up you
+
+1237
+01:01:11,659 --> 01:01:16,880
+know a lot in a lot of different cases
+
+1238
+01:01:13,880 --> 01:01:20,250
+so when you do the same computation in
+
+1239
+01:01:16,250 --> 01:01:22,389
+different ways you may you may end up in
+
+1240
+01:01:20,389 --> 01:01:28,760
+different situations a plus B plus C may
+
+1241
+01:01:22,760 --> 01:01:30,760
+not equal you know a plus people say
+
+1242
+01:01:28,760 --> 01:01:33,559
+okay yeah so here we have a plus B plus
+
+1243
+01:01:30,559 --> 01:01:34,050
+C with B plus C plus D and so here we
+
+1244
+01:01:33,050 --> 01:01:38,880
+have B plus C and here we have B plus C
+
+1245
+01:01:34,880 --> 01:01:44,929
+right the compiler may not be able to
+
+1246
+01:01:38,929 --> 01:01:44,199
+take that out and do the B plus C once
+
+1247
+01:01:44,199 --> 01:01:48,030
+okay we look at this and say okay the
+
+1248
+01:01:47,030 --> 01:01:55,800
+compiler can do temporary equals B plus
+
+1249
+01:01:48,800 --> 01:02:00,150
+C a plus 10 B plus D plus temp right
+
+1250
+01:01:55,150 --> 01:02:02,860
+because to us B plus C is B plus C I can
+
+1251
+01:02:00,860 --> 01:02:05,750
+do that computation just once but the
+
+1252
+01:02:02,750 --> 01:02:10,900
+problem is here it's a it's a plus B
+
+1253
+01:02:05,900 --> 01:02:12,760
+plus C and here it's B plus C plus D and
+
+1254
+01:02:10,760 --> 01:02:19,829
+it may actually round differently when I
+
+1255
+01:02:12,829 --> 01:02:23,719
+do the B plus C plus D then the a plus B
+
+1256
+01:02:19,719 --> 01:02:25,150
+plus C right so if I try to take that
+
+1257
+01:02:23,150 --> 01:02:26,820
+out what could happen here is the a plus
+
+1258
+01:02:25,820 --> 01:02:29,900
+B
+
+1259
+01:02:26,900 --> 01:02:41,119
+Plus see I mean may not round the same
+
+1260
+01:02:29,119 --> 01:02:41,730
+as a plus quantity B plus C okay um
+
+1261
+01:02:42,730 --> 01:02:47,219
+we've got more puzzles okay and again I
+
+1262
+01:02:46,219 --> 01:02:49,599
+don't think me doing the puzzles is
+
+1263
+01:02:47,599 --> 01:02:51,190
+helpful to you I think you need to do
+
+1264
+01:02:49,190 --> 01:02:53,679
+the puzzles okay and then talk about
+
+1265
+01:02:51,679 --> 01:02:54,239
+with the move your friends right and
+
+1266
+01:02:53,239 --> 01:02:58,500
+then come to office hours if you need
+
+1267
+01:02:54,500 --> 01:03:00,190
+help but just take a quick look all
+
+1268
+01:02:58,190 --> 01:03:01,679
+right X is a X is an integer
+
+1269
+01:03:00,679 --> 01:03:04,940
+f is a floating-point number D is a
+
+1270
+01:03:01,940 --> 01:03:07,579
+double okay so I have some integer
+
+1271
+01:03:04,579 --> 01:03:12,730
+equals I take X which is an integer I
+
+1272
+01:03:07,730 --> 01:03:14,529
+cast it as a float when I do that am i
+
+1273
+01:03:12,529 --> 01:03:20,960
+guaranteed to maintain the same level of
+
+1274
+01:03:14,960 --> 01:03:23,719
+precision no an int X and a float are
+
+1275
+01:03:20,719 --> 01:03:25,750
+the same size right but a float has to
+
+1276
+01:03:23,750 --> 01:03:28,309
+be able to as bits that are dedicated to
+
+1277
+01:03:25,309 --> 01:03:29,159
+maintaining the fractions so this is
+
+1278
+01:03:28,159 --> 01:03:32,719
+going to get rounded as X becomes a
+
+1279
+01:03:29,719 --> 01:03:36,719
+float when I cast it back from a float
+
+1280
+01:03:32,719 --> 01:03:37,079
+to an int that loses nothing but I've
+
+1281
+01:03:36,079 --> 01:03:43,699
+already lost going from the into the
+
+1282
+01:03:37,699 --> 01:03:46,460
+float so at this point my X here does
+
+1283
+01:03:43,460 --> 01:03:48,789
+not necessarily equal my original X it
+
+1284
+01:03:46,789 --> 01:03:56,940
+rounded when X became a float
+
+1285
+01:03:48,940 --> 01:03:58,869
+make sense okay here when I go from into
+
+1286
+01:03:56,869 --> 01:04:00,969
+a double I'm okay because the double is
+
+1287
+01:03:58,969 --> 01:04:02,980
+twice as wide as an int and it has
+
+1288
+01:04:00,980 --> 01:04:05,869
+enough integer bits to store a whole
+
+1289
+01:04:02,869 --> 01:04:09,779
+integer so I lose nothing going from an
+
+1290
+01:04:05,779 --> 01:04:10,199
+integer to a double and I certainly lose
+
+1291
+01:04:09,199 --> 01:04:14,699
+nothing taking those same bits back out
+
+1292
+01:04:10,699 --> 01:04:15,449
+and putting them into an integer since
+
+1293
+01:04:14,449 --> 01:04:16,650
+it started out as an integer I didn't
+
+1294
+01:04:15,650 --> 01:04:23,969
+have any fractions to lose so that'll be
+
+1295
+01:04:16,969 --> 01:04:24,750
+okay going from a float to a double I'm
+
+1296
+01:04:23,750 --> 01:04:26,469
+fine
+
+1297
+01:04:24,469 --> 01:04:28,179
+right it doubles twice as big as a float
+
+1298
+01:04:26,179 --> 01:04:32,250
+going from a double back to a float I'm
+
+1299
+01:04:28,250 --> 01:04:34,880
+still fine okay
+
+1300
+01:04:32,880 --> 01:04:36,639
+coming from a double to a float
+
+1301
+01:04:34,639 --> 01:04:39,420
+obviously not okay
+
+1302
+01:04:36,420 --> 01:04:45,568
+a double was twice as big right more
+
+1303
+01:04:39,568 --> 01:04:49,268
+precision and so I'm gonna let you take
+
+1304
+01:04:45,268 --> 01:04:51,108
+you to sort of take them from there one
+
+1305
+01:04:49,108 --> 01:04:52,449
+question is like if you think about this
+
+1306
+01:04:51,449 --> 01:04:53,529
+I'll give you a hint as to how to think
+
+1307
+01:04:52,529 --> 01:04:58,940
+of it I don't know what you solve them
+
+1308
+01:04:53,940 --> 01:05:00,710
+from there if I take F and I make it
+
+1309
+01:04:58,710 --> 01:05:04,900
+negative and then I make it negative
+
+1310
+01:05:00,900 --> 01:05:05,048
+again is that the same as F the hint is
+
+1311
+01:05:04,048 --> 01:05:09,518
+it is the same if the number one is
+
+1312
+01:05:05,518 --> 01:05:13,989
+symmetric the hint is it's not the same
+
+1313
+01:05:09,989 --> 01:05:16,759
+if the number line is not symmetric
+
+1314
+01:05:13,759 --> 01:05:18,259
+because then if I'm somewhere over here
+
+1315
+01:05:16,259 --> 01:05:20,028
+that's not representable over here
+
+1316
+01:05:18,028 --> 01:05:21,759
+I could lose something and then once
+
+1317
+01:05:20,759 --> 01:05:24,478
+I've lost it
+
+1318
+01:05:21,478 --> 01:05:24,099
+I don't get it back going the other way
+
+1319
+01:05:25,099 --> 01:05:28,880
+okay
+
+1320
+01:05:28,880 --> 01:05:34,728
+2/3 versus 2 divided by 3.0 again I'm
+
+1321
+01:05:32,728 --> 01:05:35,199
+going to let you do that but what I'm
+
+1322
+01:05:34,199 --> 01:05:39,880
+going to note is that this is integer
+
+1323
+01:05:35,880 --> 01:05:47,748
+division and this is not because that's
+
+1324
+01:05:39,748 --> 01:05:48,518
+a floating-point number okay okay we see
+
+1325
+01:05:47,518 --> 01:05:55,659
+something there so let you think about
+
+1326
+01:05:48,659 --> 01:05:56,469
+that you know here if D is less than
+
+1327
+01:05:55,469 --> 01:05:58,039
+zero
+
+1328
+01:05:56,039 --> 01:06:01,318
+does that imply that D times two is also
+
+1329
+01:05:58,318 --> 01:06:03,170
+less than zero this is a question about
+
+1330
+01:06:01,170 --> 01:06:06,509
+rounding mode with integers it didn't
+
+1331
+01:06:03,509 --> 01:06:08,599
+right because if I took a negative
+
+1332
+01:06:06,599 --> 01:06:11,608
+number and I multiply it by something
+
+1333
+01:06:08,608 --> 01:06:14,059
+and I under float it it became positive
+
+1334
+01:06:11,059 --> 01:06:17,248
+the question is here does that happen or
+
+1335
+01:06:14,248 --> 01:06:19,998
+does something else happen think about
+
+1336
+01:06:17,998 --> 01:06:21,318
+the special States that we have in I
+
+1337
+01:06:19,318 --> 01:06:23,449
+Triple E numbers to present prevent
+
+1338
+01:06:21,449 --> 01:06:24,369
+something that gets too hot from looking
+
+1339
+01:06:23,369 --> 01:06:29,690
+cold or something gets too cold from
+
+1340
+01:06:24,690 --> 01:06:30,489
+looking hot if I if I have some double I
+
+1341
+01:06:29,489 --> 01:06:31,268
+know it's greater than some
+
+1342
+01:06:30,268 --> 01:06:37,798
+floating-point number does that imply
+
+1343
+01:06:31,798 --> 01:06:39,679
+that negative of that floating-point
+
+1344
+01:06:37,679 --> 01:06:44,779
+number is greater than negative of that
+
+1345
+01:06:39,779 --> 01:06:46,429
+double okay well what you want to notice
+
+1346
+01:06:44,429 --> 01:06:52,559
+there is this is D greater
+
+1347
+01:06:46,559 --> 01:06:54,440
+a nap right so this is D my double to
+
+1348
+01:06:52,440 --> 01:07:00,530
+the right of my floating-point number
+
+1349
+01:06:54,530 --> 01:07:02,510
+okay mmm D magnitude greater than F and
+
+1350
+01:07:00,510 --> 01:07:07,539
+on this side of the number line it's
+
+1351
+01:07:02,539 --> 01:07:10,050
+negative F greater than negative D okay
+
+1352
+01:07:07,050 --> 01:07:13,260
+so in this case that sign is backwards
+
+1353
+01:07:10,260 --> 01:07:19,019
+right negative 1 is greater than
+
+1354
+01:07:13,019 --> 01:07:20,469
+negative 2 okay so that's what you want
+
+1355
+01:07:19,469 --> 01:07:25,670
+to pay attention to and understanding
+
+1356
+01:07:20,670 --> 01:07:27,469
+that and now the question is is D times
+
+1357
+01:07:25,469 --> 01:07:29,989
+D greater than zero well think about it
+
+1358
+01:07:27,989 --> 01:07:32,909
+normally we think about a positive D and
+
+1359
+01:07:29,909 --> 01:07:34,519
+say okay if I have a 4 4 times 4 is
+
+1360
+01:07:32,519 --> 01:07:35,619
+greater than 0 right and I'd say the
+
+1361
+01:07:34,619 --> 01:07:38,789
+same is also true with negative numbers
+
+1362
+01:07:35,789 --> 01:07:41,130
+right negative 4 times negative 4 the
+
+1363
+01:07:38,130 --> 01:07:46,489
+negatives are gonna cancel out but now
+
+1364
+01:07:41,489 --> 01:07:47,889
+the question is is that going to work
+
+1365
+01:07:46,889 --> 01:07:53,969
+out in the case of floating point
+
+1366
+01:07:47,969 --> 01:07:57,610
+numbers in the case of integers not
+
+1367
+01:07:53,610 --> 01:08:00,179
+necessarily right because I could I
+
+1368
+01:07:57,179 --> 01:08:03,269
+could overflow become negative think
+
+1369
+01:08:00,269 --> 01:08:03,019
+about how I Triple E handles that case
+
+1370
+01:08:10,019 --> 01:08:14,840
+does D plus F minus D equal F will again
+
+1371
+01:08:12,840 --> 01:08:18,760
+to most people sure right we've
+
+1372
+01:08:14,760 --> 01:08:21,000
+associativity community D plus F minus D
+
+1373
+01:08:18,000 --> 01:08:24,270
+is the same as D minus D plus F plus F
+
+1374
+01:08:21,270 --> 01:08:30,359
+is equal to AB but remember the case of
+
+1375
+01:08:24,359 --> 01:08:31,180
+rounding and although the community of
+
+1376
+01:08:30,180 --> 01:08:32,109
+it associated properties are
+
+1377
+01:08:31,109 --> 01:08:34,460
+approximately true and floating-point
+
+1378
+01:08:32,460 --> 01:08:38,829
+numbers they're not necessarily exactly
+
+1379
+01:08:34,829 --> 01:08:42,850
+true so think about what that means in
+
+1380
+01:08:38,850 --> 01:08:45,779
+this case I'm summary I Triple E
+
+1381
+01:08:42,779 --> 01:08:46,000
+floating point standard has clear
+
+1382
+01:08:45,000 --> 01:08:47,798
+mathematical properties it represents
+
+1383
+01:08:46,798 --> 01:08:49,909
+numbers in the form of scientific
+
+1384
+01:08:47,909 --> 01:08:51,189
+notation
+
+1385
+01:08:49,189 --> 01:08:53,149
+specifically base to scientific notation
+
+1386
+01:08:51,149 --> 01:08:54,100
+it's great because one can reason about
+
+1387
+01:08:53,100 --> 01:08:55,390
+the operations independent of
+
+1388
+01:08:54,390 --> 01:08:57,920
+implementation if I know that a
+
+1389
+01:08:55,920 --> 01:08:58,329
+processor implements the I Triple E
+
+1390
+01:08:57,329 --> 01:09:03,859
+standard I don't have to worry about
+
+1391
+01:08:58,859 --> 01:09:05,199
+which algorithms it uses to do math okay
+
+1392
+01:09:03,199 --> 01:09:07,460
+it's not the same as the arithmetic you
+
+1393
+01:09:05,460 --> 01:09:08,529
+learned in math class that approximation
+
+1394
+01:09:07,529 --> 01:09:10,819
+means that associativity and
+
+1395
+01:09:08,819 --> 01:09:13,798
+distributive Atene community don't
+
+1396
+01:09:10,798 --> 01:09:15,199
+necessarily work the same way which
+
+1397
+01:09:13,199 --> 01:09:16,569
+makes life difficult for compilers why
+
+1398
+01:09:15,569 --> 01:09:19,649
+does it make life difficult for
+
+1399
+01:09:16,649 --> 01:09:21,890
+compilers you and I might look at
+
+1400
+01:09:19,890 --> 01:09:24,720
+something and say oh I can remove this
+
+1401
+01:09:21,720 --> 01:09:26,779
+common sub-expression the results will
+
+1402
+01:09:24,779 --> 01:09:29,939
+be close enough to the original for my
+
+1403
+01:09:26,939 --> 01:09:34,520
+purposes but the compiler doesn't know
+
+1404
+01:09:29,520 --> 01:09:36,529
+your purposes so it can't do that so
+
+1405
+01:09:34,529 --> 01:09:38,079
+when it comes to floating point math
+
+1406
+01:09:36,079 --> 01:09:40,909
+compilers can't do some of the forms of
+
+1407
+01:09:38,909 --> 01:09:42,770
+mathematical optimization they would do
+
+1408
+01:09:40,770 --> 01:09:44,600
+with integer operations even though it
+
+1409
+01:09:42,600 --> 01:09:45,670
+might be fine with us because they can't
+
+1410
+01:09:44,670 --> 01:09:50,779
+break things that were correct before
+
+1411
+01:09:45,779 --> 01:09:51,100
+they started ok one more thing I
+
+1412
+01:09:50,100 --> 01:09:54,149
+actually want to talk about you guys
+
+1413
+01:09:51,149 --> 01:10:00,750
+flew with the Intel F div bug anybody
+
+1414
+01:09:54,750 --> 01:10:02,119
+heard of it on the Pentium pending bug
+
+1415
+01:10:00,119 --> 01:10:04,760
+so the it's just a classic story about
+
+1416
+01:10:02,760 --> 01:10:06,680
+floating points so floating point math
+
+1417
+01:10:04,680 --> 01:10:07,600
+and a processor happens in ways very
+
+1418
+01:10:06,600 --> 01:10:11,979
+very different than you might think it
+
+1419
+01:10:07,979 --> 01:10:15,970
+would okay long division takes a lot of
+
+1420
+01:10:11,970 --> 01:10:17,869
+iterations okay it's not a really good
+
+1421
+01:10:15,869 --> 01:10:20,369
+way of making things consistent in a
+
+1422
+01:10:17,369 --> 01:10:22,279
+processor okay it's not a good way of
+
+1423
+01:10:20,279 --> 01:10:23,199
+making things go fast in a processor so
+
+1424
+01:10:22,199 --> 01:10:24,199
+they years if you learned
+
+1425
+01:10:23,199 --> 01:10:27,939
+Taylor and Maclaurin series like in some
+
+1426
+01:10:24,939 --> 01:10:29,850
+calculus class right they use series
+
+1427
+01:10:27,850 --> 01:10:32,800
+basically to understand what the results
+
+1428
+01:10:29,800 --> 01:10:35,020
+will be and have tables of partial
+
+1429
+01:10:32,020 --> 01:10:37,680
+fractions you know and when they were
+
+1430
+01:10:35,680 --> 01:10:40,210
+and these things worked out years ago
+
+1431
+01:10:37,210 --> 01:10:42,210
+okay and so when they were building the
+
+1432
+01:10:40,210 --> 01:10:44,039
+the Pentium processor Intel's new
+
+1433
+01:10:42,039 --> 01:10:45,380
+flagship processor at the time there was
+
+1434
+01:10:44,380 --> 01:10:47,880
+an intern who was given the job of
+
+1435
+01:10:45,880 --> 01:10:50,199
+loading this table onto the tape
+
+1436
+01:10:47,199 --> 01:10:53,409
+basically of loading this into the the
+
+1437
+01:10:50,409 --> 01:10:58,079
+new processor design and his Perl script
+
+1438
+01:10:53,079 --> 01:11:00,170
+had a head of bug and was off by one and
+
+1439
+01:10:58,170 --> 01:11:06,189
+it went unnoticed through their
+
+1440
+01:11:00,189 --> 01:11:10,130
+validation and so every Pentium
+
+1441
+01:11:06,130 --> 01:11:13,350
+processor on earth was built with
+
+1442
+01:11:10,350 --> 01:11:15,390
+certain you know with the ability to
+
+1443
+01:11:13,390 --> 01:11:17,010
+have incorrect results for certain
+
+1444
+01:11:15,010 --> 01:11:19,859
+divisions and as I remember and I'm Fabi
+
+1445
+01:11:17,859 --> 01:11:21,960
+here I think was a professional Georgia
+
+1446
+01:11:19,960 --> 01:11:22,489
+Tech who is maybe a physicist or some
+
+1447
+01:11:21,489 --> 01:11:25,960
+scientist that have been doing these
+
+1448
+01:11:22,960 --> 01:11:27,869
+really precise experiments and the
+
+1449
+01:11:25,869 --> 01:11:29,609
+graduate students were running them on
+
+1450
+01:11:27,609 --> 01:11:31,680
+this new equipment and the results were
+
+1451
+01:11:29,680 --> 01:11:32,779
+really bad and they spent this huge than
+
+1452
+01:11:31,779 --> 01:11:34,890
+they weren't correct right they spent
+
+1453
+01:11:32,890 --> 01:11:36,569
+this huge amount of time checking their
+
+1454
+01:11:34,569 --> 01:11:38,880
+code and then checking the compiler and
+
+1455
+01:11:36,880 --> 01:11:39,319
+then eventually they came to the
+
+1456
+01:11:38,319 --> 01:11:43,670
+conclusion that must be the processor
+
+1457
+01:11:39,670 --> 01:11:45,869
+and you know Intel thought they were
+
+1458
+01:11:43,869 --> 01:11:47,279
+nuts of course there's no problem how
+
+1459
+01:11:45,279 --> 01:11:48,050
+processors are like whatever right and
+
+1460
+01:11:47,050 --> 01:11:51,369
+then eventually they just took the
+
+1461
+01:11:48,369 --> 01:11:53,670
+simple case and did like all the all the
+
+1462
+01:11:51,670 --> 01:11:54,619
+division cases right and then compare
+
+1463
+01:11:53,619 --> 01:11:57,939
+them to the actual results and found the
+
+1464
+01:11:54,939 --> 01:12:00,819
+F did bug and Intel basically had to
+
+1465
+01:11:57,819 --> 01:12:00,500
+replace every penny and they sold
+
+1466
+01:12:01,500 --> 01:12:04,340
+classic stories you can look it up on
+
+1467
+01:12:03,340 --> 01:12:11,050
+the web
+
+1468
+01:12:04,050 --> 01:12:11,390
+any other questions hang on yes
+
+1469
+01:12:15,390 --> 01:12:19,680
+the floating point division is
+
+1470
+01:12:17,680 --> 01:12:21,539
+associative between float to floating
+
+1471
+01:12:19,539 --> 01:12:22,189
+point numbers so I can flip the left and
+
+1472
+01:12:21,189 --> 01:12:30,600
+right in isolation it will be the same
+
+1473
+01:12:22,600 --> 01:12:32,670
+yes yes why not use a second sign bit
+
+1474
+01:12:30,670 --> 01:12:34,590
+instead of a bias the reason we do the
+
+1475
+01:12:32,590 --> 01:12:35,119
+second we use the bias instead of the
+
+1476
+01:12:34,119 --> 01:12:38,738
+second sign bit is because it makes the
+
+1477
+01:12:35,738 --> 01:12:41,619
+number line smooth otherwise the number
+
+1478
+01:12:38,619 --> 01:12:43,399
+line would break you'd have this weird
+
+1479
+01:12:41,399 --> 01:12:45,029
+discontinuity where you couldn't look at
+
+1480
+01:12:43,029 --> 01:12:47,430
+the number line and transition smoothly
+
+1481
+01:12:45,430 --> 01:12:49,560
+from one to the next does that make
+
+1482
+01:12:47,560 --> 01:12:53,899
+sense and the reason this works is
+
+1483
+01:12:49,899 --> 01:12:56,829
+because we fixed the bias in one case
+
+1484
+01:12:53,829 --> 01:12:58,469
+right to match the bias the other so the
+
+1485
+01:12:56,469 --> 01:13:00,539
+fixed bias equals the bias of the end of
+
+1486
+01:12:58,539 --> 01:13:04,729
+the of the normalized range does that
+
+1487
+01:13:00,729 --> 01:13:07,779
+make sense okay any other questions have
+
+1488
+01:13:04,779 --> 01:13:07,000
+a great day everybody
+Subtitles End: mo.dbxdb.com
+
